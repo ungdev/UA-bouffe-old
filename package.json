@@ -1,0 +1,43 @@
+{
+  "name": "bouffe-2016",
+  "version": "0.0.0",
+  "description": "Appli bouffe UA 2016",
+  "main": "dist/index.html",
+  "scripts": {
+    "build": "rm -rf dist/bundle.js dist/bundle.js.map dist/styles.css dist/styles.css.map && webpack",
+    "server": "hz serve --dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungdev/bouffe-2016.git"
+  },
+  "author": "Xuan-Thi N'Guyen <xthi.ngu@gmail.com>",
+  "contributors": [
+    "Gabriel Juchault <gabriel.juchault@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ungdev/bouffe-2016/issues"
+  },
+  "homepage": "https://github.com/ungdev/bouffe-2016#readme",
+  "dependencies": {
+    "autoprefixer": "^6.4.1",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "horizon": "^2.0.0",
+    "json-loader": "^0.5.4",
+    "normalize.css": "^4.2.0",
+    "postcss": "^5.2.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.13.0",
+    "postcss-nested": "^1.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}
