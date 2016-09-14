@@ -19,8 +19,12 @@ const webpackConfig = {
     publicPath: '/dist/'
   },
   resolve : {
-    root       : root(),
-    extensions : ['', '.js', '.jsx', '.json']
+    root      : root(),
+    extensions: ['', '.js', '.jsx', '.json'],
+    alias     : {
+      'react'    : 'react-lite',
+      'react-dom': 'react-lite'
+    }
   },
   module : {
     loaders: [
@@ -29,7 +33,7 @@ const webpackConfig = {
         loader : 'babel',
         exclude: /node_modules/,
         query  : {
-          plugins: ['transform-runtime'],
+          plugins: ['transform-runtime', 'transform-flow-strip-types'],
           presets: ['es2015', 'react', 'stage-0']
         }
       },
@@ -63,4 +67,4 @@ const webpackConfig = {
   ]
 };
 
-module.exports = webpackConfig
+module.exports = webpackConfig;

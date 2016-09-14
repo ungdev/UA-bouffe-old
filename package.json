@@ -5,7 +5,10 @@
   "main": "dist/index.html",
   "scripts": {
     "build": "rm -rf dist/bundle.js dist/bundle.js.map dist/styles.css dist/styles.css.map && webpack",
-    "server": "hz serve --dev"
+    "build:watch": "npm run build -- --watch",
+    "server": "hz serve --dev",
+    "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
+    "flow": "flow check --all \"src\""
   },
   "repository": {
     "type": "git",
@@ -21,14 +24,18 @@
   },
   "homepage": "https://github.com/ungdev/bouffe-2016#readme",
   "dependencies": {
+    "@horizon/client": "^2.0.0",
     "autoprefixer": "^6.4.1",
     "babel-loader": "^6.2.5",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "concurrently": "^2.2.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "flow-bin": "^0.32.0",
     "horizon": "^2.0.0",
     "json-loader": "^0.5.4",
     "normalize.css": "^4.2.0",
@@ -37,6 +44,9 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.13.0",
     "postcss-nested": "^1.0.0",
+    "react-lite": "^0.15.18",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   }
