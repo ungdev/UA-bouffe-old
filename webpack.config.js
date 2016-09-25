@@ -49,7 +49,6 @@ const webpackConfig = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new ExtractTextPlugin('styles.css')
   ],
   postcss: webpack => [
@@ -66,5 +65,21 @@ const webpackConfig = {
     })
   ]
 };
+
+if (isProd) {
+    console.log('[Production build loaded]');
+
+    webpackConfig.devtool = null;
+
+    webpackConfig.plugins.push(new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: JSON.stringify('production')
+        }
+    }));
+
+    webpackConfig.plugins.push(new webpack.optimize.DedupePlugin());
+
+    webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({ sourceMap: false }));
+}
 
 module.exports = webpackConfig;
