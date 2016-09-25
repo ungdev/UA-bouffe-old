@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rm -rf dist/bundle.js dist/bundle.js.map dist/styles.css dist/styles.css.map && webpack",
     "build:watch": "npm run build -- --watch",
+    "build:prod": "cross-env NODE_ENV=production npm run build",
     "server": "hz serve --dev",
     "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
     "flow": "flow check --all \"src\""
@@ -33,6 +34,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "concurrently": "^2.2.0",
+    "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "flow-bin": "^0.32.0",

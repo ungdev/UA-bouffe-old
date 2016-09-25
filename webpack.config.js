@@ -66,7 +66,7 @@ const webpackConfig = {
   ]
 };
 
-if (isProd) {
+if (process.env.NODE_ENV === 'production') {
     console.log('[Production build loaded]');
 
     webpackConfig.devtool = null;
