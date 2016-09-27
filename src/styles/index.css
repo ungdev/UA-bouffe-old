@@ -1,1 +1,14 @@
 @import 'normalize.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+
+@import 'chooser';
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  height: 100%;
+}

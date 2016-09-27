@@ -1,13 +1,28 @@
-import React    from 'react';
-import { Link } from 'react-router';
+import React                    from 'react';
+import { Link, browserHistory } from 'react-router';
 
 export default class Index extends React.Component {
+  sell() {
+    browserHistory.push('/sell');
+  }
+
+  prepare() {
+    browserHistory.push('/prepare');
+  }
+
   render() {
     return (
-      <div>
-        UA Bouffe 2016
-        <Link to="/sell">Interface de vente</Link>
-        <Link to="/prepare">Interface de préparation</Link>
+      <div className="b-chooser">
+        <div className="b-chooser__title">
+          <span>UA Bouffe 2016</span>
+        </div>
+        <div className="b-chooser__link b-chooser__link--seller" onClick={() => this.sell()}>
+          Interface de vente
+        </div>
+        <div className="b-chooser__separator"></div>
+        <div className="b-chooser__link b-chooser__link--prepare" onClick={() => this.prepare()}>
+          Interface de préparation
+        </div>
       </div>
     );
   }
