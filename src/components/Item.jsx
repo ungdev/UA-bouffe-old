@@ -29,9 +29,10 @@ class Sell extends React.Component {
 
   addItem() {
     this.props.onAddItemClick({
-      id   : this.props.id,
-      name : this.props.name,
-      price: this.props.price
+      id        : this.props.id,
+      name      : this.props.name,
+      price     : this.props.price,
+      lowerPrice: this.props.lowerPrice
     });
   }
 }

@@ -5,7 +5,12 @@ import { removeItem } from '../actions';
 
 const mapStateToProps = state => {
   return {
-    basket: state.basket
+    basket: state
+      .basket
+      .map(item => {
+        item.effectivePrice = state.lowerPrice ? item.lowerPrice : item.price;
+        return item;
+      })
   }
 };
 
@@ -25,7 +30,7 @@ class Sell extends React.Component {
 
   getTotalPrice() {
     return this.props.basket
-      .map(item => item.price / 100)
+      .map(item => item.effectivePrice / 100)
       .reduce((a, b) => a + b, 0)
       .toFixed(1);
   }
@@ -36,7 +41,7 @@ class Sell extends React.Component {
         {this.props.basket.map((item, i) => {
           return (
             <div className="b-sell__page__sidebar__item">
-              <span>{item.name}</span>
+              <span>{item.name} - {(item.effectivePrice / 100).toFixed(1)}€</span>
               <span onClick={() => this.props.onRemoveItemClick(i)}>
                 &times;
               </span>

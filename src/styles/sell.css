@@ -18,6 +18,18 @@
   }
 }
 
+.b-sell__title__priceType {
+  height: 75px;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.b-sell__title__priceType--switched {
+  background-color: #16a085;
+}
+
 .b-sell__page {
   display: flex;
   min-height: 100%;

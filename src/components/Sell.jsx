@@ -1,4 +1,8 @@
-import React from 'react';
+import React       from 'react';
+import { connect } from 'react-redux';
+import classNames  from 'classnames';
+
+import { lowerPrice } from '../actions';
 
 import * as items from '../items';
 
@@ -7,7 +11,21 @@ import Sidebar from './Sidebar';
 
 const p2 = n => ((n < 10) ? `0${n}` : n).toString();
 
-export default class Sell extends React.Component {
+const mapStateToProps = state => {
+  return {
+    lowerPrice: state.lowerPrice
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSwitch() {
+      dispatch(lowerPrice());
+    }
+  };
+};
+
+class Sell extends React.Component {
   getItems() {
     return Object.keys(items).map(item => items[item]);
   }
@@ -33,10 +51,22 @@ export default class Sell extends React.Component {
   }
 
   render() {
+    const toggleClasses = classNames(
+      'b-sell__title__priceType',
+      {
+        'b-sell__title__priceType--switched': this.props.lowerPrice
+      }
+    );
+
+    const toggleText = (this.props.lowerPrice) ? 'Prix orga' : 'Prix normal';
+
     return (
       <div className="b-sell">
         <div className="b-sell__title">
           <span>UA 2016 - {this.getDate()}</span>
+          <div className={toggleClasses} onClick={() => this.props.onSwitch()}>
+            {toggleText}
+          </div>
         </div>
         <div className="b-sell__page">
           <div className="b-sell__page__items">
@@ -52,3 +82,5 @@ export default class Sell extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sell);
