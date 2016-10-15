@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRemoveItemClick(item) {
-      dispatch(removeItem(item));
+    onRemoveItemClick(index) {
+      dispatch(removeItem(index));
     }
   };
 };
@@ -23,17 +23,33 @@ class Sell extends React.Component {
     onRemoveItemClick: React.PropTypes.func,
   };
 
+  getTotalPrice() {
+    return this.props.basket
+      .map(item => item.price / 100)
+      .reduce((a, b) => a + b, 0)
+      .toFixed(1);
+  }
+
   render() {
     return (
       <div className="b-sell__page__sidebar">
-        {this.props.basket.map(item => {
-          console.log(item);
+        {this.props.basket.map((item, i) => {
           return (
-            <div className="b-sell__page__sidebar__item" onClick={ () => this.props.onRemoveItemClick(item) }>
-              {item.name}
+            <div className="b-sell__page__sidebar__item">
+              <span>{item.name}</span>
+              <span onClick={() => this.props.onRemoveItemClick(i)}>
+                &times;
+              </span>
             </div>
           );
         })}
+        <div className="b-sell__page__sidebar__valid">
+          <span>
+            {this.getTotalPrice()}€
+          </span>
+          &nbsp;
+          <span>&#10004;</span>
+        </div>
       </div>
     );
   }

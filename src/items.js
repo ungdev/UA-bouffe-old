@@ -4,4 +4,10 @@ const crepe = {
   price: 50
 };
 
-export { crepe };
+const fleur = {
+  id   : 'fleur',
+  name : 'Fleur',
+  price: 50
+};
+
+export { crepe, fleur };

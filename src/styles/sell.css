@@ -24,12 +24,6 @@
   padding-top: 75px;
 }
 
-.b-sell__page__sidebar {
-  background-color: #34495e;
-  flex: 0;
-  min-width: 400px;
-}
-
 .b-sell__page__items {
   align-content: flex-start;
   display: flex;

@@ -5,6 +5,7 @@
 @import 'prepare';
 @import 'sell';
 @import 'item';
+@import 'sidebar';
 
 *, *:before, *:after {
   box-sizing: border-box;
