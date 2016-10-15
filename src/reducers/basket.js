@@ -6,6 +6,8 @@ const basket = (state = initialState, action) => {
       return state.concat([ action.payload ]);
     case 'REMOVE_ITEM':
       return state.filter((_, i) => i !== action.payload);
+    case 'CLEAR_BASKET':
+      return [];
   }
 
   return state;

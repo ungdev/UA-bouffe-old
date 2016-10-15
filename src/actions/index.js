@@ -1,4 +1,16 @@
-import { addItem, removeItem } from './items';
-import { lowerPrice }          from './lowerPrice';
+import {
+  addItem,
+  removeItem,
+  clearBasket,
+  sendBasket
+} from './items';
 
-export { addItem, removeItem, lowerPrice };
+import { lowerPrice } from './lowerPrice';
+
+export {
+  addItem,
+  removeItem,
+  clearBasket,
+  sendBasket,
+  lowerPrice
+};

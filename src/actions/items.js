@@ -11,3 +11,17 @@ export const removeItem = item => {
     payload: item
   };
 };
+
+export const clearBasket = () => {
+  return {
+    type: 'CLEAR_BASKET'
+  };
+};
+
+export const sendBasket = () => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(clearBasket());
+    }, 500);
+  };
+};

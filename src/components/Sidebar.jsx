@@ -1,7 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { removeItem } from '../actions';
+import { removeItem, sendBasket } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -18,6 +18,10 @@ const mapDispatchToProps = dispatch => {
   return {
     onRemoveItemClick(index) {
       dispatch(removeItem(index));
+    },
+
+    onSendBasket() {
+      dispatch(sendBasket());
     }
   };
 };
@@ -48,7 +52,7 @@ class Sell extends React.Component {
             </div>
           );
         })}
-        <div className="b-sell__page__sidebar__valid">
+        <div className="b-sell__page__sidebar__valid" onClick={() => this.props.onSendBasket()}>
           <span>
             {this.getTotalPrice()}€
           </span>

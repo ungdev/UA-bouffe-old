@@ -9,6 +9,7 @@ import {
 
 import { Provider }                     from 'react-redux';
 import createLogger                     from 'redux-logger';
+import thunk                            from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
 
 import React      from 'react';
@@ -24,7 +25,7 @@ import app from './reducers';
 const logger = createLogger();
 const store  = createStore(
   app,
-  applyMiddleware(logger)
+  applyMiddleware(logger, thunk)
 );
 
 render((
