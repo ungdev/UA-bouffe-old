@@ -1,0 +1,39 @@
+.b-sell {
+  font-size: 28px;
+  font-weight: bold;
+  height: 100%;
+}
+
+.b-sell__title {
+  background-color: #2c3e50;
+  color: #fff;
+  height: 75px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  > span {
+    display: inline-block;
+    padding-top: 20px;
+  }
+}
+
+.b-sell__page {
+  display: flex;
+  min-height: 100%;
+  padding-top: 75px;
+}
+
+.b-sell__page__sidebar {
+  background-color: #34495e;
+  flex: 0;
+  min-width: 400px;
+}
+
+.b-sell__page__items {
+  align-content: flex-start;
+  display: flex;
+  background-color: rgba(52, 73, 94, 0.5);
+  flex: 1;
+  flex-wrap: wrap;
+}

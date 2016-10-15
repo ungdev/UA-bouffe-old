@@ -4,8 +4,12 @@ import {
   Router,
   Route,
   IndexRoute,
-  browserHistory
+  hashHistory
 } from 'react-router';
+
+import { Provider }                     from 'react-redux';
+import createLogger                     from 'redux-logger';
+import { applyMiddleware, createStore } from 'redux';
 
 import React      from 'react';
 import { render } from 'react-dom';
@@ -15,12 +19,22 @@ import Index   from './components/Index';
 import Prepare from './components/Prepare';
 import Sell    from './components/Sell';
 
+import app from './reducers';
+
+const logger = createLogger();
+const store  = createStore(
+  app,
+  applyMiddleware(logger)
+);
+
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="sell" component={Sell} />
-      <Route path="prepare" component={Prepare} />
-      <IndexRoute component={Index} />
-    </Route>
-  </Router>
+  <Provider store={store}>
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
+        <Route path="sell" component={Sell} />
+        <Route path="prepare" component={Prepare} />
+        <IndexRoute component={Index} />
+      </Route>
+    </Router>
+  </Provider>
 ), document.getElementById('app'));

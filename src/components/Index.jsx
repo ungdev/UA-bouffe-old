@@ -1,13 +1,13 @@
-import React                    from 'react';
-import { Link, browserHistory } from 'react-router';
+import React                 from 'react';
+import { Link, hashHistory } from 'react-router';
 
 export default class Index extends React.Component {
   sell() {
-    browserHistory.push('/sell');
+    hashHistory.push('/sell');
   }
 
   prepare() {
-    browserHistory.push('/prepare');
+    hashHistory.push('/prepare');
   }
 
   render() {

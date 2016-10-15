@@ -33,7 +33,11 @@ const webpackConfig = {
         loader : 'babel',
         exclude: /node_modules/,
         query  : {
-          plugins: ['transform-runtime', 'transform-flow-strip-types'],
+          cacheDirectory: true,
+          plugins: [
+            'transform-runtime',
+            'transform-flow-strip-types'
+          ],
           presets: ['es2015', 'react', 'stage-0']
         }
       },
