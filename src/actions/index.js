@@ -1,6 +1,7 @@
 // export * from './items';
 // export * from './modal';
 // export * from './lowerPrice';
+// export * from './orders';
 
 import {
   addItem,
@@ -13,6 +14,8 @@ import { closeModal, openModal } from './modal';
 
 import { lowerPrice } from './lowerPrice';
 
+import { order, listenForOrders } from './orders';
+
 export {
   addItem,
   removeItem,
@@ -20,5 +23,7 @@ export {
   sendBasket,
   lowerPrice,
   closeModal,
-  openModal
+  openModal,
+  order,
+  listenForOrders
 };

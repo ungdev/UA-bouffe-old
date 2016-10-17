@@ -24,7 +24,10 @@ export const clearBasket = () => {
 
 export const sendBasket = (basket) => {
   return (dispatch) => {
-    hz('orders');
+    const orders = hz('orders');
+
+    orders.insert(basket);
+
     return new Promise((resolve) => {
       setTimeout(() => {
         dispatch(clearBasket());
