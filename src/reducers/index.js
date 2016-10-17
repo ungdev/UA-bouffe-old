@@ -8,7 +8,8 @@ import orders     from './orders';
 const app = combineReducers({
   basket,
   lowerPrice,
-  modal
+  modal,
+  orders
 });
 
 export default app;

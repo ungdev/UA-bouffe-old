@@ -42,6 +42,7 @@
     "flow-bin": "^0.32.0",
     "horizon": "^2.0.0",
     "json-loader": "^0.5.4",
+    "lodash.clone": "^4.5.0",
     "normalize.css": "^4.2.0",
     "postcss": "^5.2.0",
     "postcss-cssnext": "^2.8.0",

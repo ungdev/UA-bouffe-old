@@ -9,7 +9,6 @@ const mapStateToProps = state => {
     modal: Object.keys(state.modal)
       .filter(m => m !== 'valid')
       .map(m => state.modal[m])
-      .map(m => { console.log(m); return m;})
       .find(m => m.active),
     lowerPrice: state.lowerPrice
   };
