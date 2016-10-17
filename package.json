@@ -9,7 +9,8 @@
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "server": "hz serve --dev",
     "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
-    "flow": "flow check --all \"src\""
+    "flow": "flow check --all \"src\"",
+    "lint": "./node_modules/.bin/eslint src"
   },
   "repository": {
     "type": "git",
@@ -51,8 +52,14 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "eslint": "^3.8.0",
+    "eslint-plugin-react": "^6.4.1"
   }
 }
