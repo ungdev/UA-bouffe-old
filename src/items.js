@@ -12,4 +12,20 @@ const fleur = {
   lowerPrice: 20
 };
 
-export { crepe, fleur };
+const promoFC = {
+  id        : 'fleurcrepe',
+  name      : 'Fleur + Crepe',
+  price     : 50,
+  lowerPrice: 50,
+  items     : [ [ fleur, crepe ] ]
+};
+
+const promoDouble = {
+  id: 'double',
+  name: 'Double Item',
+  price: 50,
+  lowerPrice: 50,
+  items: [ [ fleur, fleur ], [ crepe, crepe ] ]
+};
+
+export { crepe, fleur, promoFC, promoDouble };

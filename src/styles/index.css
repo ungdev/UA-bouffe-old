@@ -6,7 +6,7 @@
 @import 'sell';
 @import 'item';
 @import 'sidebar';
-@import 'validModal';
+@import 'modal';
 
 *, *:before, *:after {
   box-sizing: border-box;

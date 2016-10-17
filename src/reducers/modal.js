@@ -1,7 +1,10 @@
 const clone = require('lodash.clone');
 
 const initialState = {
-  valid: false
+  valid: {
+    active: false,
+    payload: {}
+  }
 };
 
 const modal = (state = initialState, action) => {
@@ -9,10 +12,16 @@ const modal = (state = initialState, action) => {
 
   switch (action.type) {
     case 'CLOSE_MODAL':
-      newState[action.payload] = false;
+      newState[action.name] = {
+        active: false,
+        payload: action.payload
+      };
       break;
     case 'OPEN_MODAL':
-      newState[action.payload] = true;
+      newState[action.name] = {
+        active: true,
+        payload: action.payload
+      };
       break;
   }
 

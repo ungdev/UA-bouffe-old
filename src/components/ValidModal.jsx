@@ -5,7 +5,7 @@ import { closeModal, sendBasket } from '../actions';
 
 const mapStateToProps = state => {
   return {
-    modalValidOpened: state.modal.valid
+    modalValidOpened: state.modal.valid.active
   };
 };
 

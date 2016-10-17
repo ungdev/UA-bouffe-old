@@ -1,12 +1,15 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { addItem } from '../actions';
+import { addItem, openModal } from '../actions';
 
 const mapDispatchToProps = dispatch => {
   return {
     onAddItemClick(item) {
       dispatch(addItem(item));
+    },
+    onShowPromotionModalClick(item) {
+      dispatch(openModal(item.id, item));
     }
   }
 };
@@ -16,6 +19,8 @@ class Sell extends React.Component {
     id            : React.PropTypes.string,
     name          : React.PropTypes.string,
     price         : React.PropTypes.number,
+    lowerPrice    : React.PropTypes.number,
+    items         : React.PropTypes.array,
     onAddItemClick: React.PropTypes.func
   };
 
@@ -28,12 +33,19 @@ class Sell extends React.Component {
   }
 
   addItem() {
-    this.props.onAddItemClick({
+    const itemProps = {
       id        : this.props.id,
       name      : this.props.name,
       price     : this.props.price,
-      lowerPrice: this.props.lowerPrice
-    });
+      lowerPrice: this.props.lowerPrice,
+      items     : this.props.items
+    };
+
+    if (this.props.items) {
+      this.props.onShowPromotionModalClick(itemProps);
+    } else {
+      this.props.onAddItemClick(itemProps);
+    }
   }
 }
 
