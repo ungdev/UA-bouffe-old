@@ -6,8 +6,10 @@ import { lowerPrice } from '../actions';
 
 import * as items from '../items';
 
-import Item    from './Item';
-import Sidebar from './Sidebar';
+import Item       from './Item';
+import Sidebar    from './Sidebar';
+import ValidModal from './ValidModal';
+import PromoModal from './PromoModal';
 
 const p2 = n => ((n < 10) ? `0${n}` : n).toString();
 
@@ -62,6 +64,8 @@ class Sell extends React.Component {
 
     return (
       <div className="b-sell">
+        <PromoModal></PromoModal>
+        <ValidModal></ValidModal>
         <div className="b-sell__title">
           <span>UA 2016 - {this.getDate()}</span>
           <div className={toggleClasses} onClick={() => this.props.onSwitch()}>

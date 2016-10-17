@@ -12,6 +12,10 @@
   font-weight: normal;
   padding: 10px 20px;
 
+  &.b-sell__page__sidebar__item--promotion {
+    background-color: #F0C682;
+  }
+
   &:not(:last-child) {
     border-bottom: 2px solid #34495e;
   }
@@ -29,7 +33,7 @@
 
 .b-sell__page__sidebar__valid {
   background-color: #2ecc71;
-  bottom: 1px;
+  bottom: 0;
   color: #fff;
   font-size: 56px;
   padding: 10px;

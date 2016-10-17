@@ -22,8 +22,11 @@ export const clearBasket = () => {
 
 export const sendBasket = () => {
   return (dispatch) => {
-    setTimeout(() => {
-      dispatch(clearBasket());
-    }, 500);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        dispatch(clearBasket());
+        resolve();
+      }, 500);
+    });
   };
 };

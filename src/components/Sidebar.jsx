@@ -1,7 +1,8 @@
 import React       from 'react';
 import { connect } from 'react-redux';
+import classNames  from 'classnames';
 
-import { removeItem, sendBasket } from '../actions';
+import { removeItem, openModal } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +12,7 @@ const mapStateToProps = state => {
         item.effectivePrice = state.lowerPrice ? item.lowerPrice : item.price;
         return item;
       })
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -21,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     },
 
     onSendBasket() {
-      dispatch(sendBasket());
+      dispatch(openModal('valid'));
     }
   };
 };
@@ -43,9 +44,20 @@ class Sell extends React.Component {
     return (
       <div className="b-sell__page__sidebar">
         {this.props.basket.map((item, i) => {
+          const name = item.items ?
+            item.items.map(i => i.name).join(', ') :
+            item.name;
+
+          const itemClasses = classNames(
+            'b-sell__page__sidebar__item',
+            { 'b-sell__page__sidebar__item--promotion': item.items }
+          );
+
           return (
-            <div className="b-sell__page__sidebar__item">
-              <span>{item.name} - {(item.effectivePrice / 100).toFixed(1)}€</span>
+            <div className={itemClasses}>
+              <span>
+                {name} - {(item.effectivePrice / 100).toFixed(1)}€
+              </span>
               <span onClick={() => this.props.onRemoveItemClick(i)}>
                 &times;
               </span>
