@@ -1,3 +1,4 @@
+/* global document */
 import './styles/index.css';
 
 import {

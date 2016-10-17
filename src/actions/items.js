@@ -1,15 +1,15 @@
-import hz from 'horizon';
+import Horizon from '@horizon/client';
 
 const hz = new Horizon();
 
-export const addItem = item => {
+export const addItem = (item) => {
   return {
     type   : 'ADD_ITEM',
     payload: item
   };
 };
 
-export const removeItem = item => {
+export const removeItem = (item) => {
   return {
     type   : 'REMOVE_ITEM',
     payload: item
@@ -22,9 +22,10 @@ export const clearBasket = () => {
   };
 };
 
-export const sendBasket = basket => {
-  return dispatch => {
-    return new Promise(resolve => {
+export const sendBasket = (basket) => {
+  return (dispatch) => {
+    hz('orders');
+    return new Promise((resolve) => {
       setTimeout(() => {
         dispatch(clearBasket());
         resolve();

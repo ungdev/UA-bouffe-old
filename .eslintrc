@@ -1,0 +1,41 @@
+{
+  parser: "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "arrow-parens": 1,
+    "comma-dangle": [1, "never"],
+    "curly": 1,
+    "eqeqeq": [1, "always"],
+    "linebreak-style": [1, "unix"],
+    "new-parens": 1,
+    "no-console": 1,
+    "no-debugger": 1,
+    "no-dupe-keys": 1,
+    "no-empty": 1,
+    "no-eval": 1,
+    "no-trailing-spaces": 1,
+    "no-undef": 1,
+    "no-unreachable": 1,
+    "no-unsafe-finally": 1,
+    "no-unused-expressions": 1,
+    "no-unused-vars": 1,
+    "no-use-before-define": 1,
+    "no-var": 1,
+    "use-isnan": 1,
+    "react/jsx-indent": [1, 2],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-no-undef": [1]
+  }
+}

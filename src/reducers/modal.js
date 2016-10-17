@@ -1,4 +1,4 @@
-const clone = require('lodash.clone');
+import clone from 'lodash.clone';
 
 const initialState = {
   valid: {
