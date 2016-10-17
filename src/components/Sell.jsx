@@ -1,5 +1,6 @@
 import React       from 'react';
 import { connect } from 'react-redux';
+import { Link }    from 'react-router';
 import classNames  from 'classnames';
 
 import { lowerPrice } from '../actions';
@@ -67,6 +68,7 @@ class Sell extends React.Component {
         <PromoModal></PromoModal>
         <ValidModal></ValidModal>
         <div className="b-sell__title">
+          <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
           <span>UA 2016 - {this.getDate()}</span>
           <div className={toggleClasses} onClick={() => this.props.onSwitch()}>
             {toggleText}

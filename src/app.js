@@ -26,7 +26,7 @@ import app from './reducers';
 const logger = createLogger();
 const store  = createStore(
   app,
-  applyMiddleware(logger, thunk)
+  applyMiddleware(thunk, logger)
 );
 
 render((

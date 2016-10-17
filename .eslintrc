@@ -8,6 +8,10 @@
   "plugins": [
     "react"
   ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "arrow-parens": 1,
@@ -18,7 +22,7 @@
     "new-parens": 1,
     "no-console": 1,
     "no-debugger": 1,
-    "no-dupe-keys": 1, 
+    "no-dupe-keys": 1,
     "no-empty": 1,
     "no-eval": 1,
     "no-trailing-spaces": 1,

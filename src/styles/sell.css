@@ -27,6 +27,17 @@
   top: 0;
 }
 
+.b-sell__title__back {
+  cursor: pointer;
+  font-size: 46px;
+  height: 75px;
+  left: 0;
+  padding: 5px 20px 20px 20px;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+}
+
 .b-sell__title__priceType--switched {
   background-color: #16a085;
 }

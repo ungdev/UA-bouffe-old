@@ -1,4 +1,6 @@
-/* global setTimeout */
+import Horizon from '@horizon/client';
+
+const hz = new Horizon();
 
 export const addItem = (item) => {
   return {
@@ -20,9 +22,10 @@ export const clearBasket = () => {
   };
 };
 
-export const sendBasket = () => {
+export const sendBasket = (basket) => {
   return (dispatch) => {
-    return new Promise(resolve => {
+    hz('orders');
+    return new Promise((resolve) => {
       setTimeout(() => {
         dispatch(clearBasket());
         resolve();

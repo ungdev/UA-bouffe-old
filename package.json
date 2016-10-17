@@ -10,7 +10,7 @@
     "server": "hz serve --dev",
     "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
     "flow": "flow check --all \"src\"",
-    "lint": "./node_modules/.bin/eslint src"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
