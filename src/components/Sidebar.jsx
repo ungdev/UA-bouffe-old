@@ -1,7 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { removeItem, sendBasket } from '../actions';
+import { removeItem, openModal } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
         item.effectivePrice = state.lowerPrice ? item.lowerPrice : item.price;
         return item;
       })
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => {
     },
 
     onSendBasket() {
-      dispatch(sendBasket());
+      dispatch(openModal('valid'));
     }
   };
 };

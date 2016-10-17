@@ -29,7 +29,7 @@
 
 .b-sell__page__sidebar__valid {
   background-color: #2ecc71;
-  bottom: 1px;
+  bottom: 0;
   color: #fff;
   font-size: 56px;
   padding: 10px;

@@ -1,9 +1,15 @@
+// export * from './items';
+// export * from './modal';
+// export * from './lowerPrice';
+
 import {
   addItem,
   removeItem,
   clearBasket,
   sendBasket
 } from './items';
+
+import { closeModal, openModal } from './modal';
 
 import { lowerPrice } from './lowerPrice';
 
@@ -12,5 +18,7 @@ export {
   removeItem,
   clearBasket,
   sendBasket,
-  lowerPrice
+  lowerPrice,
+  closeModal,
+  openModal
 };

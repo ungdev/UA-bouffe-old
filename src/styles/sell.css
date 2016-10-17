@@ -19,6 +19,7 @@
 }
 
 .b-sell__title__priceType {
+  cursor: pointer;
   height: 75px;
   padding: 20px;
   position: absolute;
