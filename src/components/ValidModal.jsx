@@ -5,6 +5,7 @@ import { closeModal, sendBasket } from '../actions';
 
 const mapStateToProps = state => {
   return {
+    basket          : state.basket,
     modalValidOpened: state.modal.valid.active
   };
 };
@@ -14,8 +15,8 @@ const mapDispatchToProps = dispatch => {
     onCancelModal() {
       dispatch(closeModal('valid'));
     },
-    onValidModal() {
-      dispatch(sendBasket())
+    onValidModal(basket) {
+      dispatch(sendBasket(basket))
         .then(() => {
           dispatch(closeModal('valid'));
         });
@@ -39,7 +40,7 @@ class ValidModal extends React.Component {
             onClick={() => this.props.onCancelModal()}>Annuler</button>
           <button
             className="b-modal__button b-modal__button--validate"
-            onClick={() => this.props.onValidModal()}>Paiement validé</button>
+            onClick={() => this.props.onValidModal(this.props.basket)}>Paiement validé</button>
         </div>
         <div className="b-modal-drop" hidden={!this.props.modalValidOpened}></div>
       </div>

@@ -1,3 +1,7 @@
+import hz from 'horizon';
+
+const hz = new Horizon();
+
 export const addItem = item => {
   return {
     type   : 'ADD_ITEM',
@@ -18,7 +22,7 @@ export const clearBasket = () => {
   };
 };
 
-export const sendBasket = () => {
+export const sendBasket = basket => {
   return dispatch => {
     return new Promise(resolve => {
       setTimeout(() => {
