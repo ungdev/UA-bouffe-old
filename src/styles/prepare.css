@@ -31,6 +31,8 @@
   color: #808b96;
   display: flex;
   margin: 10px auto;
+  overflow: hidden;
+  transition: height .2s ease-out, padding .2s ease-out;
   width: 900px;
   padding: 20px;
 }

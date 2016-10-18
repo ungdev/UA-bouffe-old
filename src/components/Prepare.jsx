@@ -27,6 +27,13 @@ class Prepare extends React.Component {
         id: order.id,
         status
       });
+
+    if (status === 'ready') {
+      setTimeout(() => {
+        this.refs[order.id].style.height  = '0px';
+        this.refs[order.id].style.padding = '0 20px';
+      }, 500);
+    }
   }
 
   render() {
@@ -60,7 +67,7 @@ class Prepare extends React.Component {
             const orderClasses = `b-prepare__orders__order b-prepare__orders__order--${order.status}`;
 
             return (
-              <div className={orderClasses}>
+              <div className={orderClasses} ref={order.id}>
                 <div className="b-prepare__orders__order__name">{order.name}</div>
                 <div
                   className={pendingClasses}
@@ -70,11 +77,11 @@ class Prepare extends React.Component {
                 <div
                   className={prepareClasses}
                   onClick={() => this.onChangeStatusClick(order, 'prepare')}>
-                  Prépartion
+                  Préparation
                 </div>
                 <div
                   className={readyClasses}
-                  onClick={() => this.onChangeStatusClick(order, 'ready')}>
+                  onClick={() => this.onChangeStatusClick(order, 'ready', this)}>
                   Prêt
                 </div>
               </div>
