@@ -75,6 +75,7 @@ class Sell extends React.Component {
           </div>
         </div>
         <div className="b-sell__page">
+          <Sidebar></Sidebar>
           <div className="b-sell__page__items">
             {this.getItems().map(item => {
               return (
@@ -82,7 +83,6 @@ class Sell extends React.Component {
               );
             })}
           </div>
-          <Sidebar></Sidebar>
         </div>
       </div>
     );

@@ -43,27 +43,29 @@ class Sell extends React.Component {
   render() {
     return (
       <div className="b-sell__page__sidebar">
-        {this.props.basket.map((item, i) => {
-          const name = item.items ?
-            item.items.map(i => i.name).join(', ') :
-            item.name;
+        <div className="b-sell__page__overflow">
+          {this.props.basket.map((item, i) => {
+            const name = item.items ?
+              item.items.map(i => i.name).join(', ') :
+              item.name;
 
-          const itemClasses = classNames(
-            'b-sell__page__sidebar__item',
-            { 'b-sell__page__sidebar__item--promotion': item.items }
-          );
+            const itemClasses = classNames(
+              'b-sell__page__sidebar__item',
+              { 'b-sell__page__sidebar__item--promotion': item.items }
+            );
 
-          return (
-            <div className={itemClasses}>
-              <span>
-                {name} - {(item.effectivePrice / 100).toFixed(1)}€
-              </span>
-              <span onClick={() => this.props.onRemoveItemClick(i)}>
-                &times;
-              </span>
-            </div>
-          );
-        })}
+            return (
+              <div className={itemClasses}>
+                <span>
+                  {name} - {(item.effectivePrice / 100).toFixed(1)}€
+                </span>
+                <span onClick={() => this.props.onRemoveItemClick(i)}>
+                  &times;
+                </span>
+              </div>
+            );
+          })}
+        </div>
         <div className="b-sell__page__sidebar__valid" onClick={() => this.props.onSendBasket()}>
           <span>
             {this.getTotalPrice()}€
