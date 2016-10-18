@@ -1,7 +1,3 @@
-import Horizon from '@horizon/client';
-
-const hz = new Horizon();
-
 export const addItem = (item) => {
   return {
     type   : 'ADD_ITEM',
@@ -24,7 +20,15 @@ export const clearBasket = () => {
 
 export const sendBasket = (basket) => {
   return (dispatch) => {
-    const orders = hz('orders');
+    const orders = window.hz('orders');
+
+    basket = basket
+      .map(item => {
+        delete item.id;
+        item.status  = 'pending';
+        item.created = new Date();
+        return item;
+      });
 
     orders.insert(basket);
 
