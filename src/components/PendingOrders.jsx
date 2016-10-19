@@ -57,7 +57,7 @@ class PendingOrders extends React.Component {
               onTouchStart={() => this.startTimer(order)}
               onMouseUp={() => this.stopTimer()}
               onTouchEnd={() => this.stopTimer()}>
-              {order.name}
+              #{order.code} {order.name}
             </div>
           );
         })}

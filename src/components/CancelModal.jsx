@@ -41,10 +41,10 @@ class CancelModal extends React.Component {
       <div>
         <div className="b-modal b-valid-modal" hidden={!this.props.modalCancelOpened}>
           <button
-            className="b-modal__button b-modal__button--cancel"
-            onClick={() => this.props.onCancelModal()}>Annuler</button>
-          <button
             className="b-modal__button b-modal__button--validate"
+            onClick={() => this.props.onCancelModal()}>Retour</button>
+          <button
+            className="b-modal__button b-modal__button--cancel"
             onClick={() => this.props.onValidModal(this.props.order)}>Annuler la commande</button>
         </div>
         <div className="b-modal-drop" hidden={!this.props.modalCancelOpened}></div>

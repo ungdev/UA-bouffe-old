@@ -90,7 +90,7 @@ class Prepare extends React.Component {
 
             return (
               <div className={orderClasses} ref={order.id}>
-                <div className="b-prepare__orders__order__name">{orderName}</div>
+                <div className="b-prepare__orders__order__name">#{order.code} {orderName}</div>
                 <div
                   className={pendingClasses}
                   onClick={() => this.onChangeStatusClick(order, 'pending')}>

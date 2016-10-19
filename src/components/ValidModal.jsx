@@ -1,10 +1,11 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { closeModal, sendBasket } from '../actions';
+import { closeModal, sendBasket, nextOrderCode } from '../actions';
 
 const mapStateToProps = state => {
   return {
+    code            : state.orderCode,
     basket          : state.basket,
     modalValidOpened: state.modal.valid.active
   };
@@ -15,9 +16,15 @@ const mapDispatchToProps = dispatch => {
     onCancelModal() {
       dispatch(closeModal('valid'));
     },
-    onValidModal(basket) {
+    onValidModal(code, basket) {
+      basket = basket.map(item => {
+        item.code = code;
+        return item;
+      });
+
       dispatch(sendBasket(basket))
         .then(() => {
+          dispatch(nextOrderCode());
           dispatch(closeModal('valid'));
         });
     }
@@ -40,7 +47,9 @@ class ValidModal extends React.Component {
             onClick={() => this.props.onCancelModal()}>Annuler</button>
           <button
             className="b-modal__button b-modal__button--validate"
-            onClick={() => this.props.onValidModal(this.props.basket)}>Paiement validé</button>
+            onClick={() => this.props.onValidModal(this.props.code, this.props.basket)}>
+            Paiement validé
+          </button>
         </div>
         <div className="b-modal-drop" hidden={!this.props.modalValidOpened}></div>
       </div>
