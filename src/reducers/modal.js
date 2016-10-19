@@ -4,6 +4,10 @@ const initialState = {
   valid: {
     active: false,
     payload: {}
+  },
+  cancel: {
+    active: false,
+    payload: {}
   }
 };
 

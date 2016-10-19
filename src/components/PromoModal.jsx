@@ -4,10 +4,12 @@ import clone       from 'lodash.clone';
 
 import { addItem, closeModal } from '../actions';
 
+const ALLOWED_MODALS = ['valid', 'cancel'];
+
 const mapStateToProps = state => {
   return {
     modal: Object.keys(state.modal)
-      .filter(m => m !== 'valid')
+      .filter(m => ALLOWED_MODALS.indexOf(m) === -1)
       .map(m => state.modal[m])
       .find(m => m.active),
     lowerPrice: state.lowerPrice

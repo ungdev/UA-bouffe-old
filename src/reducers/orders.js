@@ -1,7 +1,7 @@
 const orders = (state = [], action) => {
   switch(action.type) {
     case 'ORDERS':
-      return action.payload;
+      return action.payload.filter(order => !order.removed);
   }
 
   return state;

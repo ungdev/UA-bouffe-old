@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Link }    from 'react-router';
 import classNames  from 'classnames';
 
-import { changeOrderStatus } from '../actions';
-
 const p2 = n => ((n < 10) ? `0${n}` : n).toString();
 
 const mapStateToProps = state => {
@@ -41,7 +39,7 @@ class Prepare extends React.Component {
 
   getDate() {
     const d = new Date();
-    return `${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;
+    return `${p2(d.getHours())}:${p2(d.getMinutes())}`;
   }
 
   componentDidMount() {
@@ -60,8 +58,6 @@ class Prepare extends React.Component {
   }
 
   render() {
-    const orders = this.props.orders.sort((a, b) => a < b);
-
     return (
       <div className="b-prepare">
         <div className="b-prepare__title">
@@ -69,7 +65,7 @@ class Prepare extends React.Component {
           <span>UA Bouffe 2016 - {this.getDate()}</span>
         </div>
         <div className="b-prepare__orders">
-          {orders.map(order => {
+          {this.props.orders.map(order => {
             const pendingClasses = classNames(
               'b-prepare__orders__order__status',
               'b-prepare__orders__order__pending',

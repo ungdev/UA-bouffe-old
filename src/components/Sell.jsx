@@ -7,10 +7,12 @@ import { lowerPrice } from '../actions';
 
 import * as items from '../items';
 
-import Item       from './Item';
-import Sidebar    from './Sidebar';
-import ValidModal from './ValidModal';
-import PromoModal from './PromoModal';
+import Item          from './Item';
+import Sidebar       from './Sidebar';
+import PendingOrders from './PendingOrders';
+import ValidModal    from './ValidModal';
+import PromoModal    from './PromoModal';
+import CancelModal   from './CancelModal';
 
 const p2 = n => ((n < 10) ? `0${n}` : n).toString();
 
@@ -35,7 +37,7 @@ class Sell extends React.Component {
 
   getDate() {
     const d = new Date();
-    return `${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;
+    return `${p2(d.getHours())}:${p2(d.getMinutes())}`;
   }
 
   componentDidMount() {
@@ -67,6 +69,7 @@ class Sell extends React.Component {
       <div className="b-sell">
         <PromoModal></PromoModal>
         <ValidModal></ValidModal>
+        <CancelModal></CancelModal>
         <div className="b-sell__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
           <span>UA 2016 - {this.getDate()}</span>
@@ -83,6 +86,7 @@ class Sell extends React.Component {
               );
             })}
           </div>
+          <PendingOrders></PendingOrders>
         </div>
       </div>
     );
