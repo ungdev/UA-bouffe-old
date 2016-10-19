@@ -86,9 +86,11 @@ class Prepare extends React.Component {
 
             const orderClasses = `b-prepare__orders__order b-prepare__orders__order--${order.status}`;
 
+            const orderName = order.items ? order.items.map(i => i.name).join(', ') : order.name;
+
             return (
               <div className={orderClasses} ref={order.id}>
-                <div className="b-prepare__orders__order__name">{order.name}</div>
+                <div className="b-prepare__orders__order__name">{orderName}</div>
                 <div
                   className={pendingClasses}
                   onClick={() => this.onChangeStatusClick(order, 'pending')}>
