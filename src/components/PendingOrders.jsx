@@ -25,6 +25,17 @@ class PendingOrders extends React.Component {
   };
 
   startTimer(order) {
+    if (order.status === 'ready') {
+      const orders = window.hz('orders');
+
+      orders.update({
+        id     : order.id,
+        removed: true
+      });
+
+      return;
+    }
+
     // Cancel also to avoid double event click/touch
     this.stopTimer();
     console.log('START');
@@ -50,14 +61,14 @@ class PendingOrders extends React.Component {
             `b-sell__page__orders__order--${order.status}`
           );
 
+          const orderName = order.items ? order.items.map(i => i.name).join(', ') : order.name;
+
           return (
             <div
               className={orderClasses}
-              onMouseDown={() => this.startTimer(order)}
               onTouchStart={() => this.startTimer(order)}
-              onMouseUp={() => this.stopTimer()}
               onTouchEnd={() => this.stopTimer()}>
-              #{order.code} {order.name}
+              #{order.code} {orderName}
             </div>
           );
         })}

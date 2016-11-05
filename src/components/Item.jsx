@@ -27,7 +27,7 @@ class Sell extends React.Component {
   render() {
     return (
       <div className="b-item" onClick={() => this.addItem()}>
-        {this.props.name}
+        {this.props.name} - {(this.props.price / 100).toFixed(1)}€
       </div>
     );
   }

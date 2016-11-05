@@ -1,6 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 import clone       from 'lodash.clone';
+import classNames  from 'classnames';
 
 import { addItem, closeModal } from '../actions';
 
@@ -35,34 +36,73 @@ class Sell extends React.Component {
     onCancelPromoClick: React.PropTypes.func
   };
 
+  state = {
+    choices: []
+  };
+
+  selectItem(index, item) {
+    const choices = this.state.choices;
+    choices[index] = item;
+
+    this.setState({ choices });
+  }
+
+  sendPromo() {
+    const promo = clone(this.props.modal.payload);
+    promo.items = this.state.choices;
+    this.props.onChoosePromoClick(promo);
+  }
+
   render() {
-    const hasModal       = Boolean(this.props.modal);
+    const hasModal = Boolean(this.props.modal);
 
     if (!hasModal) {
       return <div></div>;
     }
 
+    console.log(this.state);
     const item           = this.props.modal.payload;
     const effectivePrice = (this.props.lowerPrice ? item.lowerPrice : item.price) / 100;
+
+    if (this.state.choices.length === 0) {
+      // select default choice
+      this.state.choices = item.items.map(choices => choices[0]);
+    }
 
     return (
       <div>
         <div className="b-modal b-promo-modal" hidden={!hasModal}>
           <h2>{item.name} - {effectivePrice && effectivePrice.toFixed(1)}€</h2>
           <span onClick={() => this.props.onCancelPromoClick(item.id)}>&times;</span>
-          <ul className="b-promo-modal__choices">
-            {item.items.map(choice => {
+          <div className="b-promo-modal__choices">
+            {item.items.map((choice, i) => {
               const choicePayload = clone(item);
               choicePayload.items = choice;
               return (
-                <li
-                  className="b-promo-modal__choices__choice"
-                  onClick={() => this.props.onChoosePromoClick(choicePayload)}>
-                  {choice.map(item => item.name).join(', ')}
-                </li>
+                <div className="b-promo-modal__choices__category">
+                  {choice.map(item => {
+                    const choiceClasses = classNames(
+                      'b-promo-modal__choices__category__choice',
+                      {
+                        'b-promo-modal__choices__category__choice--selected': this.state.choices[i].id === item.id
+                      }
+                    );
+
+                    return (
+                      <div
+                        className={choiceClasses}
+                        onClick={() => this.selectItem(i, item)}>
+                        {item.name}
+                      </div>
+                    );
+                  })}
+                </div>
               );
             })}
-          </ul>
+          </div>
+          <button
+            className="b-modal__button b-modal__button--validate"
+            onClick={() => this.sendPromo()}>Valider</button>
         </div>
         <div className="b-modal-drop" hidden={!hasModal}></div>
       </div>

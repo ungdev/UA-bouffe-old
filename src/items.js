@@ -2,30 +2,29 @@ const crepe = {
   id        : 'crepe',
   name      : 'Crêpe',
   price     : 50,
-  lowerPrice: 50
+  lowerPrice: 0
 };
 
 const fleur = {
   id        : 'fleur',
   name      : 'Fleur',
   price     : 50,
-  lowerPrice: 20
+  lowerPrice: 0
+};
+
+const caillou = {
+  id        : 'caillou',
+  name      : 'Caillou',
+  price     : 100,
+  lowerPrice: 0
 };
 
 const promoFC = {
   id        : 'fleurcrepe',
   name      : 'Fleur + Crepe',
   price     : 50,
-  lowerPrice: 50,
-  items     : [ [ fleur, crepe ] ]
+  lowerPrice: 0,
+  items     : [ [ fleur, caillou ], [ crepe ] ]
 };
 
-const promoDouble = {
-  id: 'double',
-  name: 'Double Item',
-  price: 50,
-  lowerPrice: 50,
-  items: [ [ fleur, fleur ], [ crepe, crepe ] ]
-};
-
-export { crepe, fleur, promoFC, promoDouble };
+export { crepe, fleur, promoFC };

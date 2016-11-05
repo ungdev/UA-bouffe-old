@@ -19,9 +19,9 @@ const mapDispatchToProps = dispatch => {
       const orders = window.hz('orders');
 
       orders.update({
-          id     : order.id,
-          removed: true
-        });
+        id     : order.id,
+        removed: true
+      });
 
       dispatch(closeModal('cancel'));
     }

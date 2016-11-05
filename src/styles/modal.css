@@ -61,17 +61,29 @@
 }
 
 .b-promo-modal__choices {
-  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-.b-promo-modal__choices__choice {
+.b-promo-modal__choices__category {
+  flex: 1;
+
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.b-promo-modal__choices__category__choice {
   background-color: #7f8c8d;
   color: #fff;
   padding: 10px;
 
   &:not(:first-child) {
     margin-top: 15px;
+  }
+
+  &--selected {
+    background-color: #f39c12;
   }
 }
