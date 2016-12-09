@@ -3,7 +3,7 @@
 const crepeCremeJambonFromage = {
   id        : 'crepe-creme-jambon-fromage',
   name      : 'Crêpe Crème Jambon Fromage',
-  price     : 200,
+  price     : 150,
   lowerPrice: 100,
   category  : 'crepes'
 };
@@ -19,7 +19,7 @@ const crepeSaleeSuplementOeuf = {
 const crepeChevreEmmental = {
   id        : 'crepe-chevre-emmental',
   name      : 'Crêpe Chèvre Emmental',
-  price     : 200,
+  price     : 150,
   lowerPrice: 100,
   category  : 'crepes'
 };
@@ -27,7 +27,7 @@ const crepeChevreEmmental = {
 const crepeChevreMiel = {
   id        : 'crepe-chevre-miel',
   name      : 'Crêpe Chèvre Miel',
-  price     : 200,
+  price     : 150,
   lowerPrice: 100,
   category  : 'crepes'
 };
@@ -37,7 +37,7 @@ const crepeChevreMiel = {
 const crepeSucre = {
   id        : 'crepe-sucre',
   name      : 'Crêpe Sucre',
-  price     : 50,
+  price     : 100,
   lowerPrice: 50,
   category  : 'crepes'
 };
@@ -147,7 +147,7 @@ const pizzaChorizo = {
 const hotDog = {
   id        : 'hot-dog',
   name      : 'Hot Dog',
-  price     : 200,
+  price     : 250,
   lowerPrice: 100,
   category  : 'sandwichs'
 };
@@ -185,14 +185,6 @@ const sandwichDinde = {
 };
 
 /* Boissons */
-
-const boissonEau = {
-  id        : 'boisson-eau',
-  name      : 'Eau',
-  price     : 50,
-  lowerPrice: 0,
-  category  : 'general'
-};
 
 const boissonCanette = {
   id        : 'boisson-canette',
@@ -244,7 +236,6 @@ const snackBar = {
   category  : 'general'
 };
 
-
 const snackSaucisson = {
   id        : 'snack-saucisson',
   name      : 'Saucisson',
@@ -252,7 +243,6 @@ const snackSaucisson = {
   lowerPrice: 150,
   category  : 'general'
 };
-
 
 /* Promotions */
 
@@ -298,7 +288,7 @@ const promo3Croques = {
 const promo2CroquesNutella = {
   id        : 'promo-2croques-nutella',
   name      : '2 Croques + Nutella',
-  price     : 350,
+  price     : 300,
   lowerPrice: 200,
   items     : [
     [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
@@ -312,7 +302,7 @@ const promoBarreCanette = {
   id        : 'promo-barre-canette',
   name      : 'Barre Canette',
   price     : 150,
-  lowerPrice: 150,
+  lowerPrice: 100,
   items     : [
     [ snackBar ],
     [ boissonCanette ]
@@ -328,7 +318,7 @@ const promo2CrepesBoisson = {
   items     : [
     [ crepeCremeJambonFromage, crepeChevreEmmental, crepeChevreMiel ],
     [ crepeSucre, crepeNutella, crepeConfitureFruitRouge, crepeConfitureAbricot, crepeMiel ],
-    [ boissonCanette, boissonEau, boissonCafe, boissonChocolat, boissonThe ]
+    [ boissonCanette, boissonCafe, boissonChocolat, boissonThe ]
   ],
   category: 'general'
 };
@@ -336,13 +326,13 @@ const promo2CrepesBoisson = {
 const promo3CroquesBoisson = {
   id        : 'promo-3croques-boisson',
   name      : '3 Croques Boisson',
-  price     : 300,
-  lowerPrice: 200,
+  price     : 400,
+  lowerPrice: 250,
   items     : [
     [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
     [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
     [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
-    [ boissonCanette, boissonEau, boissonCafe, boissonChocolat, boissonThe ]
+    [ boissonCanette, boissonCafe, boissonChocolat, boissonThe ]
   ],
   category: 'general'
 };
@@ -350,7 +340,7 @@ const promo3CroquesBoisson = {
 const promoHotDogCanette = {
   id        : 'promo-hotdog-canette',
   name      : 'Hot-Dog Canette',
-  price     : 250,
+  price     : 300,
   lowerPrice: 200,
   items     : [
     [ hotDog ],
@@ -362,8 +352,8 @@ const promoHotDogCanette = {
 const promoHotDogCrepe = {
   id        : 'promo-hotdog-hotdog-crepe',
   name      : 'Hot-Dog Crêpe Sucrée',
-  price     : 250,
-  lowerPrice: 100,
+  price     : 300,
+  lowerPrice: 150,
   items     : [
     [ hotDog ],
     [ crepeSucre, crepeNutella, crepeConfitureFruitRouge, crepeConfitureAbricot, crepeMiel ]
@@ -374,11 +364,11 @@ const promoHotDogCrepe = {
 const promoCrepeBoisson = {
   id        : 'promo-crepe-boisson',
   name      : 'Crêpe Salée Boisson',
-  price     : 300,
+  price     : 200,
   lowerPrice: 150,
   items     : [
     [ crepeCremeJambonFromage, crepeChevreEmmental, crepeChevreMiel ],
-    [ boissonCanette, boissonEau, boissonCafe, boissonChocolat, boissonThe ]
+    [ boissonCanette, boissonCafe, boissonChocolat, boissonThe ]
   ],
   category: 'general'
 };
@@ -406,7 +396,6 @@ export {
   sandwichThon,
   sandwichJambonBeurre,
   sandwichDinde,
-  boissonEau,
   boissonCanette,
   boissonMonster,
   boissonCafe,
