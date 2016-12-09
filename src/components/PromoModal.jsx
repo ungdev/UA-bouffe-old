@@ -68,6 +68,8 @@ class Sell extends React.Component {
       item.items.map(choices => choices[0]) :
       this.state.choices;
 
+    this.state.choices = choices;
+
     return (
       <div>
         <div className="b-modal b-promo-modal" hidden={!hasModal}>
@@ -103,7 +105,7 @@ class Sell extends React.Component {
             className="b-modal__button b-modal__button--validate"
             onClick={() => this.sendPromo()}>Valider</button>
         </div>
-        <div className="b-modal-drop" hidden={!hasModal}></div>
+        <div className="b-modal-drop" hidden={!hasModal} onClick={() => this.props.onCancelPromoClick(item.id)}></div>
       </div>
     );
   }
