@@ -1,7 +1,7 @@
 /* global document */
 import './styles/index.css';
 
-import Horizon     from '@horizon/client';
+import Horizon from '@horizon/client';
 
 import {
   Router,
@@ -44,3 +44,7 @@ render((
     </Router>
   </Provider>
 ), document.getElementById('app'));
+
+setTimeout(() => {
+  require('dragscroll');
+}, 2000);

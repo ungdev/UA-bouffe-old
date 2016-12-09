@@ -146,7 +146,7 @@ class Sell extends React.Component {
                 Sandwich
               </div>
             </div>
-            <div className="b-sell__page__items">
+            <div className="b-sell__page__items dragscroll">
               {this.getItems().map(item => {
                 return (
                   <Item {...item}></Item>

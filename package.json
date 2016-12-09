@@ -39,6 +39,7 @@
     "concurrently": "^2.2.0",
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
+    "dragscroll": "0.0.8",
     "extract-text-webpack-plugin": "^1.0.1",
     "flow-bin": "^0.32.0",
     "horizon": "^2.0.0",
