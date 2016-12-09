@@ -60,7 +60,7 @@ class Prepare extends React.Component {
   render() {
     const orders = this.props.orders
       .sort((a, b) => {
-        return b.created - a.created;
+        return a.created - b.created;
       })
 
     return (

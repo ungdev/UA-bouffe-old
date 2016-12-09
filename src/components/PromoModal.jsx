@@ -37,7 +37,8 @@ class Sell extends React.Component {
   };
 
   state = {
-    choices: []
+    choices: [],
+    initChoices: false
   };
 
   selectItem(index, item) {
@@ -64,11 +65,18 @@ class Sell extends React.Component {
     const item           = this.props.modal.payload;
     const effectivePrice = (this.props.lowerPrice ? item.lowerPrice : item.price) / 100;
 
-    const choices = (this.state.choices.length === 0) ?
-      item.items.map(choices => choices[0]) :
-      this.state.choices;
+    let choices = this.state.choices;
 
-    this.state.choices = choices;
+    if (!this.state.initChoices) {
+      choices = (this.state.choices.length === 0) ?
+        item.items.map(choices => choices[0]) :
+        this.state.choices;
+
+      this.setState({
+        initChoices: true,
+        choices
+      });
+    }
 
     return (
       <div>
