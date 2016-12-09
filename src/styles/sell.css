@@ -50,6 +50,7 @@
 
 .b-sell__page__wrap {
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
