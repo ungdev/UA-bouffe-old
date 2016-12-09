@@ -60,8 +60,14 @@ class Prepare extends React.Component {
   render() {
     const orders = this.props.orders
       .sort((a, b) => {
+        if (a.created - b.created === 0) {
+          return a.name.localeCompare(b.name);
+        }
+
         return a.created - b.created;
       })
+
+    console.log('render');
 
     return (
       <div className="b-prepare">
