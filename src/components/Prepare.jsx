@@ -91,7 +91,7 @@ class Prepare extends React.Component {
 
             const orderClasses = `b-prepare__orders__order b-prepare__orders__order--${order.status}`;
 
-            const orderName = order.items ? order.items.map(i => i.name).join(', ') : order.name;
+            const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
 
             return (
               <div className={orderClasses} ref={order.id}>
