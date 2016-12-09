@@ -67,7 +67,7 @@ class Prepare extends React.Component {
       <div className="b-prepare">
         <div className="b-prepare__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span>UA Bouffe 2016 - {this.getDate()}</span>
+          <span onClick={() => location.reload(true)}>UA Bouffe 2016 - {this.getDate()}</span>
         </div>
         <div className="b-prepare__orders">
           {orders.map(order => {

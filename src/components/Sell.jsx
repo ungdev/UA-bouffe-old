@@ -116,7 +116,7 @@ class Sell extends React.Component {
         <CancelModal></CancelModal>
         <div className="b-sell__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span>UA 2016 - {this.getDate()}</span>
+          <span onClick={() => location.reload(true)}>UA 2016 - {this.getDate()}</span>
           <div className={toggleClasses} onClick={() => this.props.onSwitch()}>
             {toggleText}
           </div>

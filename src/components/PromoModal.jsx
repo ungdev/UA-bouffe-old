@@ -67,17 +67,6 @@ class Sell extends React.Component {
 
     let choices = this.state.choices;
 
-    if (!this.state.initChoices) {
-      choices = (this.state.choices.length === 0) ?
-        item.items.map(choices => choices[0]) :
-        this.state.choices;
-
-      this.setState({
-        initChoices: true,
-        choices
-      });
-    }
-
     return (
       <div>
         <div className="b-modal b-promo-modal" hidden={!hasModal}>
@@ -90,10 +79,11 @@ class Sell extends React.Component {
               return (
                 <div className="b-promo-modal__choices__category">
                   {choice.map(item => {
+                    const selected = choices.length > 0 && choices[i].id === item.id;
                     const choiceClasses = classNames(
                       'b-promo-modal__choices__category__choice',
                       {
-                        'b-promo-modal__choices__category__choice--selected': choices[i].id === item.id
+                        'b-promo-modal__choices__category__choice--selected': selected
                       }
                     );
 
