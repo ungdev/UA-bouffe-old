@@ -14,12 +14,13 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-class Sell extends React.Component {
+class Item extends React.Component {
   propTypes = {
     id            : React.PropTypes.string,
     name          : React.PropTypes.string,
     price         : React.PropTypes.number,
     lowerPrice    : React.PropTypes.number,
+    effectivePrice: React.PropTypes.number,
     items         : React.PropTypes.array,
     onAddItemClick: React.PropTypes.func
   };
@@ -27,7 +28,7 @@ class Sell extends React.Component {
   render() {
     return (
       <div className="b-item" onClick={() => this.addItem()}>
-        {this.props.name} - {(this.props.price / 100).toFixed(1)}€
+        {this.props.name} - {(this.props.effectivePrice / 100).toFixed(1)}€
       </div>
     );
   }
@@ -49,4 +50,4 @@ class Sell extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Sell);
+export default connect(null, mapDispatchToProps)(Item);

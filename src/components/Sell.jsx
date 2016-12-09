@@ -40,6 +40,11 @@ class Sell extends React.Component {
       .map(item => items[item])
       .filter(item => {
         return item.category === this.state.tab;
+      })
+      .map(item => {
+        item.effectivePrice = this.props.lowerPrice ? item.lowerPrice : item.price;
+
+        return item;
       });
   }
 
