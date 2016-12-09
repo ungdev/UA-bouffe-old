@@ -61,7 +61,7 @@ class PendingOrders extends React.Component {
             `b-sell__page__orders__order--${order.status}`
           );
 
-          const orderName = order.items ? order.items.map(i => i.name).join(', ') : order.name;
+          const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
 
           return (
             <div
