@@ -5,11 +5,11 @@
   height: 200px;
   justify-content: center;
   left: 50%;
+  min-width: 400px;
   padding: 20px;
   position: fixed;
   top: 100px;
   transform: translateX(-50%);
-  width: 400px;
   z-index: 10;
 }
 

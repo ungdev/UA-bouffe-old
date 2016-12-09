@@ -31,8 +31,16 @@ const mapDispatchToProps = dispatch => {
 };
 
 class Sell extends React.Component {
+  state = {
+    tab: 'general'
+  };
+
   getItems() {
-    return Object.keys(items).map(item => items[item]);
+    return Object.keys(items)
+      .map(item => items[item])
+      .filter(item => {
+        return item.category === this.state.tab;
+      });
   }
 
   getDate() {
@@ -55,6 +63,12 @@ class Sell extends React.Component {
     }, 1000);
   }
 
+  changeTab(elem, tab) {
+    this.setState({
+      tab
+    });
+  }
+
   render() {
     const toggleClasses = classNames(
       'b-sell__title__priceType',
@@ -64,6 +78,31 @@ class Sell extends React.Component {
     );
 
     const toggleText = (this.props.lowerPrice) ? 'Prix orga' : 'Prix normal';
+
+    const classesGeneral = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'general' }
+    );
+
+    const classesCrepes = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'crepes' }
+    );
+
+    const classesCroques = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'croques' }
+    );
+
+    const classesPizzas = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'pizzas' }
+    );
+
+    const classesSandwichs = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'sandwichs' }
+    );
 
     return (
       <div className="b-sell">
@@ -79,12 +118,41 @@ class Sell extends React.Component {
         </div>
         <div className="b-sell__page">
           <Sidebar></Sidebar>
-          <div className="b-sell__page__items">
-            {this.getItems().map(item => {
-              return (
-                <Item {...item}></Item>
-              );
-            })}
+          <div className="b-sell__page__wrap">
+            <div className="b-sell__page__tabs">
+              <div
+                className={classesGeneral}
+                onClick={e => this.changeTab(e.currentTarget, 'general')}>
+                Général
+              </div>
+              <div
+                className={classesCrepes}
+                onClick={e => this.changeTab(e.currentTarget, 'crepes')}>
+                Crêpes
+              </div>
+              <div
+                className={classesCroques}
+                onClick={e => this.changeTab(e.currentTarget, 'croques')}>
+                Croques
+              </div>
+              <div
+                className={classesPizzas}
+                onClick={e => this.changeTab(e.currentTarget, 'pizzas')}>
+                Pizzas
+              </div>
+              <div
+                className={classesSandwichs}
+                onClick={e => this.changeTab(e.currentTarget, 'sandwichs')}>
+                Sandwich
+              </div>
+            </div>
+            <div className="b-sell__page__items">
+              {this.getItems().map(item => {
+                return (
+                  <Item {...item}></Item>
+                );
+              })}
+            </div>
           </div>
           <PendingOrders></PendingOrders>
         </div>

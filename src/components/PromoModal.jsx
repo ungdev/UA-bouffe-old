@@ -64,10 +64,9 @@ class Sell extends React.Component {
     const item           = this.props.modal.payload;
     const effectivePrice = (this.props.lowerPrice ? item.lowerPrice : item.price) / 100;
 
-    if (this.state.choices.length === 0) {
-      // select default choice
-      this.state.choices = item.items.map(choices => choices[0]);
-    }
+    const choices = (this.state.choices.length === 0) ?
+      item.items.map(choices => choices[0]) :
+      this.state.choices;
 
     return (
       <div>
@@ -84,7 +83,7 @@ class Sell extends React.Component {
                     const choiceClasses = classNames(
                       'b-promo-modal__choices__category__choice',
                       {
-                        'b-promo-modal__choices__category__choice--selected': this.state.choices[i].id === item.id
+                        'b-promo-modal__choices__category__choice--selected': choices[i].id === item.id
                       }
                     );
 

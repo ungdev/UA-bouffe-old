@@ -48,12 +48,39 @@
   padding-top: 75px;
 }
 
+.b-sell__page__wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-sell__page__tabs {
+  display: flex;
+}
+
+.b-sell__page__tabs__tab {
+  background-color: #35415b;
+  color: #ffe500;
+  cursor: pointer;
+  flex: 1;
+  font-size: 24px;
+  height: 42px;
+  line-height: 31px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.b-sell__page__tabs__tab--active {
+  background-color: #ffe500;
+  color: #35415b;
+}
+
 .b-sell__page__items {
   align-content: flex-start;
   display: flex;
   background-color: rgba(52, 73, 94, 0.5);
   flex: 1;
   flex-wrap: wrap;
+  overflow-y: overlay;
 }
 
 .b-sell__page__overflow {
