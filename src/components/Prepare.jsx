@@ -58,6 +58,11 @@ class Prepare extends React.Component {
   }
 
   render() {
+    const orders = this.props.orders
+      .sort((a, b) => {
+        return b.created - a.created;
+      })
+
     return (
       <div className="b-prepare">
         <div className="b-prepare__title">
@@ -65,7 +70,7 @@ class Prepare extends React.Component {
           <span>UA Bouffe 2016 - {this.getDate()}</span>
         </div>
         <div className="b-prepare__orders">
-          {this.props.orders.map(order => {
+          {orders.map(order => {
             const pendingClasses = classNames(
               'b-prepare__orders__order__status',
               'b-prepare__orders__order__pending',
