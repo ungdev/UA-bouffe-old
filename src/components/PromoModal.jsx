@@ -52,6 +52,9 @@ class Sell extends React.Component {
     const promo = clone(this.props.modal.payload);
     promo.items = this.state.choices;
     this.props.onChoosePromoClick(promo);
+    this.setState({
+      choices: []
+    });
   }
 
   render() {
