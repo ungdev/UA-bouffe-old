@@ -79,7 +79,7 @@ class Sell extends React.Component {
               return (
                 <div className="b-promo-modal__choices__category">
                   {choice.map(item => {
-                    const selected = choices.length > 0 && choices[i].id === item.id;
+                    const selected = choices[i] && choices[i].id === item.id;
                     const choiceClasses = classNames(
                       'b-promo-modal__choices__category__choice',
                       {
