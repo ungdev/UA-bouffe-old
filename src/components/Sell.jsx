@@ -141,6 +141,7 @@ class Sell extends React.Component {
                 Croques
               </div>
               <div
+                style="display: none;"
                 className={classesPizzas}
                 onClick={e => this.changeTab(e.currentTarget, 'pizzas')}>
                 Pizzas
