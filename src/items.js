@@ -150,6 +150,22 @@ const pizzaFlammen = {
   category  : 'pizzas'
 };
 
+const pizzaChorizo = {
+  id        : 'pizza-chorizo',
+  name      : 'Chorizo',
+  price     : 400,
+  lowerPrice: 300,
+  category  : 'pizzas'
+};
+
+const pizzaFromage = {
+  id        : 'pizza-fromage',
+  name      : 'Fromage',
+  price     : 400,
+  lowerPrice: 300,
+  category  : 'pizzas'
+};
+
 /* Sandwich */
 
 const hotDog = {
@@ -193,6 +209,14 @@ const sandwichDinde = {
 };
 
 /* Boissons */
+
+const boissonEau = {
+  id        : 'boisson-eau',
+  name      : 'Eau',
+  price     : 50,
+  lowerPrice: 50,
+  category  : 'general'
+};
 
 const boissonCanette = {
   id        : 'boisson-canette',
@@ -260,7 +284,7 @@ const promoPizzaCannetteBarreOuCrepe = {
   price     : 550,
   lowerPrice: 450,
   items     : [
-    [ pizzaRoyale, pizzaBolo, pizzaThon, pizzaPoulet, pizzaFlammen ],
+    [ pizzaRoyale, pizzaBolo, pizzaThon, pizzaPoulet, pizzaFlammen, pizzaChorizo, pizzaFromage ],
     [ boissonCanette ],
     [ snackBar, crepeSucre, crepeNutella, crepeConfitureFruitRouge, crepeConfitureAbricot, crepeMiel ]
   ],
@@ -400,6 +424,8 @@ export {
   pizzaThon,
   pizzaPoulet,
   pizzaFlammen,
+  pizzaChorizo,
+  pizzaFromage,
   hotDog,
   sandwichVegeEmmentalCruditeMayo,
   sandwichThon,

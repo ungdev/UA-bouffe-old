@@ -140,12 +140,12 @@ class Sell extends React.Component {
                 onClick={e => this.changeTab(e.currentTarget, 'croques')}>
                 Croques
               </div>
-              {/*<div
+              <div
                 style="display: none;"
                 className={classesPizzas}
                 onClick={e => this.changeTab(e.currentTarget, 'pizzas')}>
                 Pizzas
-              </div>*/}
+              </div>
               <div
                 className={classesSandwichs}
                 onClick={e => this.changeTab(e.currentTarget, 'sandwichs')}>
