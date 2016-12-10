@@ -126,30 +126,6 @@ const pizzaBolo = {
   category  : 'pizzas'
 };
 
-const pizza4F = {
-  id        : 'pizza-4f',
-  name      : 'Pizza 4F',
-  price     : 400,
-  lowerPrice: 300,
-  category  : 'pizzas'
-};
-
-const pizzaChorizo = {
-  id        : 'pizza-chorizo',
-  name      : 'Pizza Chorizo',
-  price     : 400,
-  lowerPrice: 300,
-  category  : 'pizzas'
-};
-
-const pizzaKebab = {
-  id        : 'pizza-kebab',
-  name      : 'Pizza Kebab',
-  price     : 400,
-  lowerPrice: 300,
-  category  : 'pizzas'
-};
-
 const pizzaThon = {
   id        : 'pizza-thon',
   name      : 'Pizza Thon',
@@ -284,7 +260,7 @@ const promoPizzaCannetteBarreOuCrepe = {
   price     : 550,
   lowerPrice: 450,
   items     : [
-    [ pizza4F, pizzaRoyale, pizzaChorizo, pizzaBolo, pizzaKebab, pizzaThon, pizzaPoulet, pizzaFlammen ],
+    [ pizzaRoyale, pizzaBolo, pizzaThon, pizzaPoulet, pizzaFlammen ],
     [ boissonCanette ],
     [ snackBar, crepeSucre, crepeNutella, crepeConfitureFruitRouge, crepeConfitureAbricot, crepeMiel ]
   ],
@@ -421,9 +397,6 @@ export {
   croqueChevreEmmental,
   pizzaRoyale,
   pizzaBolo,
-  pizza4F,
-  pizzaChorizo,
-  pizzaKebab,
   pizzaThon,
   pizzaPoulet,
   pizzaFlammen,
