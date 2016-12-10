@@ -158,6 +158,22 @@ const pizzaThon = {
   category  : 'pizzas'
 };
 
+const pizzaPoulet = {
+  id        : 'pizza-poulet',
+  name      : 'Pizza Poulet',
+  price     : 400,
+  lowerPrice: 300,
+  category  : 'pizzas'
+};
+
+const pizzaFlammen = {
+  id        : 'pizza-flammenkuche',
+  name      : 'Flammenkuche',
+  price     : 400,
+  lowerPrice: 300,
+  category  : 'pizzas'
+};
+
 /* Sandwich */
 
 const hotDog = {
@@ -268,7 +284,7 @@ const promoPizzaCannetteBarreOuCrepe = {
   price     : 550,
   lowerPrice: 450,
   items     : [
-    [ pizza4F, pizzaRoyale, pizzaChorizo, pizzaBolo, pizzaKebab, pizzaThon ],
+    [ pizza4F, pizzaRoyale, pizzaChorizo, pizzaBolo, pizzaKebab, pizzaThon, pizzaPoulet, pizzaFlammen ],
     [ boissonCanette ],
     [ snackBar, crepeSucre, crepeNutella, crepeConfitureFruitRouge, crepeConfitureAbricot, crepeMiel ]
   ],
@@ -409,6 +425,8 @@ export {
   pizzaChorizo,
   pizzaKebab,
   pizzaThon,
+  pizzaPoulet,
+  pizzaFlammen,
   hotDog,
   sandwichVegeEmmentalCruditeMayo,
   sandwichThon,
