@@ -67,13 +67,44 @@ class Prepare extends React.Component {
         return a.created - b.created;
       })
 
-    console.log('render');
+    // for each item, count per status
+    const ordersCounter = [];
+    orders.map(order => {
+      if (!ordersCounter[order.name]) {
+        ordersCounter[order.name] = {prepare:0, pending:0}
+      }
+      ordersCounter[order.name][order.status]++;
+    })
 
     return (
       <div className="b-prepare">
         <div className="b-prepare__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
           <span onClick={() => location.reload(true)}>UA Bouffe 2016 - {this.getDate()}</span>
+        </div>
+        <div className="b-prepare__abstract">
+          <div className="b-prepare__abstract__title">
+            État des commandes
+          </div>
+          <table className="b-prepare__abstract__table">
+            <tbody>
+              {
+                Object.keys(ordersCounter).map(itemName => {
+                  return (
+                    <tr className="b-prepare__abstract__table_row">
+                      <td>{itemName}</td>
+                      <td className="b-prepare__abstract__table_td_counter b-prepare__abstract__table_td_counter--total">
+                        <span>{ordersCounter[itemName].pending + ordersCounter[itemName].prepare}</span>
+                      </td>
+                      <td className="b-prepare__abstract__table_td_counter b-prepare__abstract__table_td_counter--prepare">
+                        <span>{ordersCounter[itemName].prepare}</span>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
         </div>
         <div className="b-prepare__orders">
           {orders.map(order => {
