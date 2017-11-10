@@ -20,61 +20,12 @@
   }
 }
 
-.b-prepare__orders, .b-prepare__abstract {
-  padding-top: 75px;
-}
-
-.b-prepare__abstract__title {
-  padding: 20px 0;
-  background-color: #fff;
-  color: #34495e;
-  text-align: center;
-}
-
-.b-prepare__abstract__table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.b-prepare__abstract__table td {
-  padding: 5px;
-  font-weight: 300;
-  font-size: 22px;
-}
-
-.b-prepare__abstract__table_td_counter {
-  text-align:center;
-  vertical-align:middle;
-  width: 15%;
-}
-
-.b-prepare__abstract__table_td_counter span {
-  font-weight: bold;
-}
-
-.b-prepare__abstract__table_row {
-  border-bottom: 1px solid #808b96;
-}
-
-.b-prepare__abstract__total_number {
-  font-weight: bold;
-}
-
-.b-prepare__abstract {
-  width: 20%;
-  background-color: #34495e;
-  color: #fff;
-}
-
 .b-prepare__orders {
   background-color: #677786;
   height: 100%;
   overflow-y: auto;
-  width: 80%;
-}
-
-.b-prepare__abstract__table_td_counter--prepare {
-  background: #d35400;
+  padding-top: 75px;
+  width: 100%;
 }
 
 .b-prepare__orders__order {
@@ -84,7 +35,7 @@
   margin: 10px auto;
   overflow: hidden;
   transition: height .2s ease-out, padding .2s ease-out;
-  width: 1200px;
+  width: 900px;
   padding: 20px;
 }
 
