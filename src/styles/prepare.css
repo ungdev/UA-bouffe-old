@@ -179,3 +179,10 @@
     }
   }
 }
+
+.b-prepare__orders__empty {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 300;
+}
