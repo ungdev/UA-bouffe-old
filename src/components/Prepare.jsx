@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link }    from 'react-router';
 import classNames  from 'classnames';
 
-const p2 = n => ((n < 10) ? `0${n}` : n).toString();
+import AppBarTimer   from './AppBarTimer';
 
 const mapStateToProps = state => {
   return {
@@ -37,26 +37,6 @@ class Prepare extends React.Component {
     }
   }
 
-  getDate() {
-    const d = new Date();
-    return `${p2(d.getHours())}:${p2(d.getMinutes())}`;
-  }
-
-  componentDidMount() {
-    this.timeUpdate();
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timeout);
-  }
-
-  timeUpdate() {
-    this.timeout = setTimeout(() => {
-      this.forceUpdate();
-      this.timeUpdate();
-    }, 1000);
-  }
-
   render() {
     const orders = this.props.orders
       .sort((a, b) => {
@@ -67,13 +47,11 @@ class Prepare extends React.Component {
         return a.created - b.created;
       })
 
-    console.log('render');
-
     return (
       <div className="b-prepare">
         <div className="b-prepare__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span onClick={() => location.reload(true)}>UA Bouffe 2016 - {this.getDate()}</span>
+          <AppBarTimer />
         </div>
         <div className="b-prepare__orders">
           {orders.map(order => {
