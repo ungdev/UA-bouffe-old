@@ -13,8 +13,7 @@ import PendingOrders from './PendingOrders';
 import ValidModal    from './ValidModal';
 import PromoModal    from './PromoModal';
 import CancelModal   from './CancelModal';
-
-const p2 = n => ((n < 10) ? `0${n}` : n).toString();
+import AppBarTimer   from './AppBarTimer';
 
 const mapStateToProps = state => {
   return {
@@ -43,29 +42,8 @@ class Sell extends React.Component {
       })
       .map(item => {
         item.effectivePrice = this.props.lowerPrice ? item.lowerPrice : item.price;
-
         return item;
       });
-  }
-
-  getDate() {
-    const d = new Date();
-    return `${p2(d.getHours())}:${p2(d.getMinutes())}`;
-  }
-
-  componentDidMount() {
-    this.timeUpdate();
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timeout);
-  }
-
-  timeUpdate() {
-    this.timeout = setTimeout(() => {
-      this.forceUpdate();
-      this.timeUpdate();
-    }, 1000);
   }
 
   changeTab(elem, tab) {
@@ -116,7 +94,7 @@ class Sell extends React.Component {
         <CancelModal></CancelModal>
         <div className="b-sell__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span onClick={() => location.reload(true)}>UA 2016 - {this.getDate()}</span>
+          <AppBarTimer />
           <div className={toggleClasses} onClick={() => this.props.onSwitch()}>
             {toggleText}
           </div>
