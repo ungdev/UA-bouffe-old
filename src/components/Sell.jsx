@@ -11,6 +11,7 @@ import Item          from './Item';
 import Sidebar       from './Sidebar';
 import PendingOrders from './PendingOrders';
 import ValidModal    from './ValidModal';
+import OrderIdModal  from './OrderIdModal';
 import PromoModal    from './PromoModal';
 import CancelModal   from './CancelModal';
 import AppBarTimer   from './AppBarTimer';
@@ -90,6 +91,7 @@ class Sell extends React.Component {
     return (
       <div className="b-sell">
         <PromoModal></PromoModal>
+        <OrderIdModal></OrderIdModal>
         <ValidModal></ValidModal>
         <CancelModal></CancelModal>
         <div className="b-sell__title">

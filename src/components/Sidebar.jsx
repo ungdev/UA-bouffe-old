@@ -20,9 +20,8 @@ const mapDispatchToProps = dispatch => {
     onRemoveItemClick(index) {
       dispatch(removeItem(index));
     },
-
     onSendBasket() {
-      dispatch(openModal('valid'));
+      dispatch(openModal('orderId'));
     }
   };
 };

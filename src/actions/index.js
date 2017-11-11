@@ -10,7 +10,7 @@ import {
   sendBasket
 } from './items';
 
-import { closeModal, openModal } from './modal';
+import { closeModal, openModal, closeIntermediateModal } from './modal';
 
 import { lowerPrice } from './lowerPrice';
 
@@ -24,6 +24,7 @@ export {
   lowerPrice,
   closeModal,
   openModal,
+  closeIntermediateModal,
   order,
   listenForOrders,
   nextOrderCode

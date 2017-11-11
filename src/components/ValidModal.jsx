@@ -5,9 +5,10 @@ import { closeModal, sendBasket, nextOrderCode } from '../actions';
 
 const mapStateToProps = state => {
   return {
-    code            : state.orderCode,
-    basket          : state.basket,
-    modalValidOpened: state.modal.valid.active
+    code              : state.orderCode,
+    basket            : state.basket,
+    modalValidOpened  : state.modal.valid.active,
+    modalValidPayload : state.modal.valid.payload
   };
 };
 
@@ -42,6 +43,7 @@ class ValidModal extends React.Component {
     return (
       <div>
         <div className="b-modal b-valid-modal" hidden={!this.props.modalValidOpened}>
+          Commande {this.props.modalValidPayload && this.props.modalValidPayload.id}
           <button
             className="b-modal__button b-modal__button--cancel"
             onClick={() => this.props.onCancelModal()}>Annuler</button>
