@@ -1,0 +1,16 @@
+.b-order_id-select--letter {
+  background-color: #ffe500;
+  color: #35415b;
+  margin: 1px;
+  display: inline-block;
+
+  /* center the letter in the square */
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.b-order_id-select--letter--selected {
+  background-color: #35415b;
+  color: #ffe500;
+}

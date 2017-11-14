@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { closeModal, closeIntermediateModal, openModal } from '../actions';
 
+import SelectOrderId  from './SelectOrderId'; 
+
 const mapStateToProps = state => {
   return {
     modalOrderIdOpened: state.modal.orderId.active
@@ -33,14 +35,18 @@ class OrderIdModal extends React.Component {
     return (
       <div>
         <div className="b-modal b-order_id-modal" hidden={!this.props.modalOrderIdOpened}>
-          <button
-            className="b-modal__button b-modal__button--cancel"
-            onClick={() => this.props.onCancelModal()}>Annuler</button>
-          orderId
-          <button
-            className="b-modal__button b-modal__button--validate"
-            onClick={() => this.props.onSubmitOrderId(1)}>
-            Valider</button>
+          <div className="b-modal__row">
+            <SelectOrderId></SelectOrderId>
+          </div>
+          <div className="b-modal__row">
+            <button
+              className="b-modal__button b-modal__button--cancel"
+              onClick={() => this.props.onCancelModal()}>Annuler</button>
+            <button
+              className="b-modal__button b-modal__button--validate"
+              onClick={() => this.props.onSubmitOrderId(1)}>
+              Valider</button>
+          </div>
         </div>
         <div className="b-modal-drop" hidden={!this.props.modalValidOpened}></div>
       </div>
