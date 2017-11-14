@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { closeModal, closeIntermediateModal, openModal } from '../actions';
 
-import SelectOrderId  from './SelectOrderId'; 
+import OrderId  from './OrderId';
 
 const mapStateToProps = state => {
   return {
@@ -36,7 +36,7 @@ class OrderIdModal extends React.Component {
       <div>
         <div className="b-modal b-order_id-modal" hidden={!this.props.modalOrderIdOpened}>
           <div className="b-modal__row">
-            <SelectOrderId></SelectOrderId>
+            <OrderId></OrderId>
           </div>
           <div className="b-modal__row">
             <button

@@ -8,6 +8,7 @@
 @import 'sidebar';
 @import 'modal';
 @import 'pendingOrders';
+@import 'keyboard';
 @import 'orderId';
 
 *, *:before, *:after {
