@@ -52,36 +52,56 @@ class PendingOrders extends React.Component {
   }
 
   render() {
+    const ordersPending = this.props.orders.filter(order => order.status === "pending");
+    ordersPending.sort((a, b) => {
+      if (a.created - b.created === 0) {
+        return a.name.localeCompare(b.name);
+      }
+
+      return b.created - a.created;
+    });
+
+    const ordersInPrep = this.props.orders.filter(order => order.status === "prepare");
+    ordersInPrep.sort((a, b) => {
+      if (a.created - b.created === 0) {
+        return a.name.localeCompare(b.name);
+      }
+
+      return a.created - b.created;
+    });
+
+    const ordersReady = this.props.orders.filter(order => order.status === "ready");
+    ordersReady.sort((a, b) => {
+      if (a.created - b.created === 0) {
+        return a.name.localeCompare(b.name);
+      }
+
+      return a.created - b.created;
+    });
+
+    const orders = [...ordersReady, ...ordersInPrep, ...ordersPending];
+
     return (
       <div className="b-sell__page__orders">
-        {this.props.orders
-            .sort((a, b) => {
-              if (a.created - b.created === 0) {
-                return a.name.localeCompare(b.name);
-              }
+          {orders.map(order => {
+              const orderClasses = classNames(
+                'b-sell__page__orders__order',
+                `b-sell__page__orders__order--${order.status}`
+              );
 
-              return a.created - b.created;
+              const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
+
+              return (
+                <div
+                  className={orderClasses}
+                  onTouchStart={() => this.startTimer(order)}
+                  onMousedown={() => this.startTimer(order)}
+                  onTouchEnd={() => this.stopTimer()}
+                  onMouseUp={() => this.stopTimer()}>
+                  #{order.code} {orderName}
+                </div>
+              );
             })
-            .map(order => {
-
-            const orderClasses = classNames(
-              'b-sell__page__orders__order',
-              `b-sell__page__orders__order--${order.status}`
-            );
-
-            const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
-
-            return (
-              <div
-                className={orderClasses}
-                onTouchStart={() => this.startTimer(order)}
-                onMousedown={() => this.startTimer(order)}
-                onTouchEnd={() => this.stopTimer()}
-                onMouseUp={() => this.stopTimer()}>
-                #{order.code} {orderName}
-              </div>
-            );
-          })
         }
       </div>
     );
