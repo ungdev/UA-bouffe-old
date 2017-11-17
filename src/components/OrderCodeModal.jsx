@@ -3,22 +3,22 @@ import { connect } from 'react-redux';
 
 import { closeModal, closeIntermediateModal, openModal, setPlayerCode } from '../actions';
 
-import OrderId  from './OrderId';
+import OrderCode  from './OrderCode';
 
 const mapStateToProps = state => {
   return {
-    modalOrderIdOpened: state.modal.orderId.active
+    modalOrderCodeOpened: state.modal.orderCode.active
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     onCancelModal() {
-      dispatch(closeModal('orderId'));
+      dispatch(closeModal('orderCode'));
     },
     onSubmitOrderCode(code) {
       dispatch(setPlayerCode(code));
-      dispatch(closeIntermediateModal('orderId'))
+      dispatch(closeIntermediateModal('orderCode'))
         .then(() => {
           dispatch(openModal('valid'));
         });
@@ -26,9 +26,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class OrderIdModal extends React.Component {
+class OrderCodeModal extends React.Component {
   propTypes = {
-    modalOrderIdOpened  : React.PropTypes.bool,
+    modalOrderCodeOpened: React.PropTypes.bool,
     onCancelModal       : React.PropTypes.func,
     onSubmitOrderCode   : React.PropTypes.func
   };
@@ -58,12 +58,12 @@ class OrderIdModal extends React.Component {
   render() {
     return (
       <div>
-        <div className="b-modal b-order_id-modal" hidden={!this.props.modalOrderIdOpened}>
+        <div className="b-modal b-order_code-modal" hidden={!this.props.modalOrderCodeOpened}>
           <div className="b-modal__row">
-            <OrderId
+            <OrderCode
               number={this.state.number} onNumberChange={this.onNumberChange.bind(this)}
               letter={this.state.letter} onLetterChange={this.onLetterChange.bind(this)}>
-            </OrderId>
+            </OrderCode>
           </div>
           <div className="b-modal__row">
             <button
@@ -81,4 +81,4 @@ class OrderIdModal extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderIdModal);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderCodeModal);

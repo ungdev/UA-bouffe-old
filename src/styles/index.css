@@ -9,7 +9,7 @@
 @import 'modal';
 @import 'pendingOrders';
 @import 'keyboard';
-@import 'orderId';
+@import 'orderCode';
 
 *, *:before, *:after {
   box-sizing: border-box;

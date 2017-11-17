@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class OrderId extends React.Component {
+class OrderCode extends React.Component {
   propTypes = {
     onNumberChange    : React.PropTypes.func,
     onLetterChange    : React.PropTypes.func
@@ -34,9 +34,9 @@ class OrderId extends React.Component {
 
   render() {
     return (
-      <div className="b-select_order_id">
+      <div className="b-select_order_code">
         Si <b>joueur</b>, selectionner sa place :
-        <div className="b-order_id__keyboards">
+        <div className="b-order_code__keyboards">
           <Keyboard
             selectedKey={this.props.letter}
             onChange={this.props.onLetterChange}
@@ -54,4 +54,4 @@ class OrderId extends React.Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderId);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderCode);

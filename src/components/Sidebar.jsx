@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(removeItem(index));
     },
     onSendBasket() {
-      dispatch(openModal('orderId'));
+      dispatch(openModal('orderCode'));
     }
   };
 };

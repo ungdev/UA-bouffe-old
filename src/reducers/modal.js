@@ -9,7 +9,7 @@ const initialState = {
     active: false,
     payload: {}
   },
-  orderId: {
+  orderCode: {
     active: false,
     payload: {}
   }
