@@ -41,7 +41,7 @@ class Item extends React.Component {
       price     : this.props.price,
       lowerPrice: this.props.lowerPrice,
       items     : this.props.items,
-      category  : this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)
+      category  : this.props.category
     };
 
     if (this.props.items) {
