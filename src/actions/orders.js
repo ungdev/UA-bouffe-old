@@ -8,6 +8,19 @@ export const nextOrderCode = () => {
   };
 };
 
+export const cleanPlayerCode = () => {
+  return {
+    type: 'CLEAN_PLAYER_CODE'
+  };
+};
+
+export const setPlayerCode = (code) => {
+  return {
+    type: 'SET_PLAYER_CODE',
+    payload: {code}
+  };
+};
+
 export const orders = (allOrders) => {
   return {
     type   : 'ORDERS',

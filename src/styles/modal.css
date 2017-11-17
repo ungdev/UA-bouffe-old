@@ -2,7 +2,7 @@
   background: #fff;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  min-height: 200px;
   justify-content: center;
   left: 50%;
   min-width: 400px;
@@ -20,13 +20,10 @@
   color: #fff;
   cursor: pointer;
   padding: 15px;
+  width: 100%;
 
   &.b-modal__button--cancel {
     background-color: #e74c3c;
-  }
-
-  &:not(:first-child) {
-    margin-top: 15px;
   }
 }
 

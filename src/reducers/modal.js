@@ -8,6 +8,10 @@ const initialState = {
   cancel: {
     active: false,
     payload: {}
+  },
+  orderCode: {
+    active: false,
+    payload: {}
   }
 };
 

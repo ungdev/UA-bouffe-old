@@ -1,0 +1,21 @@
+.b-keyboard__key {
+  background-color: #ffe500;
+  color: #35415b;
+  margin: 2px;
+  display: inline-block;
+
+  /* center the letter in the square */
+  width: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.b-keyboard__key--selected {
+  background-color: #35415b;
+  color: #ffe500;
+}
+
+.b-keyboard:first-child {
+  padding-right: 20px;
+}

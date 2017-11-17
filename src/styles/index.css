@@ -8,6 +8,8 @@
 @import 'sidebar';
 @import 'modal';
 @import 'pendingOrders';
+@import 'keyboard';
+@import 'orderCode';
 
 *, *:before, *:after {
   box-sizing: border-box;

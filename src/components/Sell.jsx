@@ -7,13 +7,14 @@ import { lowerPrice } from '../actions';
 
 import * as items from '../items';
 
-import Item          from './Item';
-import Sidebar       from './Sidebar';
-import PendingOrders from './PendingOrders';
-import ValidModal    from './ValidModal';
-import PromoModal    from './PromoModal';
-import CancelModal   from './CancelModal';
-import AppBarTimer   from './AppBarTimer';
+import Item           from './Item';
+import Sidebar        from './Sidebar';
+import PendingOrders  from './PendingOrders';
+import ValidModal     from './ValidModal';
+import OrderCodeModal from './OrderCodeModal';
+import PromoModal     from './PromoModal';
+import CancelModal    from './CancelModal';
+import AppBarTimer    from './AppBarTimer';
 
 const mapStateToProps = state => {
   return {
@@ -89,6 +90,7 @@ class Sell extends React.Component {
 
     return (
       <div className="b-sell">
+        <OrderCodeModal></OrderCodeModal>
         <PromoModal></PromoModal>
         <ValidModal></ValidModal>
         <CancelModal></CancelModal>
