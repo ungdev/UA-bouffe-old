@@ -19,6 +19,9 @@ class Keyboard extends React.Component {
   };
 
   onKeySelect(selectedKey) {
+    if (selectedKey === this.props.selectedKey) {
+      selectedKey = null;
+    }
     this.props.onChange(selectedKey);
   }
 
