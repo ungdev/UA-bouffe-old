@@ -22,7 +22,8 @@ class Item extends React.Component {
     lowerPrice    : React.PropTypes.number,
     effectivePrice: React.PropTypes.number,
     items         : React.PropTypes.array,
-    onAddItemClick: React.PropTypes.func
+    onAddItemClick: React.PropTypes.func,
+    category      : React.PropTypes.string
   };
 
   render() {
@@ -39,7 +40,8 @@ class Item extends React.Component {
       name      : this.props.name,
       price     : this.props.price,
       lowerPrice: this.props.lowerPrice,
-      items     : this.props.items
+      items     : this.props.items,
+      category  : this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)
     };
 
     if (this.props.items) {

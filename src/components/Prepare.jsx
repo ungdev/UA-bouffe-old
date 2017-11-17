@@ -51,10 +51,18 @@ class Prepare extends React.Component {
     const ordersCounter = [];
     orders.map(order => {
       if (order.status != "ready") {
-        if (!ordersCounter[order.name]) {
-          ordersCounter[order.name] = {prepare:0, pending:0}
+        if (order.category == "General") {
+          if (!ordersCounter[order.name]) {
+            ordersCounter[order.name] = {prepare:0, pending:0}
+          }
+          ordersCounter[order.name][order.status]++;
         }
-        ordersCounter[order.name][order.status]++;
+        else {
+          if (!ordersCounter[order.category]) {
+            ordersCounter[order.category] = {prepare:0, pending:0}
+          }
+          ordersCounter[order.category][order.status]++;
+        }
       }
     })
 
