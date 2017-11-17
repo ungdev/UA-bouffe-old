@@ -47,7 +47,7 @@ class Prepare extends React.Component {
         return a.created - b.created;
       })
 
-    // for each item, count per status
+    // for each item, count per status and organize per category
     const ordersCounter = [];
     orders.map(order => {
       if (order.status != "ready") {
