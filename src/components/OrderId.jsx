@@ -35,6 +35,7 @@ class OrderId extends React.Component {
   render() {
     return (
       <div className="b-select_order_id">
+        Si <b>joueur</b>, selectionner sa place :
         <div className="b-order_id__keyboards">
           <Keyboard
             selectedKey={this.props.letter}

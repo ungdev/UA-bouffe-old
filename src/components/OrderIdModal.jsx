@@ -67,12 +67,12 @@ class OrderIdModal extends React.Component {
           </div>
           <div className="b-modal__row">
             <button
-              className="b-modal__button b-modal__button--cancel"
-              onClick={() => this.props.onCancelModal()}>Annuler</button>
-            <button
               className="b-modal__button b-modal__button--validate"
               onClick={() => this.onSubmitOrderCode()}>
               Valider</button>
+            <button
+              className="b-modal__button b-modal__button--cancel"
+              onClick={() => this.props.onCancelModal()}>Annuler</button>
           </div>
         </div>
         <div className="b-modal-drop" hidden={!this.props.modalValidOpened}></div>

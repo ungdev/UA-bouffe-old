@@ -11,7 +11,15 @@
   font-size: 30px;
 }
 
+.b-order_id__keyboards {
+  display: flex !important;
+}
+
 .b-keyboard__key--selected {
   background-color: #35415b;
   color: #ffe500;
+}
+
+.b-keyboard:first-child {
+  padding-right: 20px;
 }

@@ -1,3 +1,15 @@
 .b-order_id {
   font-size: 20px;
 }
+
+.b-order_id__keyboards {
+  padding-top: 5px;
+  display: block;
+}
+
+.b-select_order_id {
+  padding: 5px;
+  background-color: #EEE;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
