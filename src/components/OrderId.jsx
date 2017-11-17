@@ -27,21 +27,25 @@ const mapDispatchToProps = dispatch => {
 };
 
 class OrderId extends React.Component {
-  state = {
-    selectedLetter: null
+  propTypes = {
+    onNumberChange    : React.PropTypes.func,
+    onLetterChange    : React.PropTypes.func
   };
 
-  onLetterSelect(selectedLetter) {
-    this.setState({selectedLetter});
-  }
-
   render() {
-
     return (
       <div className="b-select_order_id">
-        <div className="b-order_id__keyboards">          
-          <Keyboard keys={SPOT_LETTERS} keysPerRow={LETTERS_PER_ROW}></Keyboard>
-          <Keyboard keys={SPOT_NUMBERS} keysPerRow={NUMBERS_PER_ROW}></Keyboard>
+        <div className="b-order_id__keyboards">
+          <Keyboard
+            selectedKey={this.props.letter}
+            onChange={this.props.onLetterChange}
+            keys={SPOT_LETTERS}
+            keysPerRow={LETTERS_PER_ROW}></Keyboard>
+          <Keyboard
+            selectedKey={this.props.number}
+            onChange={this.props.onNumberChange}
+            keys={SPOT_NUMBERS}
+            keysPerRow={NUMBERS_PER_ROW}></Keyboard>
         </div>
       </div>
     );

@@ -14,15 +14,12 @@ const mapDispatchToProps = dispatch => {
 class Keyboard extends React.Component {
   propTypes = {
     keys          : React.PropTypes.array,
-    keysPerRow    : React.PropTypes.number
-  };
-
-  state = {
-    selectedKey: null
+    keysPerRow    : React.PropTypes.number,
+    onChange      : React.PropTypes.func
   };
 
   onKeySelect(selectedKey) {
-    this.setState({selectedKey});
+    this.props.onChange(selectedKey);
   }
 
   render() {
@@ -43,7 +40,7 @@ class Keyboard extends React.Component {
                         return <span
                           className={
                             `b-keyboard__key
-                            ${key === this.state.selectedKey ? ' b-keyboard__key--selected' : ''}`}
+                            ${key === this.props.selectedKey ? ' b-keyboard__key--selected' : ''}`}
                           onClick={() => this.onKeySelect(key)}>
                           {key}
                           </span>

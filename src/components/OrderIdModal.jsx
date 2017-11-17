@@ -1,7 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { closeModal, closeIntermediateModal, openModal } from '../actions';
+import { closeModal, closeIntermediateModal, openModal, setPlayerCode } from '../actions';
 
 import OrderId  from './OrderId';
 
@@ -16,10 +16,11 @@ const mapDispatchToProps = dispatch => {
     onCancelModal() {
       dispatch(closeModal('orderId'));
     },
-    onSubmitOrderId(id) {
+    onSubmitOrderCode(code) {
+      dispatch(setPlayerCode(code));
       dispatch(closeIntermediateModal('orderId'))
         .then(() => {
-          dispatch(openModal('valid', {id}));
+          dispatch(openModal('valid'));
         });
     }
   };
@@ -29,14 +30,40 @@ class OrderIdModal extends React.Component {
   propTypes = {
     modalOrderIdOpened  : React.PropTypes.bool,
     onCancelModal       : React.PropTypes.func,
+    onSubmitOrderCode   : React.PropTypes.func
   };
+
+  state = {
+    letter: null,
+    number: null
+  };
+
+  onLetterChange(letter) {
+    this.setState({letter});
+  }
+
+  onNumberChange(number) {
+    this.setState({number});
+  }
+
+  onSubmitOrderCode() {
+    const code = (this.state.letter && this.state.number) ? `${this.state.letter}${this.state.number}` : null;
+    this.setState({
+      letter: null,
+      number: null
+    });
+    this.props.onSubmitOrderCode(code);
+  }
 
   render() {
     return (
       <div>
         <div className="b-modal b-order_id-modal" hidden={!this.props.modalOrderIdOpened}>
           <div className="b-modal__row">
-            <OrderId></OrderId>
+            <OrderId
+              number={this.state.number} onNumberChange={this.onNumberChange.bind(this)}
+              letter={this.state.letter} onLetterChange={this.onLetterChange.bind(this)}>
+            </OrderId>
           </div>
           <div className="b-modal__row">
             <button
@@ -44,7 +71,7 @@ class OrderIdModal extends React.Component {
               onClick={() => this.props.onCancelModal()}>Annuler</button>
             <button
               className="b-modal__button b-modal__button--validate"
-              onClick={() => this.props.onSubmitOrderId(1)}>
+              onClick={() => this.onSubmitOrderCode()}>
               Valider</button>
           </div>
         </div>
