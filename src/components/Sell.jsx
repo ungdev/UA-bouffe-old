@@ -90,8 +90,8 @@ class Sell extends React.Component {
 
     return (
       <div className="b-sell">
-        <PromoModal></PromoModal>
         <OrderCodeModal></OrderCodeModal>
+        <PromoModal></PromoModal>
         <ValidModal></ValidModal>
         <CancelModal></CancelModal>
         <div className="b-sell__title">

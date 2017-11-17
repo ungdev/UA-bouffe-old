@@ -5,12 +5,12 @@ import classNames  from 'classnames';
 
 import { addItem, closeModal } from '../actions';
 
-const ALLOWED_MODALS = ['valid', 'cancel'];
+const NOT_ALLOWED_MODALS = ['valid', 'cancel', 'orderCode'];
 
 const mapStateToProps = state => {
   return {
     modal: Object.keys(state.modal)
-      .filter(m => ALLOWED_MODALS.indexOf(m) === -1)
+      .filter(m => NOT_ALLOWED_MODALS.indexOf(m) === -1)
       .map(m => state.modal[m])
       .find(m => m.active),
     lowerPrice: state.lowerPrice
@@ -58,13 +58,13 @@ class Sell extends React.Component {
   }
 
   render() {
+    console.log("modal", this.props.modal);
     const hasModal = Boolean(this.props.modal);
 
     if (!hasModal) {
       return <div></div>;
     }
 
-    console.log(this.state);
     const item           = this.props.modal.payload;
     const effectivePrice = (this.props.lowerPrice ? item.lowerPrice : item.price) / 100;
 
