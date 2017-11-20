@@ -10,6 +10,7 @@
 @import 'pendingOrders';
 @import 'keyboard';
 @import 'orderCode';
+@import 'stats';
 
 *, *:before, *:after {
   box-sizing: border-box;

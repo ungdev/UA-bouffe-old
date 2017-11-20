@@ -22,6 +22,7 @@ import App     from './components/App';
 import Index   from './components/Index';
 import Prepare from './components/Prepare';
 import Sell    from './components/Sell';
+import Stats   from './components/Stats';
 
 import app from './reducers';
 
@@ -39,6 +40,7 @@ render((
       <Route path="/" component={App}>
         <Route path="sell" component={Sell} />
         <Route path="prepare" component={Prepare} />
+        <Route path="stats" component={Stats} />
         <IndexRoute component={Index} />
       </Route>
     </Router>
