@@ -12,6 +12,8 @@
   background-color: #EEE;
   font-weight: normal;
   margin-bottom: 25px;
+  font-size: 20px;
+  min-width: 1070px;
 }
 
 .b-order_code__keyboards {
