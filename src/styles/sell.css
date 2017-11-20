@@ -29,6 +29,8 @@
   right: 0;
   top: 0;
   font-size: 28px;
+  align-text: left;
+  min-width: 186px;
 }
 
 .b-sell__title__back {
