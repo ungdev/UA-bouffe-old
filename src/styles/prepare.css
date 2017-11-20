@@ -196,7 +196,7 @@
 }
 
 .b-prepare__orders__orders {
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 .b-prepare__orders__tabs__tab {
