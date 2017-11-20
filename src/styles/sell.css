@@ -1,5 +1,6 @@
 .b-sell {
-  font-size: 28px;
+  display: flex;
+  font-size: 21px;
   font-weight: bold;
   height: 100%;
 }
@@ -11,10 +12,12 @@
   position: absolute;
   text-align: center;
   width: 100%;
+  z-index: 10;
 
   > span {
     display: inline-block;
     padding-top: 20px;
+    font-size: 28px;
   }
 }
 
@@ -25,6 +28,7 @@
   position: absolute;
   right: 0;
   top: 0;
+  font-size: 28px;
 }
 
 .b-sell__title__back {
@@ -63,7 +67,6 @@
   color: #ffe500;
   cursor: pointer;
   flex: 1;
-  font-size: 24px;
   height: 42px;
   line-height: 31px;
   padding: 5px 10px;
@@ -85,6 +88,6 @@
 }
 
 .b-sell__page__overflow {
-  height: calc(100% - 200px);
+  height: calc(100% - 100px);
   overflow-y: auto;
 }

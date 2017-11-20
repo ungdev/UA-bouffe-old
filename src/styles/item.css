@@ -3,11 +3,11 @@
   background: rgba(255, 255, 255, .6);
   cursor: pointer;
   display: flex;
-  font-size: 20px;
   height: 150px;
   justify-content:center;
   margin: 8px;
   padding: 0 15px;
   text-align: center;
   width: 150px;
+  font-weight: 500;
 }
