@@ -1,6 +1,6 @@
 .b-prepare {
   display: flex;
-  font-size: 28px;
+  font-size: 21px;
   font-weight: bold;
   height: 100%;
 }
@@ -17,6 +17,7 @@
   > span {
     display: inline-block;
     padding-top: 20px;
+    font-size: 28px;
   }
 }
 
@@ -25,7 +26,7 @@
 }
 
 .b-prepare__abstract__title {
-  padding: 20px 0;
+  padding: 9px 0;
   background-color: #fff;
   color: #34495e;
   text-align: center;
@@ -39,7 +40,7 @@
 .b-prepare__abstract__table td {
   padding: 5px;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .b-prepare__abstract__table_td_counter {
@@ -87,7 +88,7 @@
   margin: 10px auto;
   overflow: hidden;
   width: 98%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .b-prepare__orders__order__name {

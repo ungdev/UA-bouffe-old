@@ -8,7 +8,7 @@
   width: 70px;
   line-height: 70px;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .b-keyboard__key--selected {
@@ -17,5 +17,5 @@
 }
 
 .b-keyboard:first-child {
-  padding-right: 20px;
+  padding-right: 10px;
 }
