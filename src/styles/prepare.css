@@ -83,7 +83,6 @@
   display: flex;
   margin: 10px auto;
   overflow: hidden;
-  transition: height .2s ease-out, padding .2s ease-out;
   width: 1200px;
   padding: 20px;
 }
