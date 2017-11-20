@@ -1,24 +1,16 @@
-import React       from 'react';
-import { Link }    from 'react-router';
-import { connect } from 'react-redux';
+import React        from 'react';
+import { Link }     from 'react-router';
+import { connect }  from 'react-redux';
 
-const mapStateToProps = state => {
-  return {
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-  };
-};
+import PieChart     from './PieChart';
 
 class Stats extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      orders: [],
-      sortedOrders: {}
+      orders: null,
+      sortedOrders: null
     };
 
     this.onOrdersFetch = this.onOrdersFetch.bind(this);
@@ -59,6 +51,14 @@ class Stats extends React.Component {
   }
 
   render() {
+
+    const charts = [];
+
+    this.state.sortedOrders && this.state.sortedOrders
+    .forEach((items, category) => {
+      charts.push(<PieChart name={category} items={items} />)
+    })
+
     return (
       <div>
         <div className="b-stats__title">
@@ -67,10 +67,11 @@ class Stats extends React.Component {
             Stats
           </span>
         </div>
+        {charts}
       </div>
     );
   }
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Stats);
+export default connect(null, null)(Stats);
