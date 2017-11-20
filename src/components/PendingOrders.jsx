@@ -28,10 +28,10 @@ class PendingOrders extends React.Component {
     if (order.status === 'ready') {
       const orders = window.hz('orders');
 
-      orders.update({
+      setTimeout(function(){orders.update({
         id     : order.id,
         removed: true
-      });
+      })}, 500);
 
       return;
     }

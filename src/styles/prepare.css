@@ -71,6 +71,9 @@
   height: 100%;
   overflow-y: auto;
   width: 80%;
+  display:flex;
+  flex:1;
+  flex-direction: column;
 }
 
 .b-prepare__abstract__table_td_counter--prepare {
@@ -186,14 +189,13 @@
   font-weight: 300;
 }
 
-.b-prepare__orders__wrap {
-  display:flex;
-  flex:1;
-  flex-direction: column;
-}
-
 .b-prepare__orders__tabs {
   display: flex;
+  min-height: 42px;
+}
+
+.b-prepare__orders__orders {
+  overflow-y: overlay;
 }
 
 .b-prepare__orders__tabs__tab {
@@ -202,6 +204,8 @@
   cursor: pointer;
   flex: 1;
   font-size: 24px;
+  height: 42px;
+  line-height: 31px;
   padding: 5px 10px;
   text-align: center;
 }
