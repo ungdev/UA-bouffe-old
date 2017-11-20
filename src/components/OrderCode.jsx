@@ -3,12 +3,11 @@ import { connect }  from 'react-redux';
 
 import Keyboard from './Keyboard';
 
-const LETTERS_PER_ROW = 4;
-const SPOT_LETTERS = ['A', 'B', 'C', 'D',
-                      'E', 'F', 'G', 'H',
-                      'I', 'J', 'K', 'L',
-                      'M', 'N', 'O', 'P',
-                      'Q', 'R', 'S'];
+const LETTERS_PER_ROW = 6;
+const SPOT_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F',
+                      'G', 'H', 'I', 'J', 'K', 'L',
+                      'M', 'N', 'O', 'P', 'Q', 'R',
+                      'S', 'T', 'U', 'V', 'W', 'X'];
 
 const NUMBERS_PER_ROW = 8;
 const SPOT_NUMBERS = [ 1,  2,  3,  4,  5,  6,  7,  8,
