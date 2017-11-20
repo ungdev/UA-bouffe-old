@@ -31,7 +31,7 @@ class PendingOrders extends React.Component {
       setTimeout(function(){orders.update({
         id     : order.id,
         removed: true
-      })}, 500);
+      })}, 250);
 
       return;
     }
