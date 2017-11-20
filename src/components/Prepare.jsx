@@ -21,6 +21,10 @@ class Prepare extends React.Component {
     orders: React.PropTypes.array
   };
 
+  state = {
+    tab: 'notReady'
+  }
+
   onChangeStatusClick(order, status) {
     const orders = window.hz('orders');
 
@@ -29,39 +33,75 @@ class Prepare extends React.Component {
         status
       });
 
+    /* The ready status doesn't modify anymore the div style
+
     if (status === 'ready') {
       setTimeout(() => {
         this.refs[order.id].style.height  = '0px';
         this.refs[order.id].style.padding = '0 20px';
       }, 500);
-    }
+    }*/
+  }
+
+  getOrders() {
+    const orders = this.props.orders
+      .filter(order => {
+        if (this.state.tab === 'notReady') {
+          return ((order.status === 'pending') || (order.status === 'prepare'));
+        }
+        else return order.status === this.state.tab;
+      })
+      .map(order => {
+        return order;
+      });
+
+    orders.sort((a, b) => {
+      if (a.created - b.created === 0) {
+        return a.name.localeCompare(b.name);
+      }
+
+      return a.created - b.created;
+    });
+
+    return orders;
+  }
+
+  changeTab(elem, tab) {
+    this.setState({
+      tab
+    });
   }
 
   render() {
-    const orders = this.props.orders
-      .sort((a, b) => {
-        if (a.created - b.created === 0) {
-          return a.name.localeCompare(b.name);
-        }
+    const classesNotReady = classNames(
+      'b-prepare__orders__tabs__tab',
+      { 'b-prepare__orders__tabs__tab--active': this.state.tab === 'notReady' }
+    );
 
-        return a.created - b.created;
-      })
+    const classesReady = classNames(
+      'b-prepare__orders__tabs__tab',
+      { 'b-prepare__orders__tabs__tab--active': this.state.tab === 'ready' }
+    );
 
-    // for each item, count per status
+    const orders = this.props.orders;
+    const ordersToDisplay = this.getOrders();
+
+    // for each item, count per status and organize per category
     const ordersCounter = [];
     orders.map(order => {
       if (order.status != "ready") {
-        if (order.category == "General") {
+        if (order.category == "general") {
           if (!ordersCounter[order.name]) {
             ordersCounter[order.name] = {prepare:0, pending:0}
           }
           ordersCounter[order.name][order.status]++;
         }
         else {
-          if (!ordersCounter[order.category]) {
-            ordersCounter[order.category] = {prepare:0, pending:0}
+          const category = order.category.charAt(0).toUpperCase() + order.category.slice(1); // In order to use the category with an uppercase char as the first later
+          if (!ordersCounter[category]) {
+            ordersCounter[category] = {prepare:0, pending:0}
           }
-          ordersCounter[order.category][order.status]++;
+          ordersCounter[category][order.status]++;
         }
       }
     })
@@ -95,12 +135,25 @@ class Prepare extends React.Component {
           </table>
         </div>
         <div className="b-prepare__orders">
+          <div className="b-prepare__orders__wrap">
+            <div className="b-prepare__orders__tabs">
+              <div
+                className={classesNotReady}
+                onClick={e => this.changeTab(e.currentTarget, 'notReady')}>
+                Préparation
+              </div>
+              <div
+                className={classesReady}
+                onClick={e => this.changeTab(e.currentTarget, 'ready')}>
+                Prêtes
+              </div>
+            </div>
           {
-            (orders.length == 0)
+            (ordersToDisplay.length == 0)
             ?
               <div className="b-prepare__orders__empty">Aucune commande pour le moment.</div>
             :
-              orders.map(order => {
+              ordersToDisplay.map(order => {
                 const pendingClasses = classNames(
                   'b-prepare__orders__order__status',
                   'b-prepare__orders__order__pending',
@@ -145,6 +198,7 @@ class Prepare extends React.Component {
                 );
               })
           }
+          </div>
         </div>
       </div>
     );
