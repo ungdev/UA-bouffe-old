@@ -186,3 +186,28 @@
   margin-top: 50px;
   font-weight: 300;
 }
+
+.b-prepare__orders__wrap {
+  display:flex;
+  flex:1;
+  flex-direction: column;
+}
+
+.b-prepare__orders__tabs {
+  display: flex;
+}
+
+.b-prepare__orders__tabs__tab {
+  background-color: #35415b;
+  color: #ffe500;
+  cursor: pointer;
+  flex: 1;
+  font-size: 24px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.b-prepare__orders__tabs__tab--active {
+  background-color: #ffe500;
+  color: #35415b;
+}

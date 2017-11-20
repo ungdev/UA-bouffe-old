@@ -21,6 +21,10 @@ class Prepare extends React.Component {
     orders: React.PropTypes.array
   };
 
+  state = {
+    tab: 'notReady'
+  }
+
   onChangeStatusClick(order, status) {
     const orders = window.hz('orders');
 
@@ -29,7 +33,9 @@ class Prepare extends React.Component {
         status
       });
 
-    /*if (status === 'ready') {
+    /* The ready status doesn't modify anymore the div style
+
+    if (status === 'ready') {
       setTimeout(() => {
         this.refs[order.id].style.height  = '0px';
         this.refs[order.id].style.padding = '0 20px';
@@ -37,9 +43,19 @@ class Prepare extends React.Component {
     }*/
   }
 
-  render() {
-    const ordersReady = this.props.orders.filter(order => order.status === "ready");
-    ordersReady.sort((a, b) => {
+  getOrders() {
+    const orders = this.props.orders
+      .filter(order => {
+        if (this.state.tab === 'notReady') {
+          return ((order.status === 'pending') || (order.status === 'prepare'));
+        }
+        else return order.status === this.state.tab;
+      })
+      .map(order => {
+        return order;
+      });
+
+    orders.sort((a, b) => {
       if (a.created - b.created === 0) {
         return a.name.localeCompare(b.name);
       }
@@ -47,16 +63,28 @@ class Prepare extends React.Component {
       return a.created - b.created;
     });
 
-    const ordersNotReady = this.props.orders.filter(order => ((order.status === "pending") || (order.status === "prepare")));
-      ordersNotReady.sort((a, b) => {
-        if (a.created - b.created === 0) {
-          return a.name.localeCompare(b.name);
-        }
+    return orders;
+  }
 
-        return a.created - b.created;
-      })
+  changeTab(elem, tab) {
+    this.setState({
+      tab
+    });
+  }
 
-    const orders = [...ordersNotReady, ...ordersReady];
+  render() {
+    const classesNotReady = classNames(
+      'b-prepare__orders__tabs__tab',
+      { 'b-prepare__orders__tabs__tab--active': this.state.tab === 'notReady' }
+    );
+
+    const classesReady = classNames(
+      'b-prepare__orders__tabs__tab',
+      { 'b-prepare__orders__tabs__tab--active': this.state.tab === 'ready' }
+    );
+
+    const orders = this.props.orders;
+    const ordersToDisplay = this.getOrders();
 
     // for each item, count per status and organize per category
     const ordersCounter = [];
@@ -107,12 +135,25 @@ class Prepare extends React.Component {
           </table>
         </div>
         <div className="b-prepare__orders">
+          <div className="b-prepare__orders__wrap">
+            <div className="b-prepare__orders__tabs">
+              <div
+                className={classesNotReady}
+                onClick={e => this.changeTab(e.currentTarget, 'notReady')}>
+                Préparation
+              </div>
+              <div
+                className={classesReady}
+                onClick={e => this.changeTab(e.currentTarget, 'ready')}>
+                Prêtes
+              </div>
+            </div>
           {
-            (orders.length == 0)
+            (ordersToDisplay.length == 0)
             ?
               <div className="b-prepare__orders__empty">Aucune commande pour le moment.</div>
             :
-              orders.map(order => {
+              ordersToDisplay.map(order => {
                 const pendingClasses = classNames(
                   'b-prepare__orders__order__status',
                   'b-prepare__orders__order__pending',
@@ -157,6 +198,7 @@ class Prepare extends React.Component {
                 );
               })
           }
+          </div>
         </div>
       </div>
     );
