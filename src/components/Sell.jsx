@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Link }    from 'react-router';
 import classNames  from 'classnames';
 
-import { lowerPrice } from '../actions';
-
 import * as items from '../items';
 
 import Item           from './Item';
