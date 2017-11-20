@@ -14,7 +14,7 @@ export default class Index extends React.Component {
     return (
       <div className="b-chooser">
         <div className="b-chooser__title">
-          <span>UA Bouffe 2016</span>
+          <span>UNG - Netgames</span>
         </div>
         <div className="b-chooser__link b-chooser__link--seller" onClick={() => this.sell()}>
           Interface de vente

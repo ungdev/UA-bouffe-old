@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
 
 class Sell extends React.Component {
   state = {
-    tab: 'general'
+    tab: 'croque'
   };
 
   getItems() {
@@ -109,6 +109,11 @@ class Sell extends React.Component {
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'sandwichs' }
     );
 
+    const classesCannettes = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'cannettes' }
+    );
+
     return (
       <div className="b-sell">
         <PromoModal></PromoModal>
@@ -116,7 +121,7 @@ class Sell extends React.Component {
         <CancelModal></CancelModal>
         <div className="b-sell__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span onClick={() => location.reload(true)}>UA 2016 - {this.getDate()}</span>
+          <span onClick={() => location.reload(true)}>Netgame - {this.getDate()}</span>
           <div className={toggleClasses} onClick={() => this.props.onSwitch()}>
             {toggleText}
           </div>
@@ -125,11 +130,6 @@ class Sell extends React.Component {
           <Sidebar></Sidebar>
           <div className="b-sell__page__wrap">
             <div className="b-sell__page__tabs">
-              <div
-                className={classesGeneral}
-                onClick={e => this.changeTab(e.currentTarget, 'general')}>
-                Général
-              </div>
               <div
                 className={classesCrepes}
                 onClick={e => this.changeTab(e.currentTarget, 'crepes')}>
@@ -141,15 +141,9 @@ class Sell extends React.Component {
                 Croques
               </div>
               <div
-                style="display: none;"
-                className={classesPizzas}
-                onClick={e => this.changeTab(e.currentTarget, 'pizzas')}>
-                Pizzas
-              </div>
-              <div
-                className={classesSandwichs}
-                onClick={e => this.changeTab(e.currentTarget, 'sandwichs')}>
-                Sandwich
+                className={classesCannettes}
+                onClick={e => this.changeTab(e.currentTarget, 'cannettes')}>
+                Cannettes
               </div>
             </div>
             <div className="b-sell__page__items dragscroll">
