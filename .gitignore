@@ -1,6 +1,7 @@
 rethinkdb_data
 **/*.log
 .hz/secrets.toml
+.hz/config.toml
 node_modules
 dist/bundle.js
 dist/bundle.js.map
