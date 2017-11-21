@@ -63,7 +63,30 @@ class Prepare extends React.Component {
       return a.created - b.created;
     });
 
-    return orders;
+    const resOrders = [];
+
+    orders.map(order => {
+      if (resOrders[resOrders.length - 1] != undefined) {
+        if (resOrders[resOrders.length - 1]["created"] != undefined) {
+          if ((new Date(order.created).getTime() === new Date(resOrders[resOrders.length - 1]["created"]).getTime())
+            && (order.code === resOrders[resOrders.length - 1]["code"])) {
+              var temp = [resOrders[resOrders.length - 1], order];
+              resOrders[resOrders.length - 1] = temp;
+            }
+          else resOrders.push(order);
+        }
+        else if ((new Date(order.created).getTime() === new Date(resOrders[resOrders.length - 1][0].created).getTime())
+          && (order.code === resOrders[resOrders.length - 1][0].code)) {
+            var temp = resOrders[resOrders.length - 1];
+            temp.push(order);
+            resOrders[resOrders.length - 1] = temp;
+          }
+        else resOrders.push(order);
+      }
+      else resOrders.push(order);
+    });
+
+    return resOrders;
   }
 
   changeTab(elem, tab) {
@@ -84,7 +107,6 @@ class Prepare extends React.Component {
     );
 
     const orders = this.props.orders;
-    const ordersToDisplay = this.getOrders();
 
     // for each item, count per status and organize per category
     const ordersCounter = [];
@@ -105,6 +127,8 @@ class Prepare extends React.Component {
         }
       }
     })
+
+    const ordersToDisplay = this.getOrders();
 
     return (
       <div className="b-prepare">
@@ -151,51 +175,105 @@ class Prepare extends React.Component {
             {
               (ordersToDisplay.length == 0)
               ?
-                <div className="b-prepare__orders__empty">Aucune commande pour le moment.</div>
+                <div className="b-prepare__orders__orders__empty">Aucune commande pour le moment.</div>
               :
                 ordersToDisplay.map(order => {
-                  const pendingClasses = classNames(
-                    'b-prepare__orders__order__status',
-                    'b-prepare__orders__order__pending',
-                    { 'b-prepare__orders__order__status--active': order.status === 'pending' }
-                  );
+                  if (order.id) {
+                    const pendingClasses = classNames(
+                      'b-prepare__orders__orders__order__status',
+                      'b-prepare__orders__orders__order__pending',
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' }
+                    );
 
-                  const prepareClasses = classNames(
-                    'b-prepare__orders__order__status',
-                    'b-prepare__orders__order__prepare',
-                    { 'b-prepare__orders__order__status--active': order.status === 'prepare' }
-                  );
+                    const prepareClasses = classNames(
+                      'b-prepare__orders__orders__order__status',
+                      'b-prepare__orders__orders__order__prepare',
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' }
+                    );
 
-                  const readyClasses = classNames(
-                    'b-prepare__orders__order__status',
-                    'b-prepare__orders__order__ready',
-                    { 'b-prepare__orders__order__status--active': order.status === 'ready' }
-                  );
+                    const readyClasses = classNames(
+                      'b-prepare__orders__orders__order__status',
+                      'b-prepare__orders__orders__order__ready',
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'ready' }
+                    );
 
-                  const orderClasses = `b-prepare__orders__order b-prepare__orders__order--${order.status}`;
+                    const orderClasses = `b-prepare__orders__orders__order b-prepare__orders__orders__order--${order.status}`;
 
-                  const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
+                    const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
 
-                  return (
-                    <div className={orderClasses} ref={order.id}>
-                      <div className="b-prepare__orders__order__name">#{order.code} {orderName}</div>
-                      <div
-                        className={pendingClasses}
-                        onClick={() => this.onChangeStatusClick(order, 'pending')}>
-                        Attente
+                    return (
+                      <div className={orderClasses} ref={order.id}>
+                        <div className="b-prepare__orders__orders__order__name">#{order.code} {orderName}</div>
+                        <div
+                          className={pendingClasses}
+                          onClick={() => this.onChangeStatusClick(order, 'pending')}>
+                          Attente
+                        </div>
+                        <div
+                          className={prepareClasses}
+                          onClick={() => this.onChangeStatusClick(order, 'prepare')}>
+                          Préparation
+                        </div>
+                        <div
+                          className={readyClasses}
+                          onClick={() => this.onChangeStatusClick(order, 'ready', this)}>
+                          Prêt
+                        </div>
                       </div>
-                      <div
-                        className={prepareClasses}
-                        onClick={() => this.onChangeStatusClick(order, 'prepare')}>
-                        Préparation
+                    );
+                  }
+                  else {
+                    return (
+                      <div className="b-prepare__orders__orders__orders">
+                        {
+                          order.map(order => {
+                            const pendingClasses = classNames(
+                              'b-prepare__orders__orders__order__status',
+                              'b-prepare__orders__orders__order__pending',
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' }
+                            );
+
+                            const prepareClasses = classNames(
+                              'b-prepare__orders__orders__order__status',
+                              'b-prepare__orders__orders__order__prepare',
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' }
+                            );
+
+                            const readyClasses = classNames(
+                              'b-prepare__orders__orders__order__status',
+                              'b-prepare__orders__orders__order__ready',
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'ready' }
+                            );
+
+                            const orderClasses = `b-prepare__orders__orders__order b-prepare__orders__orders__order--${order.status}`;
+
+                            const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
+
+                            return (
+                              <div className={orderClasses} ref={order.id}>
+                                <div className="b-prepare__orders__orders__order__name">#{order.code} {orderName}</div>
+                                <div
+                                  className={pendingClasses}
+                                  onClick={() => this.onChangeStatusClick(order, 'pending')}>
+                                  Attente
+                                </div>
+                                <div
+                                  className={prepareClasses}
+                                  onClick={() => this.onChangeStatusClick(order, 'prepare')}>
+                                  Préparation
+                                </div>
+                                <div
+                                  className={readyClasses}
+                                  onClick={() => this.onChangeStatusClick(order, 'ready', this)}>
+                                  Prêt
+                                </div>
+                              </div>
+                            );
+                          })
+                        }
                       </div>
-                      <div
-                        className={readyClasses}
-                        onClick={() => this.onChangeStatusClick(order, 'ready', this)}>
-                        Prêt
-                      </div>
-                    </div>
-                  );
+                    );
+                  }
                 })
             }
           </div>
