@@ -29,13 +29,15 @@ export default class PieChart extends React.Component {
         title: {
             display: true,
             text: this.props.name,
-            fontSize: 32
+            fontSize: 32,
+            fontColor: '#fff'
         },
         legend: {
             display: true,
             position: 'bottom',
             labels: {
-              fontSize: 18
+              fontSize: 18,
+              fontColor: '#fff'
             }
         }
       }

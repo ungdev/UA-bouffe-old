@@ -87,22 +87,28 @@ class Stats extends React.Component {
       <div className="b-stats">
         <div className="b-stats__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
-          <span>
-            Stats
-          </span>
+          <h1>
+            Statistiques des ventes
+          </h1>
         </div>
-        <div className="b-stats__table__container">
-          <h2>Résumé des ventes</h2>
-          <table className="b-stats__table">
-            <tr>
-              <th>Item</th>
-              <th>Vendu</th>
-              <th>Montant</th>
-            </tr>
-            {rows}
-          </table>
+        <div className="b-stats__summary">
+          <h2>Résumé</h2>
+          <div className="b-stats__table__container">
+            <table className="b-stats__table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Nombre vendu</th>
+                  <th>Montant total (€)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div>
+        <div className="b-stats__charts__container">
           <h2>Graphiques</h2>
           {charts}
         </div>
