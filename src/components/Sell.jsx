@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
 
 class Sell extends React.Component {
   state = {
-    tab: 'general'
+    tab: 'croques'
   };
 
   getItems() {
@@ -63,9 +63,14 @@ class Sell extends React.Component {
 
     const toggleText = (this.props.lowerPrice) ? 'Prix orga' : 'Prix normal';
 
-    const classesGeneral = classNames(
+    /*const classesGeneral = classNames(
       'b-sell__page__tabs__tab',
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'general' }
+    );*/
+
+    const classesCroques = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'croques' }
     );
 
     const classesCrepes = classNames(
@@ -73,12 +78,7 @@ class Sell extends React.Component {
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'crepes' }
     );
 
-    const classesCroques = classNames(
-      'b-sell__page__tabs__tab',
-      { 'b-sell__page__tabs__tab--active': this.state.tab === 'croques' }
-    );
-
-    const classesPizzas = classNames(
+    /*const classesPizzas = classNames(
       'b-sell__page__tabs__tab',
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'pizzas' }
     );
@@ -86,6 +86,11 @@ class Sell extends React.Component {
     const classesSandwichs = classNames(
       'b-sell__page__tabs__tab',
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'sandwichs' }
+    );*/
+
+    const classesCanettes = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'canettes' }
     );
 
     return (
@@ -105,22 +110,22 @@ class Sell extends React.Component {
           <Sidebar></Sidebar>
           <div className="b-sell__page__wrap">
             <div className="b-sell__page__tabs">
-              <div
+              {/*div
                 className={classesGeneral}
                 onClick={e => this.changeTab(e.currentTarget, 'general')}>
                 Général
-              </div>
-              <div
-                className={classesCrepes}
-                onClick={e => this.changeTab(e.currentTarget, 'crepes')}>
-                Crêpes
-              </div>
+              </div>*/}
               <div
                 className={classesCroques}
                 onClick={e => this.changeTab(e.currentTarget, 'croques')}>
                 Croques
               </div>
               <div
+                className={classesCrepes}
+                onClick={e => this.changeTab(e.currentTarget, 'crepes')}>
+                Crêpes
+              </div>
+              {/*<div
                 style="display: none;"
                 className={classesPizzas}
                 onClick={e => this.changeTab(e.currentTarget, 'pizzas')}>
@@ -129,7 +134,12 @@ class Sell extends React.Component {
               <div
                 className={classesSandwichs}
                 onClick={e => this.changeTab(e.currentTarget, 'sandwichs')}>
-                Sandwich
+                Sandwichs
+              </div>*/}
+              <div
+                className={classesCanettes}
+                onClick={e => this.changeTab(e.currentTarget, 'canettes')}>
+                Canettes
               </div>
             </div>
             <div className="b-sell__page__items dragscroll">

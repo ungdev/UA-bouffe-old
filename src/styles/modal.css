@@ -41,7 +41,8 @@
   height: auto;
 
   h2 {
-    font-size: 26px;
+    font-size: 21px;
+    margin: 10px 0px 10px 0px;
   }
 
   span {
@@ -60,7 +61,7 @@
 .b-promo-modal__choices {
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 0px 0px 15px 0px;
 }
 
 .b-promo-modal__choices__category {
