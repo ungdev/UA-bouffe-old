@@ -2,6 +2,7 @@
   display: flex;
   font-weight: bold;
   height: 100%;
+  font-size: 21px;
 }
 
 .b-chooser__title {
@@ -15,6 +16,7 @@
   > span {
     display: inline-block;
     padding-top: 20px;
+    font-size: 28px;
   }
 }
 

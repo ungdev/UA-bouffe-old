@@ -45,7 +45,7 @@ const crepeSucre = {
 const crepeNutella = {
   id        : 'crepe-nutella',
   name      : 'Crêpe Nutella',
-  price     : 100,
+  price     : 50,
   lowerPrice: 50,
   category  : 'crepes'
 };
@@ -53,7 +53,7 @@ const crepeNutella = {
 const crepeConfitureFruitRouge = {
   id        : 'crepe-confiture-fruits-rouges',
   name      : 'Crêpe Confiture Fruits-Rouges',
-  price     : 100,
+  price     : 50,
   lowerPrice: 50,
   category  : 'crepes'
 };
@@ -61,7 +61,7 @@ const crepeConfitureFruitRouge = {
 const crepeConfitureAbricot = {
   id        : 'crepe-confiture-abricot',
   name      : 'Crêpe Confiture Abricôt',
-  price     : 100,
+  price     : 50,
   lowerPrice: 50,
   category  : 'crepes'
 };
@@ -69,7 +69,15 @@ const crepeConfitureAbricot = {
 const crepeMiel = {
   id        : 'crepe-miel',
   name      : 'Crêpe Miel',
-  price     : 100,
+  price     : 50,
+  lowerPrice: 50,
+  category  : 'crepes'
+};
+
+const crepeCaramel = {
+  id        : 'crepe-caramel',
+  name      : 'Crêpe Caramel beurre sâlé',
+  price     : 50,
   lowerPrice: 50,
   category  : 'crepes'
 };
@@ -88,6 +96,30 @@ const croqueCremeJambonFromage = {
   id        : 'croque-creme-jambon-fromage',
   name      : 'Croque Crème Jambon Fromage',
   price     : 150,
+  lowerPrice: 100,
+  category  : 'croques'
+};
+
+const croqueJambonFromage = {
+  id        : 'croque-jambon-fromage',
+  name      : 'Croque Jambon Fromage',
+  price     : 100,
+  lowerPrice: 100,
+  category  : 'croques'
+};
+
+const croquePouletCurry = {
+  id        : 'croque-poulet-curry',
+  name      : 'Croque Poulet Curry',
+  price     : 100,
+  lowerPrice: 100,
+  category  : 'croques'
+};
+
+const croquePoivronsMozza = {
+  id        : 'croque-poivrons-mozza-sauce-tomate',
+  name      : 'Croque Poivrons Mozza Sauce Tomate',
+  price     : 100,
   lowerPrice: 100,
   category  : 'croques'
 };
@@ -258,6 +290,55 @@ const boissonChocolat = {
   category  : 'general'
 };
 
+
+const iceTea = {
+  id        : 'ice-tea',
+  name      : 'Ice Tea',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
+const coca = {
+  id        : 'coca-cola',
+  name      : 'Coca Cola',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
+const oasisTropical = {
+  id        : 'oasis-tropical',
+  name      : 'Oasis Tropical',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
+const sprite = {
+  id        : 'sprite',
+  name      : 'Sprite',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
+const oasisPCF = {
+  id        : 'oasis-PCF',
+  name      : 'Oasis Pomme Cassis Framboise',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
+const orangina = {
+  id        : 'orangina',
+  name      : 'Orangina',
+  price     : 60,
+  lowerPrice: 60,
+  category  : 'canettes'
+};
+
 /* Snack */
 
 const snackBar = {
@@ -307,14 +388,14 @@ const promoSandwichCanetteBarreOuCrepe = {
 const promo3Croques = {
   id        : 'promo-3croques',
   name      : '3 Croques',
-  price     : 350,
+  price     : 200,
   lowerPrice: 200,
   items     : [
-    [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
-    [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ],
-    [ croqueCremeJambonFromage, croqueChevreMiel, croqueChevreEmmental ]
+    [ croqueJambonFromage, croquePouletCurry, croquePoivronsMozza ],
+    [ croqueJambonFromage, croquePouletCurry, croquePoivronsMozza ],
+    [ croqueJambonFromage, croquePouletCurry, croquePoivronsMozza ]
   ],
-  category: 'general'
+  category: 'croques'
 };
 
 const promo2CroquesNutella = {
@@ -406,16 +487,17 @@ const promoCrepeBoisson = {
 };
 
 export {
-  crepeCremeJambonFromage,
+  /*crepeCremeJambonFromage,
   crepeSaleeSuplementOeuf,
   crepeChevreEmmental,
   crepeChevreMiel,
-  crepeSucre,
+  crepeSucre,*/
   crepeNutella,
   crepeConfitureFruitRouge,
   crepeConfitureAbricot,
+  crepeCaramel,
   crepeMiel,
-  croqueNutella,
+  /*croqueNutella,
   croqueCremeJambonFromage,
   croqueChevreMiel,
   croqueChevreEmmental,
@@ -439,13 +521,22 @@ export {
   snackBar,
   snackSaucisson,
   promoPizzaCannetteBarreOuCrepe,
-  promoSandwichCanetteBarreOuCrepe,
+  promoSandwichCanetteBarreOuCrepe,*/
   promo3Croques,
-  promo2CroquesNutella,
+  /*promo2CroquesNutella,
   promoBarreCanette,
   promo2CrepesBoisson,
   promo3CroquesBoisson,
   promoHotDogCanette,
   promoHotDogCrepe,
-  promoCrepeBoisson
+  promoCrepeBoisson*/
+  croqueJambonFromage,
+  croquePouletCurry,
+  croquePoivronsMozza,
+  iceTea,
+  coca,
+  oasisTropical,
+  sprite,
+  oasisPCF,
+  orangina
 };
