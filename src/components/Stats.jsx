@@ -109,7 +109,7 @@ class Stats extends React.Component {
           </div>
         </div>
         <div className="b-stats__charts__container">
-          <h2>Graphiques</h2>
+          <h2>Charts</h2>
           {charts}
         </div>
       </div>
