@@ -72,9 +72,12 @@ class Stats extends React.Component {
       });
     const numberOfDays = Array.from(new Set(extendedOrders.map(order => order.date)));
     let itemsPerHour = new Array(24*numberOfDays.length).fill(0).map((_, i) => {
-      return {hour: i, count: 0}
+      return {hour: i, count: 0, earn: 0}
     });
-    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour].count += 1)
+    extendedOrders.map(order => {
+      itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour].count += 1;
+      itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour].earn += order.price;
+    })
 
     let afterLeadingZero = 0;
     while (itemsPerHour[afterLeadingZero].count === 0 && afterLeadingZero < itemsPerHour.length) {
@@ -98,6 +101,20 @@ class Stats extends React.Component {
       pieCharts.push(<PieChart name={category} items={items} />)
     })
 
+    // generate line charts
+    const labels = this.state.itemsPerHour.map(e => e.hour);
+    const lineCharts = [
+      <LineChart
+        name="Items vendu par heure"
+        labels={labels}
+        data={this.state.itemsPerHour.map(e => e.count)} />,
+      <LineChart
+        name="Argent gagnée par heure"
+        labels={labels}
+        data={this.state.itemsPerHour.map(e => e.earn)} />
+    ];
+
+
     // generate table rows
     const rows = [];
     this.state.ordersCounters && this.state.ordersCounters
@@ -108,10 +125,6 @@ class Stats extends React.Component {
                   <td>{`${(this.state.prices.get(name) * counter) / 100}`}</td>
                 </tr>)
     })
-
-    // generate labels and data for sells LineChart
-    const data = this.state.itemsPerHour.map(e => e.count);
-    const labels = this.state.itemsPerHour.map(e => e.hour);
 
     return (
       <div className="b-stats">
@@ -138,7 +151,7 @@ class Stats extends React.Component {
             </table>
           </div>
         </div>
-        <LineChart name="Ventes par heure" labels={labels} data={data} />
+        {lineCharts}
         <div className="b-stats__charts__container">
           <h2>PieCharts</h2>
           {pieCharts}

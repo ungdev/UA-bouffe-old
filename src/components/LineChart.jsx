@@ -9,7 +9,6 @@ export default class LineChart extends React.Component {
   };
 
   componentDidUpdate() {
-    console.log('MOUNTED');
     const ctx = document.getElementById(this.props.name).getContext('2d');
     const myLineChart = new Chart(ctx, {
       type: 'line',
