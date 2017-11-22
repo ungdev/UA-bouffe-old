@@ -71,8 +71,20 @@ class Stats extends React.Component {
         return order;
       });
     const numberOfDays = Array.from(new Set(extendedOrders.map(order => order.date)));
-    const itemsPerHour = new Array(24*numberOfDays.length).fill(0);
-    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour] += 1)
+    let itemsPerHour = new Array(24*numberOfDays.length).fill(0).map((_, i) => {
+      return {hour: i, count: 0}
+    });
+    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour].count += 1)
+
+    let afterLeadingZero = 0;
+    while (itemsPerHour[afterLeadingZero].count === 0 && afterLeadingZero < itemsPerHour.length) {
+      afterLeadingZero++;
+    }
+    let beforeTrailingZero = itemsPerHour.length - 1;
+    while (itemsPerHour[beforeTrailingZero].count === 0 && beforeTrailingZero > 0) {
+      beforeTrailingZero--;
+    }
+    itemsPerHour = itemsPerHour.slice(afterLeadingZero, beforeTrailingZero + 1);
 
     this.setState({orders, sortedOrders, ordersCounters, prices, itemsPerHour});
   }
@@ -98,8 +110,8 @@ class Stats extends React.Component {
     })
 
     // generate labels and data for sells LineChart
-    const data = this.state.itemsPerHour;
-    const labels = this.state.itemsPerHour.map((_, i) => i % 24);
+    const data = this.state.itemsPerHour.map(e => e.count);
+    const labels = this.state.itemsPerHour.map(e => e.hour);
 
     return (
       <div className="b-stats">
