@@ -27,17 +27,28 @@
   width: 100%;
 }
 
-.b-chart__container {
+.b-pie-chart__container {
   width: 50% !important;
   display: inline-block;
   margin-top: 50px;
 }
-
-.b-chart__canvas-holder {
+.b-pie-chart__canvas-holder {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   padding: 20px 0;
+}
+
+.b-line-chart__container {
+  width: 100% !important;
+  display: block;
+}
+.b-line-chart__canvas-holder {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  position: relative;
 }
 
 .b-stats__summary {

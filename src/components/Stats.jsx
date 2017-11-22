@@ -3,6 +3,7 @@ import { Link }     from 'react-router';
 import { connect }  from 'react-redux';
 
 import PieChart     from './PieChart';
+import LineChart    from './LineChart';
 
 class Stats extends React.Component {
   constructor() {
@@ -108,6 +109,7 @@ class Stats extends React.Component {
             </table>
           </div>
         </div>
+        <LineChart name="Ventes par heure" items={new Map()} />
         <div className="b-stats__charts__container">
           <h2>Charts</h2>
           {charts}

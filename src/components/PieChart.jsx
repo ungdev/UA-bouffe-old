@@ -52,8 +52,8 @@ export default class PieChart extends React.Component {
 
   render() {
     return (
-      <div className="b-chart__container">
-        <div className="b-chart__canvas-holder">
+      <div className="b-pie-chart__container">
+        <div className="b-pie-chart__canvas-holder">
           <canvas id={this.props.name} height="100" width="100"></canvas>
         </div>
       </div>
