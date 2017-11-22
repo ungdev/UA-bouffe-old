@@ -4,22 +4,24 @@ import Chart  from 'chart.js';
 export default class LineChart extends React.Component {
   propTypes = {
     name  : React.PropTypes.string,
-    items : React.PropTypes.array
+    labels: React.PropTypes.array,
+    data  : React.PropTypes.array
   };
 
-  componentDidMount() {
+  componentDidUpdate() {
+    console.log('MOUNTED');
     const ctx = document.getElementById(this.props.name).getContext('2d');
     const myLineChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: Array.from(this.props.items.keys()),
+        labels: this.props.labels,
         datasets: [{
           label: "My First dataset",
           backgroundColor: '#fff',
           borderColor: '#FB667A',
           showLine: true,
           fill: false,
-          data: Array.from(this.props.items.values())
+          data: this.props.data
           }]
         },
         options: {
@@ -62,6 +64,8 @@ export default class LineChart extends React.Component {
   }
 
   render() {
+    console.log("labels", this.props.labels);
+    console.log("props", this.props.data);
     return (
       <div className="b-line-chart__container">
         <div className="b-line-chart__canvas-holder">

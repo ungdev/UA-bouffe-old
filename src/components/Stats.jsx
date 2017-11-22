@@ -14,6 +14,7 @@ class Stats extends React.Component {
       sortedOrders: null,
       ordersCounters: null,
       prices: null,
+      itemsPerHour: []
     };
 
     this.onOrdersFetch = this.onOrdersFetch.bind(this);
@@ -51,26 +52,38 @@ class Stats extends React.Component {
             (sortedOrders.has(order.statsCategory) && sortedOrders.get(order.statsCategory).get(order.name) || 0) + 1
           )
       );
-    })
+    });
 
     // fill the counters Map
     orders
-    .map(order => ordersCounters.set(order.name, (ordersCounters.get(order.name) || 0) + 1))
+    .map(order => ordersCounters.set(order.name, (ordersCounters.get(order.name) || 0) + 1));
 
     // fill the prices Map
     orders
-    .map(order => !prices.has(order.name) && prices.set(order.name, order.price))
+    .map(order => !prices.has(order.name) && prices.set(order.name, order.price));
 
-    this.setState({orders, sortedOrders, ordersCounters, prices});
+    // fill the itemsPerHour Map
+    const extendedOrders = orders
+      .sort((a, b) => a.created - b.created)
+      .map(order => {
+        order.date = `${order.created.getDate()}/${order.created.getMonth()}`;
+        order.hour = order.created.getHours();
+        return order;
+      });
+    const numberOfDays = Array.from(new Set(extendedOrders.map(order => order.date)));
+    const itemsPerHour = new Array(24*numberOfDays.length).fill(0);
+    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date) + 1] += 1)
+
+    this.setState({orders, sortedOrders, ordersCounters, prices, itemsPerHour});
   }
 
   render() {
 
-    // generate charts
-    const charts = [];
+    // generate pie charts
+    const pieCharts = [];
     this.state.sortedOrders && this.state.sortedOrders
     .forEach((items, category) => {
-      charts.push(<PieChart name={category} items={items} />)
+      pieCharts.push(<PieChart name={category} items={items} />)
     })
 
     // generate table rows
@@ -83,6 +96,10 @@ class Stats extends React.Component {
                   <td>{`${(this.state.prices.get(name) * counter) / 100}`}</td>
                 </tr>)
     })
+
+    // generate labels and data for sells LineChart
+    const data = this.state.itemsPerHour;
+    const labels = this.state.itemsPerHour.map((_, i) => i % 24);
 
     return (
       <div className="b-stats">
@@ -109,10 +126,10 @@ class Stats extends React.Component {
             </table>
           </div>
         </div>
-        <LineChart name="Ventes par heure" items={new Map()} />
+        <LineChart name="Ventes par heure" labels={labels} data={data} />
         <div className="b-stats__charts__container">
-          <h2>Charts</h2>
-          {charts}
+          <h2>PieCharts</h2>
+          {pieCharts}
         </div>
       </div>
     );
