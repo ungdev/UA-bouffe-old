@@ -72,7 +72,7 @@ class Stats extends React.Component {
       });
     const numberOfDays = Array.from(new Set(extendedOrders.map(order => order.date)));
     const itemsPerHour = new Array(24*numberOfDays.length).fill(0);
-    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date) + 1] += 1)
+    extendedOrders.map(order => itemsPerHour[numberOfDays.indexOf(order.date)*24 + order.hour] += 1)
 
     this.setState({orders, sortedOrders, ordersCounters, prices, itemsPerHour});
   }
