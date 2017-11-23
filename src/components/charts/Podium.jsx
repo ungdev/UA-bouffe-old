@@ -8,12 +8,14 @@ export default class Podium extends React.Component {
   };
 
   render() {
+
+    if (this.props.players.length === 0) {
+      return (<div></div>);
+    }
+
     return (
       <div className="b-podium__container">
-        {
-          this.props.players.length > 0 &&
-          <h2>Les plus gros mangeurs</h2>
-        }
+        <h2>Les plus gros mangeurs</h2>
         <div className="b-podium">
           {
             this.props.players[1] &&

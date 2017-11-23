@@ -28,6 +28,10 @@ export default class SalesPieChart extends React.Component {
       sortedOrders[order.statsCategory][order.name] += 1;
     });
 
+    if (Object.keys(sortedOrders).length === 0) {
+      return (<div></div>);
+    }
+
     return (
       <div className="b-stats__piecharts__container">
         <h2>PieCharts</h2>

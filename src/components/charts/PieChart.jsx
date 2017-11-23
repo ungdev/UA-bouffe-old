@@ -50,7 +50,7 @@ export default class PieChart extends React.Component {
     });
   }
 
-  render() {
+  render() {    
     return (
       <div className="b-pie-chart__container">
         <div className="b-pie-chart__canvas-holder">
