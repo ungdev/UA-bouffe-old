@@ -12,7 +12,7 @@ export default class PieChart extends React.Component {
     const myPieChart = new Chart(ctx,{
       type: 'pie',
       data: {
-        labels: Array.from(this.props.items.keys()),
+        labels: Object.keys(this.props.items),
         datasets: [{
           backgroundColor: [
             'rgba(255,99,132,1)',
@@ -22,7 +22,7 @@ export default class PieChart extends React.Component {
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)'
           ],
-          data: Array.from(this.props.items.values())
+          data: Object.values(this.props.items)
          }]
       },
       options: {

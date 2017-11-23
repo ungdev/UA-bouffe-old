@@ -8,37 +8,33 @@ export default class SalesPieChart extends React.Component {
   };
 
   render() {
-
-    const sortedOrders = new Map();
+    const sortedOrders = {};
 
     // fill the sorted orders Map
     this.props.orders
-    // remove the orders useless for stats
+    // keep only the orders that will appears on the pie charts
     .filter(order => order.statsCategory)
     // put each order in sortedOrders
     .map(order => {
-      sortedOrders.set(
-        order.statsCategory,
-        // the value of each category is a map where keys are item's names of this
-        // category, and values are the number of items with this name sold
-        (sortedOrders.get(order.statsCategory) || new Map())
-          .set(
-            order.name,
-            (sortedOrders.has(order.statsCategory) && sortedOrders.get(order.statsCategory).get(order.name) || 0) + 1
-          )
-      );
+      // if the category is not already in sortedOrders, add it
+      if (!sortedOrders[order.statsCategory]) {
+        sortedOrders[order.statsCategory] = {};
+      }
+      // if this items is not already in sortedOrders, add it
+      if (!sortedOrders[order.statsCategory][order.name]) {
+        sortedOrders[order.statsCategory][order.name] = 0
+      }
+      // increment the counter for this item
+      sortedOrders[order.statsCategory][order.name] += 1;
     });
-
-    const pieCharts = [];
-    sortedOrders
-    .forEach((items, category) => {
-      pieCharts.push(<PieChart name={category} items={items} />)
-    })
 
     return (
       <div className="b-stats__charts__container">
         <h2>PieCharts</h2>
-        {pieCharts}
+        {
+          Object.keys(sortedOrders)
+          .map(category => <PieChart name={category} items={sortedOrders[category]} />)
+        }
       </div>
     );
   }
