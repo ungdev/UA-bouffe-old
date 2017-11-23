@@ -28,8 +28,9 @@ export default class LineChart extends React.Component {
           title: {
             display: true,
             text: this.props.name,
-            fontColor: '#fff',
-            fontSize: 32
+            fontColor: '#4DC3FA',
+            fontSize: 32,
+            fontStyle: '300'
           },
           legend: {
             display: false

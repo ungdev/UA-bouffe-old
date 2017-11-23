@@ -4,7 +4,7 @@
   min-height: 100%;
 
   h1, h2 {
-    font-weight: 300;
+    font-weight: normal;
     text-align: center;
   }
 
@@ -14,7 +14,7 @@
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 32px;
     color: #4DC3FA;
   }
 }
@@ -42,6 +42,7 @@
 .b-line-chart__container {
   width: 100% !important;
   display: block;
+  margin-top: 100px;
 }
 .b-line-chart__canvas-holder {
   width: 90%;
@@ -53,6 +54,10 @@
 
 .b-stats__summary {
   padding-top: 75px;
+}
+
+.b-stats__piecharts__container {
+  margin-top: 100px;
 }
 
 /* TABLE */

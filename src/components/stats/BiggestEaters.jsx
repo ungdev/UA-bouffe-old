@@ -20,7 +20,7 @@ export default class BiggestEaters extends React.Component {
 
     const sortedEaters = Object.keys(eaters)
     .map(player => [player, eaters[player]])
-    .sort((a, b) => b[1] - b[0])
+    .sort((a, b) => b[1] - a[1])
 
     console.log(sortedEaters);
 

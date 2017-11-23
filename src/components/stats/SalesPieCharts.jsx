@@ -29,7 +29,7 @@ export default class SalesPieChart extends React.Component {
     });
 
     return (
-      <div className="b-stats__charts__container">
+      <div className="b-stats__piecharts__container">
         <h2>PieCharts</h2>
         {
           Object.keys(sortedOrders)
