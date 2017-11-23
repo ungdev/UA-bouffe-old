@@ -22,7 +22,7 @@ import App     from './components/App';
 import Index   from './components/Index';
 import Prepare from './components/Prepare';
 import Sell    from './components/Sell';
-import Stats   from './components/Stats';
+import Stats   from './components/stats/Stats';
 
 import app from './reducers';
 
