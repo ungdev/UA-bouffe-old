@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cssnext      = require('postcss-cssnext');
 const nested       = require('postcss-nested');
 const atImport     = require('postcss-import');
+const cssvariables = require('postcss-css-variables');
 
 const root = (...args) => path.join(__dirname, 'src', ...args);
 
@@ -64,9 +65,10 @@ const webpackConfig = {
       addDependencyTo: webpack
     }),
     nested,
+    cssvariables(),
     cssnext({
       browsers: '> 0%'
-    })
+    }),
   ]
 };
 

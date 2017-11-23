@@ -12,6 +12,18 @@
 @import 'orderCode';
 @import 'stats';
 
+:root {
+  --pink-swagg: #FB667A;
+  --blue-swagg: #4DC3FA;
+  --yellow-swagg: rgb(255, 206, 86);
+  --dark-blue: #1F2739;
+  --blue-grey: #2C3446;
+  --blue-grey-light: #323C50;
+  --grey: #464A52;
+  --dark-text: #333;
+  --light-text: #fff;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }

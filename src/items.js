@@ -487,17 +487,17 @@ const promoCrepeBoisson = {
 };
 
 export {
-  /*crepeCremeJambonFromage,
+  crepeCremeJambonFromage,
   crepeSaleeSuplementOeuf,
   crepeChevreEmmental,
   crepeChevreMiel,
-  crepeSucre,*/
+  crepeSucre,
   crepeNutella,
   crepeConfitureFruitRouge,
   crepeConfitureAbricot,
   crepeCaramel,
   crepeMiel,
-  /*croqueNutella,
+  croqueNutella,
   croqueCremeJambonFromage,
   croqueChevreMiel,
   croqueChevreEmmental,
@@ -521,15 +521,15 @@ export {
   snackBar,
   snackSaucisson,
   promoPizzaCannetteBarreOuCrepe,
-  promoSandwichCanetteBarreOuCrepe,*/
+  promoSandwichCanetteBarreOuCrepe,
   promo3Croques,
-  /*promo2CroquesNutella,
+  promo2CroquesNutella,
   promoBarreCanette,
   promo2CrepesBoisson,
   promo3CroquesBoisson,
   promoHotDogCanette,
   promoHotDogCrepe,
-  promoCrepeBoisson*/
+  promoCrepeBoisson,
   croqueJambonFromage,
   croquePouletCurry,
   croquePoivronsMozza,
