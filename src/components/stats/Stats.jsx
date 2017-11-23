@@ -6,6 +6,7 @@ import PieChart         from '../charts/PieChart';
 import LineChart        from '../charts/LineChart';
 import Table            from './Table';
 import SalesLineCharts  from './SalesLineCharts';
+import BiggestEaters    from './BiggestEaters';
 import SalesPieCharts   from './SalesPieCharts';
 
 class Stats extends React.Component {
@@ -43,6 +44,7 @@ class Stats extends React.Component {
           </h1>
         </div>
         <Table orders={this.state.orders} />
+        <BiggestEaters orders={this.state.orders} />
         <SalesLineCharts orders={this.state.orders} />
         <SalesPieCharts orders={this.state.orders} />
       </div>

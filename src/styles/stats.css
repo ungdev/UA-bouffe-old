@@ -139,3 +139,45 @@
   -moz-box-shadow: 0 6px 6px -6px #0E1119;
   box-shadow: 0 6px 6px -6px #0E1119;
 }
+
+/* PODIUM */
+
+.b-podium {
+  text-align: center;
+}
+
+.b-podium > * {
+  display: inline-block;
+  width: 200px;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.b-podium--1 {
+  background-color: rgb(255,99,132);
+  margin: 0 100px;
+  height: 700px;
+}
+.b-podium--2 {
+  background-color: rgb(255, 206, 86);
+  height: 500px;
+}
+.b-podium--3 {
+  background-color: rgb(54, 162, 235);
+  height: 300px;
+}
+
+.b-podium__text {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.b-podium__text__code {
+  color: #333;
+  margin-top: 15px;
+}
