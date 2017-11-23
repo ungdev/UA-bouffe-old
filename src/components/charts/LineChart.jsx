@@ -63,8 +63,6 @@ export default class LineChart extends React.Component {
   }
 
   render() {
-    console.log("labels", this.props.labels);
-    console.log("props", this.props.data);
     return (
       <div className="b-line-chart__container">
         <div className="b-line-chart__canvas-holder">

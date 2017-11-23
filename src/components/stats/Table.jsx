@@ -6,24 +6,18 @@ export default class Table extends React.Component {
   };
 
   render() {
-    const prices = new Map();
-    this.props.orders && this.props.orders
-    .map(order => !prices.has(order.name) && prices.set(order.name, order.price));
-
-    const ordersCounters = new Map();
-    this.props.orders && this.props.orders
-    .map(order => ordersCounters.set(order.name, (ordersCounters.get(order.name) || 0) + 1));
-
-    // generate table rows
-    const rows = [];
-    ordersCounters
-    .forEach((counter, name) => {
-      rows.push(<tr>
-                  <td>{name}</td>
-                  <td>{counter}</td>
-                  <td>{`${(prices.get(name) * counter) / 100}`}</td>
-                </tr>)
-      })
+    const ordersCounters = {};
+    this.props.orders
+    .map(order => {
+      if (!ordersCounters[order.name]) {
+        ordersCounters[order.name] = {
+          count: 0,
+          earn: 0
+        }
+      }
+      ordersCounters[order.name].count += 1;
+      ordersCounters[order.name].earn += order.effectivePrice;
+    });
 
     return (
       <div className="b-stats__summary">
@@ -38,7 +32,15 @@ export default class Table extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {rows}
+              {
+                Object.keys(ordersCounters).map(name => {
+                  return (<tr>
+                            <td>{name}</td>
+                            <td>{ordersCounters[name].count}</td>
+                            <td>{ordersCounters[name].earn / 100}</td>
+                          </tr>)
+                })
+              }
             </tbody>
           </table>
         </div>
