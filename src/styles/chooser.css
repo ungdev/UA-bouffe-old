@@ -33,3 +33,15 @@
   text-align: center;
   width: 50%;
 }
+
+.b-chooser__link--stats {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 75px;
+  padding: 0;
+  padding-right: 20px;
+}
