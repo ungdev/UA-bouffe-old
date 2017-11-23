@@ -46,10 +46,13 @@ Then, go to http://localhost:8080
 * [horizon](http://horizon.io/docs/getting-started/)
 * [react.js](https://reactjs.org/)
 * [redux](https://redux.js.org/)
+* [chart.js](http://www.chartjs.org/)
 
 ## Authors
 
 * **gjuchault** - *Initial work*
+* **prudywsh**
+* **enilarik**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
