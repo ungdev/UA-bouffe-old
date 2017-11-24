@@ -1,6 +1,6 @@
 .b-stats {
   background-color: var(--dark-blue);
-  color: var(--light-text);
+  color: var(--light-light-gray);
   min-height: 100%;
 
   h1, h2 {
@@ -10,12 +10,12 @@
 
   h1 {
     font-size: 3em;
-    color: var(--pink-swagg);
+    color: var(--dark-pink);
   }
 
   h2 {
     font-size: 32px;
-    color: var(--blue-swagg);
+    color: var(--aqua);
   }
 }
 
@@ -94,7 +94,7 @@
 {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: var(--pink-swagg);
+	background-color: var(--dark-pink);
 }
 
 .b-stats__table tr {
@@ -136,10 +136,10 @@
   background-color: var(--dark-blue);
 }
 
-.b-stats__table td:first-child { color: var(--pink-swagg); }
+.b-stats__table td:first-child { color: var(--dark-pink); }
 
 .b-stats__table tr:hover {
-  background-color: var(--grey);
+  background-color: var(--dark-dark-gray);
 }
 
 /* PODIUM */
@@ -156,16 +156,16 @@
 }
 
 .b-podium--1 {
-  background-color: var(--pink-swagg);
+  background-color: var(--dark-pink);
   margin: 0 100px;
   height: 700px;
 }
 .b-podium--2 {
-  background-color: var(--yellow-swagg);
+  background-color: var(--dark-sunflower);
   height: 500px;
 }
 .b-podium--3 {
-  background-color: var(--blue-swagg);
+  background-color: var(--aqua);
   height: 300px;
 }
 
@@ -180,6 +180,6 @@
 }
 
 .b-podium__text__code {
-  color: var(--dark-text);
+  color: var(--dark-blue);
   margin-top: 15px;
 }

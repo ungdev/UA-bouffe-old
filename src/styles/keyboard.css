@@ -1,6 +1,6 @@
 .b-keyboard__key {
-  background-color: #ffe500;
-  color: #35415b;
+  background-color: var(--dark-sunflower);
+  color: var(--dark-blue);
   margin: 2px;
   display: inline-block;
 
@@ -12,8 +12,8 @@
 }
 
 .b-keyboard__key--selected {
-  background-color: #35415b;
-  color: #ffe500;
+  background-color: var(--dark-blue);
+  color: var(--dark-sunflower);
 }
 
 .b-keyboard:first-child {

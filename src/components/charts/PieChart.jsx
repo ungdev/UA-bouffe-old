@@ -15,12 +15,16 @@ export default class PieChart extends React.Component {
         labels: Object.keys(this.props.items),
         datasets: [{
           backgroundColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#D670AC',
+            '#3BAFDA',
+            '#F5BA45',
+            '#8AC054',
+            '#E8563F',
+            '#D94452',
+            '#35BB9B',
+            '#4B89DA',
+            '#967ADA',
+            '#E4B693',
           ],
           data: Object.values(this.props.items)
          }]
@@ -50,7 +54,7 @@ export default class PieChart extends React.Component {
     });
   }
 
-  render() {    
+  render() {
     return (
       <div className="b-pie-chart__container">
         <div className="b-pie-chart__canvas-holder">

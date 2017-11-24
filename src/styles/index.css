@@ -13,15 +13,59 @@
 @import 'stats';
 
 :root {
-  --pink-swagg: #FB667A;
-  --blue-swagg: #4DC3FA;
-  --yellow-swagg: rgb(255, 206, 86);
+  --light-pink: #F299CE;
+  --pink: #EB87BF;
+  --dark-pink: #D670AC;
+
+  --light-aqua: #4fc1e9;
+  --aqua: #3BAFDA;
+
+  --light-sunflower: #FCD277;
+  --sunflower: #FECD57;
+  --dark-sunflower: #F5BA45;
+
+  --light-grass: #B4E080;
+  --grass: #9ED36A;
+  --dark-grass: #8AC054;
+  --darker-grass: #2d4118;
+
+  --light-bittersweet: #FC8370;
+  --bittersweet: #FB6D51;
+  --dark-bittersweet: #E8563F;
+  --darker-bittersweet: #61170c;
+
+  --light-grapefruit: #F76D82;
+  --grapefruit: #EC5564;
+  --dark-grapefruit: #D94452;
+  --darker-grapefruit: #521117;
+
+  --light-mint: #62DDBD;
+  --mint: #46CEAD;
+  --dark-mint: #35BB9B;
+
+  --light-jeans: #73b1F4;
+  --jeans: #5E9CEA;
+  --dark-jeans: #4B89DA;
+
+  --light-lavender: #B3A5EF;
+  --lavender: #AC92EA;
+  --dark-lavender: #967ADA;
+
+  --light-skin: #F4D0B5;
+  --skin: #F0C8A5;
+  --dark-skin: #E4B693;
+
+  --light-light-gray: #F4F6F9;
+  --light-gray: #E5E8EC;
+  --dark-light-gray: #cbd0d8;
+
+  --light-dark-gray: #A9B1BC;
+  --dark-gray: #646C77;
+  --dark-dark-gray: #424953;
+
   --dark-blue: #1F2739;
   --blue-grey: #2C3446;
   --blue-grey-light: #323C50;
-  --grey: #464A52;
-  --dark-text: #333;
-  --light-text: #fff;
 }
 
 *, *:before, *:after {
