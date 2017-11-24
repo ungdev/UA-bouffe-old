@@ -8,21 +8,20 @@
 
 .b-chooser__title {
   background-color: var(--dark-blue);
-  color: var(--light-light-gray);
-  height: 75px;
+  color: var(--dark-pink);
+  height: 100px;
   position: absolute;
   text-align: center;
   width: 100%;
 
-  > span {
+  > h1 {
     display: inline-block;
-    padding-top: 20px;
-    font-size: 28px;
+    font-weight: 300;
   }
 }
 
 .b-chooser__separator {
-  background-color: var(--light-light-gray);
+  background-color: var(--dark-pink);
   height: 100%;
   width: 1px;
 }

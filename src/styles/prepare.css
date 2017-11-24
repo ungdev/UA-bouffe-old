@@ -27,7 +27,7 @@
 
 .b-prepare__abstract__title {
   padding: 9px 0;
-  background-color: var(--blue-grey-light);
+  background-color: var(--dark-blue);
   color: var(--light-light-gray);
   text-align: center;
 }
@@ -53,8 +53,16 @@
   font-weight: bold;
 }
 
-.b-prepare__abstract__table_row {
-  border-bottom: 1px solid var(--light-gray);
+.b-prepare__abstract__table tr:nth-child(odd) {
+  background-color: var(--blue-grey-light);
+}
+
+.b-prepare__abstract__table tr:nth-child(even) {
+  background-color: var(--blue-grey);
+}
+
+.b-prepare__abstract__table tr:hover {
+  background-color: var(--dark-dark-gray);
 }
 
 .b-prepare__abstract__total_number {
@@ -221,7 +229,7 @@
   color: var(--light-gray);
   display: flex;
   flex-direction: column;
-  margin: 10px auto;
+  margin: 20px auto;
   overflow: hidden;
   width: 98%;
   padding: 5px 5px 5px 10px;
