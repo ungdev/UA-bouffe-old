@@ -29,7 +29,7 @@ export default class AppBarTimer extends React.Component {
 
   render() {
     return (
-      <span onClick={() => location.reload(true)}>UA {this.state.year} - Netgame - {this.getDate()}</span>
+      <span onClick={() => location.reload(true)}>UA {this.state.year} - {this.getDate()}</span>
     )
   }
 

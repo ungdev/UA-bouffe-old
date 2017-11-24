@@ -11,11 +11,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-  };
-};
-
 class Prepare extends React.Component {
   propTypes = {
     orders: React.PropTypes.array
@@ -32,15 +27,6 @@ class Prepare extends React.Component {
         id: order.id,
         status
       });
-
-    /* The ready status doesn't modify anymore the div style
-
-    if (status === 'ready') {
-      setTimeout(() => {
-        this.refs[order.id].style.height  = '0px';
-        this.refs[order.id].style.padding = '0 20px';
-      }, 500);
-    }*/
   }
 
   getOrders() {
@@ -144,7 +130,7 @@ class Prepare extends React.Component {
             {
               Object.keys(ordersCounter).map(itemName => {
                 return (
-                  <tr className="b-prepare__abstract__table_row">
+                  <tr>
                     <td>{itemName}</td>
                     <td className="b-prepare__abstract__table_td_counter b-prepare__abstract__table_td_counter--total">
                       <span>{ordersCounter[itemName].pending + ordersCounter[itemName].prepare}</span>
@@ -283,4 +269,4 @@ class Prepare extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Prepare);
+export default connect(mapStateToProps, null)(Prepare);

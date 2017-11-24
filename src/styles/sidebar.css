@@ -1,5 +1,5 @@
 .b-sell__page__sidebar {
-  background-color: #34495e;
+  background-color: var(--dark-blue);
   flex: 0;
   min-width: 250px;
   position: relative;
@@ -7,18 +7,18 @@
 
 .b-sell__page__sidebar__item {
   align-items: center;
-  background-color: #ecf0f1;
+  background-color: var(--light-gray);
   display: flex;
   font-size: 20px;
   font-weight: normal;
   padding: 0 0 0 20px;
 
   &.b-sell__page__sidebar__item--promotion {
-    background-color: #F0C682;
+    background-color: var(--dark-light-gray);
   }
 
   &:not(:last-child) {
-    border-bottom: 2px solid #34495e;
+    border-bottom: 2px solid var(--dark-blue);
   }
 
   > span {
@@ -26,8 +26,8 @@
   }
 
   > :last-child {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: var(--dark-grapefruit);
+    color: var(--light-light-gray);
     cursor: pointer;
     flex: 0;
     font-size: 38px;
@@ -36,9 +36,9 @@
 }
 
 .b-sell__page__sidebar__valid {
-  background-color: #2ecc71;
+  background-color: var(--dark-grass);
   bottom: 0;
-  color: #fff;
+  color: var(--light-light-gray);
   font-size: 40px;
   padding: 10px;
   position: absolute;

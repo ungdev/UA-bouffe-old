@@ -20,7 +20,7 @@ export default class Index extends React.Component {
     return (
       <div className="b-chooser">
         <div className="b-chooser__title">
-          <span>UA {year} - Bouffe</span>
+          <h1>UA {year} - Bouffe</h1>
           <div className="b-chooser__link--stats" onClick={() => this.stats()}>stats</div>
         </div>
         <div className="b-chooser__link b-chooser__link--seller" onClick={() => this.sell()}>

@@ -1,5 +1,5 @@
 .b-sell__page__orders {
-  background-color: #34495e;
+  background-color: var(--dark-blue);
   height: 100%;
   min-width: 250px;
   overflow-y: auto;
@@ -7,7 +7,7 @@
 }
 
 .b-sell__page__orders__order {
-  color: #fff;
+  color: var(--light-light-gray);
   font-weight: 400;
   opacity: 1;
   padding: 10px 20px;
@@ -19,13 +19,13 @@
 }
 
 .b-sell__page__orders__order--pending {
-  background-color: #c0392b;
+  background-color: var(--dark-grapefruit);
 }
 
 .b-sell__page__orders__order--prepare {
-  background-color: #e67e22;
+  background-color: var(--dark-bittersweet);
 }
 
 .b-sell__page__orders__order--ready {
-  background-color: #27ae60;
+  background-color: var(--dark-grass);
 }

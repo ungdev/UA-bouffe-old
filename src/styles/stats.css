@@ -1,6 +1,6 @@
 .b-stats {
-  background-color: #1F2739;
-  color: #fff;
+  background-color: var(--dark-blue);
+  color: var(--light-light-gray);
   min-height: 100%;
 
   h1, h2 {
@@ -10,17 +10,17 @@
 
   h1 {
     font-size: 3em;
-    color: #FB667A;
+    color: var(--dark-pink);
   }
 
   h2 {
     font-size: 32px;
-    color: #4DC3FA;
+    color: var(--aqua);
   }
 }
 
 .b-stats__title {
-  background-color: #1F2739;
+  background-color: var(--dark-blue);
   height: 75px;
   position: absolute;
   text-align: center;
@@ -60,8 +60,6 @@
   margin-top: 100px;
 }
 
-/* TABLE */
-
 .b-stats__table__container {
   width: 80%;
   margin: 0 auto;
@@ -76,25 +74,6 @@
   display: block;
   overflow-y: scroll;
   height: 654px;
-}
-
-/* scrollbar */
-.b-stats__table tbody::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #1F2739;
-}
-.b-stats__table tbody::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #1F2739;
-}
-.b-stats__table tbody::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #FB667A;
 }
 
 .b-stats__table tr {
@@ -122,30 +101,23 @@
   text-align: center;
 }
 
-/* Background-color of the odd rows */
 .b-stats__table tr:nth-child(odd) {
-  background-color: #323C50;
+  background-color: var(--blue-grey-light);
 }
 
-/* Background-color of the even rows */
 .b-stats__table tr:nth-child(even) {
-  background-color: #2C3446;
+  background-color: var(--blue-grey);
 }
 
 .b-stats__table th {
-  background-color: #1F2739;
+  background-color: var(--dark-blue);
 }
 
-.b-stats__table td:first-child { color: #FB667A; }
+.b-stats__table td:first-child { color: var(--dark-pink); }
 
 .b-stats__table tr:hover {
-  background-color: #464A52;
-  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-  -moz-box-shadow: 0 6px 6px -6px #0E1119;
-  box-shadow: 0 6px 6px -6px #0E1119;
+  background-color: var(--dark-dark-gray);
 }
-
-/* PODIUM */
 
 .b-podium {
   text-align: center;
@@ -159,16 +131,16 @@
 }
 
 .b-podium--1 {
-  background-color: rgb(255,99,132);
+  background-color: var(--dark-pink);
   margin: 0 100px;
   height: 700px;
 }
 .b-podium--2 {
-  background-color: rgb(255, 206, 86);
+  background-color: var(--dark-sunflower);
   height: 500px;
 }
 .b-podium--3 {
-  background-color: rgb(54, 162, 235);
+  background-color: var(--aqua);
   height: 300px;
 }
 
@@ -183,6 +155,6 @@
 }
 
 .b-podium__text__code {
-  color: #333;
+  color: var(--dark-blue);
   margin-top: 15px;
 }

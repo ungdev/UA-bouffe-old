@@ -17,7 +17,7 @@ export default class LineChart extends React.Component {
         datasets: [{
           label: "My First dataset",
           backgroundColor: '#fff',
-          borderColor: '#FB667A',
+          borderColor: '#D670AC',
           showLine: true,
           fill: false,
           data: this.props.data
@@ -28,7 +28,7 @@ export default class LineChart extends React.Component {
           title: {
             display: true,
             text: this.props.name,
-            fontColor: '#4DC3FA',
+            fontColor: '#3BAFDA',
             fontSize: 32,
             fontStyle: '300'
           },

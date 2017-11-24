@@ -6,8 +6,8 @@
 }
 
 .b-sell__title {
-  background-color: #2c3e50;
-  color: #fff;
+  background-color: var(--dark-blue);
+  color: var(--light-light-gray);
   height: 75px;
   position: absolute;
   text-align: center;
@@ -45,7 +45,7 @@
 }
 
 .b-sell__title__priceType--switched {
-  background-color: #16a085;
+  background-color: var(--dark-lavender);
 }
 
 .b-sell__page {
@@ -66,8 +66,8 @@
 }
 
 .b-sell__page__tabs__tab {
-  background-color: #35415b;
-  color: #ffe500;
+  background-color: var(--blue-grey);
+  color: var(--dark-sunflower);
   cursor: pointer;
   flex: 1;
   height: 42px;
@@ -77,14 +77,14 @@
 }
 
 .b-sell__page__tabs__tab--active {
-  background-color: #ffe500;
-  color: #35415b;
+  background-color: var(--dark-sunflower);
+  color: var(--blue-grey);
 }
 
 .b-sell__page__items {
   align-content: flex-start;
   display: flex;
-  background-color: rgba(52, 73, 94, 0.5);
+  background-color: var(--blue-grey);
   flex: 1;
   flex-wrap: wrap;
   overflow-y: overlay;

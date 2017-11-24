@@ -48,6 +48,7 @@
     "lodash.clone": "^4.5.0",
     "normalize.css": "^4.2.0",
     "postcss": "^5.2.0",
+    "postcss-css-variables": "^0.8.0",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.13.0",
