@@ -1,16 +1,6 @@
 import React        from 'react';
 import { connect }  from 'react-redux';
 
-const mapStateToProps = state => {
-  return {
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-  };
-};
-
 class Keyboard extends React.Component {
   propTypes = {
     keys          : React.PropTypes.array,
@@ -58,4 +48,4 @@ class Keyboard extends React.Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Keyboard);
+export default connect(null, null)(Keyboard);

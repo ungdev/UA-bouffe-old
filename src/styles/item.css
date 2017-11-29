@@ -1,6 +1,7 @@
 .b-item {
   align-items:center;
-  background: rgba(255, 255, 255, .6);
+  background: var(--light-dark-gray);
+  color: var(--dark-blue);
   cursor: pointer;
   display: flex;
   height: 150px;

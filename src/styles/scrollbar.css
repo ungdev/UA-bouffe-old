@@ -1,0 +1,48 @@
+.b-stats__table tbody::-webkit-scrollbar-track,
+.b-prepare__orders__orders::-webkit-scrollbar-track,
+.b-sell__page__orders::-webkit-scrollbar-track,
+.b-sell__page__overflow::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: var(--dark-blue);
+}
+.b-stats__table tbody::-webkit-scrollbar,
+.b-prepare__orders__orders::-webkit-scrollbar,
+.b-sell__page__orders::-webkit-scrollbar,
+.b-sell__page__overflow::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: var(--dark-blue);
+}
+
+.b-prepare__orders__orders::-webkit-scrollbar-thumb,
+.b-stats__table tbody::-webkit-scrollbar-thumb,
+.b-sell__page__orders::-webkit-scrollbar-thumb,
+.b-sell__page__overflow::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+.b-prepare__orders__orders::-webkit-scrollbar-thumb
+{
+  background-color: var(--dark-sunflower);
+}
+
+.b-stats__table tbody::-webkit-scrollbar-thumb
+{
+  background-color: var(--dark-pink);
+}
+
+.b-sell__page__orders::-webkit-scrollbar-thumb,
+.b-sell__page__overflow::-webkit-scrollbar-thumb
+{
+  background-color: var(--aqua);
+}
+
+.b-sell__page__orders,
+.b-sell__page__overflow
+{
+  padding-right: 5px;
+}

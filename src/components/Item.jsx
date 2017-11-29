@@ -14,6 +14,8 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
+const IS_SUBCATEGORY_REGEX = new RegExp('^(boisson|promo)-', 'i');
+
 class Item extends React.Component {
   propTypes = {
     id            : React.PropTypes.string,
@@ -36,12 +38,17 @@ class Item extends React.Component {
 
   addItem() {
     const itemProps = {
-      id        : this.props.id,
-      name      : this.props.name,
-      price     : this.props.price,
-      lowerPrice: this.props.lowerPrice,
-      items     : this.props.items,
-      category  : this.props.category
+      id            : this.props.id,
+      name          : this.props.name,
+      price         : this.props.price,
+      lowerPrice    : this.props.lowerPrice,
+      items         : this.props.items,
+      category      : this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1),
+      statsCategory : ['crepes', 'croques', 'pizzas', 'sandwichs'].includes(this.props.category)
+                      ? this.props.category
+                      : IS_SUBCATEGORY_REGEX.test(this.props.id)
+                        ? this.props.id.split('-')[0]
+                        : null
     };
 
     if (this.props.items) {

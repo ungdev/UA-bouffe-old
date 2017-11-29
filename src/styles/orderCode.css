@@ -9,7 +9,7 @@
 
 .b-select_order_code {
   padding: 5px;
-  background-color: #EEE;
+  background-color: var(--light-gray);
   font-weight: normal;
   margin-bottom: 25px;
   font-size: 20px;

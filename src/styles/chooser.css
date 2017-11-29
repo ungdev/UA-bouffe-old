@@ -3,25 +3,25 @@
   font-weight: bold;
   height: 100%;
   font-size: 21px;
+  background-color: var(--dark-blue);
 }
 
 .b-chooser__title {
-  background-color: #2c3e50;
-  color: #fff;
-  height: 75px;
+  background-color: var(--dark-blue);
+  color: var(--dark-pink);
+  height: 100px;
   position: absolute;
   text-align: center;
   width: 100%;
 
-  > span {
+  > h1 {
     display: inline-block;
-    padding-top: 20px;
-    font-size: 28px;
+    font-weight: 300;
   }
 }
 
 .b-chooser__separator {
-  background-color: #2c3e50;
+  background-color: var(--dark-pink);
   height: 100%;
   width: 1px;
 }
@@ -29,7 +29,27 @@
 .b-chooser__link {
   cursor: pointer;
   flex-grow: 1;
-  padding-top: 275px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
+  color: var(--dark-jeans);
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.b-chooser__link:hover {
+  background-color: var(--blue-grey);
+}
+
+.b-chooser__link--stats {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 75px;
+  padding: 0;
+  padding-right: 20px;
 }

@@ -1,5 +1,5 @@
 .b-modal {
-  background: #fff;
+  background: var(--light-light-gray);
   display: flex;
   flex-direction: column;
   min-height: 200px;
@@ -14,16 +14,16 @@
 }
 
 .b-modal__button {
-  background: #2ecc71;
+  background: var(--dark-grass);
   border-radius: 2px;
   border: 0;
-  color: #fff;
+  color: var(--light-light-gray);
   cursor: pointer;
   padding: 15px;
   width: 100%;
 
   &.b-modal__button--cancel {
-    background-color: #e74c3c;
+    background-color: var(--dark-grapefruit);
   }
 }
 
@@ -46,8 +46,8 @@
   }
 
   span {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: var(--dark-grapefruit);
+    color: var(--light-light-gray);
     font-size: 44px;
     height: 50px;
     position: absolute;
@@ -73,8 +73,8 @@
 }
 
 .b-promo-modal__choices__category__choice {
-  background-color: #7f8c8d;
-  color: #fff;
+  background-color: var(--light-pink);
+  color: var(--light-light-gray);
   padding: 10px;
 
   &:not(:first-child) {
@@ -82,6 +82,6 @@
   }
 
   &--selected {
-    background-color: #f39c12;
+    background-color: var(--dark-lavender);
   }
 }
