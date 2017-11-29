@@ -111,19 +111,22 @@ class Prepare extends React.Component {
     // for each item, count per status and organize per category
     const ordersCounter = [];
     orders.map(order => {
+      var name = order.name.charAt(0).toUpperCase() + order.name.slice(1);
+      var category = order.category.charAt(0).toUpperCase() + order.category.slice(1);
+
       if (order.status != "ready") {
-        if (order.category == "general") {
-          if (!ordersCounter[order.name]) {
-            ordersCounter[order.name] = {prepare:0, pending:0}
-          }
-          ordersCounter[order.name][order.status]++;
-        }
-        else {
-          const category = order.category.charAt(0).toUpperCase() + order.category.slice(1); // In order to use the category with an uppercase char as the first later
+        if (category === "Canettes") {
           if (!ordersCounter[category]) {
             ordersCounter[category] = {prepare:0, pending:0}
           }
           ordersCounter[category][order.status]++;
+        }
+
+        else {
+          if (!ordersCounter[name]) {
+            ordersCounter[name] = {prepare:0, pending:0}
+          }
+          ordersCounter[name][order.status]++;
         }
       }
     })
