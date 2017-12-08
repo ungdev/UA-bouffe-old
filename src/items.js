@@ -168,7 +168,7 @@ const pizzaRoyale = {
 
 const pizzaBolognaise = {
   id        : 'pizza-bolognaise',
-  name      : 'Pizza Bolognaise',
+  name      : 'Bolognaise',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'
@@ -637,7 +637,7 @@ const tartineMiel = {
 
 const promoPizzaCannette = {
   id        : 'promo-pizza-canette',
-  name      : 'Pizza Boisson',
+  name      : 'Pizza + Boisson',
   price     : 500,
   lowerPrice: 450,
   items     : [
@@ -649,7 +649,7 @@ const promoPizzaCannette = {
 
 const promoSandwichCanette = {
   id        : 'promo-sandwich-canette-barre-ou-crepe',
-  name      : 'Sandwich Canette Barre/Crêpe',
+  name      : 'Sandwich + Boisson',
   price     : 400,
   lowerPrice: 350,
   items     : [
@@ -699,7 +699,7 @@ const promoBarreCanette = {
 
 const promoCrepesBoisson = {
   id        : 'promo-2crepes-boisson',
-  name      : 'Crêpe Salée+Sucrée Boisson',
+  name      : 'Crêpe Salée + Boisson',
   price     : 250,
   lowerPrice: 200,
   items     : [
@@ -711,7 +711,7 @@ const promoCrepesBoisson = {
 
 const promo3CroquesBoisson = {
   id        : 'promo-3croques-boisson',
-  name      : '3 Croques Boisson',
+  name      : '3 Croques + Boisson',
   price     : 450,
   lowerPrice: 400,
   items     : [
