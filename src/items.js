@@ -308,7 +308,7 @@ const boissonCanette = {
 
 const boissonMonsterEnergy = {
   id        : 'boisson-monster-energy',
-  name      : 'Monster',
+  name      : 'Monster Energy',
   price     : 250,
   lowerPrice: 200,
   category  : 'canettes'
@@ -316,7 +316,7 @@ const boissonMonsterEnergy = {
 
 const boissonMonsterAssault = {
   id        : 'boisson-monster-assault',
-  name      : 'Monster',
+  name      : 'Monster Assault',
   price     : 250,
   lowerPrice: 200,
   category  : 'canettes'
@@ -324,7 +324,7 @@ const boissonMonsterAssault = {
 
 const boissonMonsterUltra = {
   id        : 'boisson-monster-ultra',
-  name      : 'Monster',
+  name      : 'Monster Ultra',
   price     : 250,
   lowerPrice: 200,
   category  : 'canettes'
@@ -791,6 +791,7 @@ export {
   snackKitKat,
   snackTwix,
   snackMaltesers,
+  promoBarreCanette,
   tshirtUA,
   cableCinqMetres,
   cableSeptMetres,
@@ -849,6 +850,5 @@ export {
   promo2CroquesNutella,
   promoCrepesBoisson,
   promoPizzaCannette,
-  promoSandwichCanette,
-  promoBarreCanette
+  promoSandwichCanette
 };
