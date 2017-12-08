@@ -68,14 +68,19 @@ class Sell extends React.Component {
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'general' }
     );
 
-    const classesCroques = classNames(
+    const classesCanettes = classNames(
       'b-sell__page__tabs__tab',
-      { 'b-sell__page__tabs__tab--active': this.state.tab === 'croques' }
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'canettes' }
     );
 
     const classesCrepes = classNames(
       'b-sell__page__tabs__tab',
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'crepes' }
+    );
+
+    const classesCroques = classNames(
+      'b-sell__page__tabs__tab',
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'croques' }
     );
 
     const classesPizzas = classNames(
@@ -88,9 +93,9 @@ class Sell extends React.Component {
       { 'b-sell__page__tabs__tab--active': this.state.tab === 'sandwichs' }
     );
 
-    const classesCanettes = classNames(
+    const classesTartines = classNames(
       'b-sell__page__tabs__tab',
-      { 'b-sell__page__tabs__tab--active': this.state.tab === 'canettes' }
+      { 'b-sell__page__tabs__tab--active': this.state.tab === 'tartines' }
     );
 
     return (
@@ -116,6 +121,11 @@ class Sell extends React.Component {
                 Général
               </div>
               <div
+                className={classesCanettes}
+                onClick={e => this.changeTab(e.currentTarget, 'canettes')}>
+                Boissons
+              </div>
+              <div
                 className={classesCroques}
                 onClick={e => this.changeTab(e.currentTarget, 'croques')}>
                 Croques
@@ -137,9 +147,9 @@ class Sell extends React.Component {
                 Sandwichs
               </div>
               <div
-                className={classesCanettes}
-                onClick={e => this.changeTab(e.currentTarget, 'canettes')}>
-                Canettes
+                className={classesTartines}
+                onClick={e => this.changeTab(e.currentTarget, 'tartines')}>
+                Tartines
               </div>
             </div>
             <div className="b-sell__page__items dragscroll">

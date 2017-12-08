@@ -229,7 +229,7 @@
   color: var(--light-gray);
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: 10px auto;
   overflow: hidden;
   width: 98%;
   padding: 5px 5px 5px 10px;
