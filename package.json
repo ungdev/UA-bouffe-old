@@ -11,7 +11,8 @@
     "server:prod": "hz serve --bind 0.0.0.0 --secure no --permissions no --auto-create-collection yes --auto-create-index yes --allow-unauthenticated yes --allow-anonymous yes --serve-static ./dist --access-control-allow-origin '*' --schema-file .hz/schema.toml",
     "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
     "flow": "flow check --all \"src\"",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
