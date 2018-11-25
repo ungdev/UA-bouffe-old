@@ -12,7 +12,7 @@
     "dev": "concurrent \"npm run build:watch\" \"npm run server\"",
     "flow": "flow check --all \"src\"",
     "lint": "eslint src",
-    "start": "npm run server:prod"
+    "start": "npm run build:prod && npm run server:prod"
   },
   "repository": {
     "type": "git",
