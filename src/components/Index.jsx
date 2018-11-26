@@ -6,6 +6,10 @@ export default class Index extends React.Component {
     hashHistory.push('/sell');
   }
 
+  follow() {
+    hashHistory.push('/follow');
+  }
+
   prepare() {
     hashHistory.push('/prepare');
   }
@@ -25,6 +29,10 @@ export default class Index extends React.Component {
         </div>
         <div className="b-chooser__link b-chooser__link--seller" onClick={() => this.sell()}>
           Interface de vente
+        </div>
+        <div className="b-chooser__separator"></div>
+        <div className="b-chooser__link b-chooser__link--follow" onClick={() => this.follow()}>
+          Interface de suivi des commandes
         </div>
         <div className="b-chooser__separator"></div>
         <div className="b-chooser__link b-chooser__link--prepare" onClick={() => this.prepare()}>

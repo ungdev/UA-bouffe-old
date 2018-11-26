@@ -21,6 +21,7 @@ import { render } from 'react-dom';
 import App     from './components/App';
 import Index   from './components/Index';
 import Prepare from './components/Prepare';
+import Follow from './components/Follow'
 import Sell    from './components/Sell';
 import Stats   from './components/stats/Stats';
 
@@ -40,6 +41,7 @@ render((
       <Route path="/" component={App}>
         <Route path="sell" component={Sell} />
         <Route path="prepare" component={Prepare} />
+        <Route path="follow" component={Follow} />
         <Route path="stats" component={Stats} />
         <IndexRoute component={Index} />
       </Route>
