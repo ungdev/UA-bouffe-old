@@ -1,44 +1,5 @@
 /* Crêpes Salées */
 
-const crepeJambonFromage = {
-  id        : 'crepe-jambon-fromage',
-  name      : 'Crêpe Jambon Fromage',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
-const crepeSupplementOeuf = {
-  id        : 'crepe-salee-supplement-oeuf',
-  name      : 'Supplément Oeuf',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
-const crepeChevreEmmental = {
-  id        : 'crepe-chevre-emmental',
-  name      : 'Crêpe Chèvre Emmental',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
-const crepeChevreMiel = {
-  id        : 'crepe-chevre-miel',
-  name      : 'Crêpe Chèvre Miel',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
-const crepeTroisFromages = {
-  id        : 'crepe-trois-fromages',
-  name      : 'Crêpe Trois Fromages',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
 
 /* Crêpes Sucrées */
 
@@ -66,14 +27,6 @@ const crepeConfiture = {
   category  : 'crepes'
 };
 
-const crepeConfitureAbricot = {
-  id        : 'crepe-confiture-abricot',
-  name      : 'Crêpe Confiture Abricôt',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
 const crepeMiel = {
   id        : 'crepe-miel',
   name      : 'Crêpe Miel',
@@ -82,31 +35,8 @@ const crepeMiel = {
   category  : 'crepes'
 };
 
-const crepeCaramel = {
-  id        : 'crepe-caramel',
-  name      : 'Crêpe Caramel beurre sâlé',
-  price     : 50,
-  lowerPrice: 50,
-  category  : 'crepes'
-};
-
 /* Croques-Monsieur */
 
-const croqueNutella = {
-  id        : 'croque-nutella',
-  name      : 'Croque Nutella',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
-
-const croqueCremeJambonFromage = {
-  id        : 'croque-creme-jambon-fromage',
-  name      : 'Croque Crème Jambon Fromage',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
 
 const croqueJambonFromage = {
   id        : 'croque-jambon-fromage',
@@ -116,111 +46,16 @@ const croqueJambonFromage = {
   category  : 'croques'
 };
 
-const croquePouletCurry = {
-  id        : 'croque-poulet-curry',
-  name      : 'Croque Poulet Curry',
+const croqueTomateMozza = {
+  id        : 'croque-tomate-mozza',
+  name      : 'Croque Tomate Mozza',
   price     : 100,
   lowerPrice: 100,
   category  : 'croques'
 };
 
-const croquePoivronsMozza = {
-  id        : 'croque-poivrons-mozza-sauce-tomate',
-  name      : 'Croque Poivrons Mozza Sauce Tomate',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
-
-const croqueChevreMiel = {
-  id        : 'croque-chevre-miel',
-  name      : 'Croque Chèvre Miel',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
-
-const croqueTroisFromages = {
-  id        : 'croque-trois-fromages',
-  name      : 'Croque Trois Fromages',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
-
-const croqueChevreEmmental = {
-  id        : 'croque-chevre-emmental',
-  name      : 'Croque Chèvre Emmental',
-  price     : 100,
-  lowerPrice: 100,
-  category  : 'croques'
-};
 
 /* canettes */
-
-const boissonEau = {
-  id        : 'boisson-eau',
-  name      : 'Eau',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonCanette = {
-  id        : 'boisson-canette',
-  name      : 'Canette',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonMonsterEnergy = {
-  id        : 'boisson-monster-energy',
-  name      : 'Monster Energy',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonMonsterAssault = {
-  id        : 'boisson-monster-assault',
-  name      : 'Monster Assault',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonMonsterUltra = {
-  id        : 'boisson-monster-ultra',
-  name      : 'Monster Ultra',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonCafe = {
-  id        : 'boisson-cafe',
-  name      : 'Café',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonThe = {
-  id        : 'boisson-the',
-  name      : 'Thé',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
-const boissonChocolat = {
-  id        : 'boisson-chocolat',
-  name      : 'Chocolat',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
 
 
 const iceTea = {
@@ -327,14 +162,6 @@ const fantaOrange = {
   category  : 'canettes'
 };
 
-const theGlace = {
-  id        : 'the-glace',
-  name      : 'Thé Glacé',
-  price     : 60,
-  lowerPrice: 60,
-  category  : 'canettes'
-};
-
 /* Goodies */
 
 const tshirtUA = {
@@ -369,25 +196,12 @@ const promo3Croques = {
   price     : 200,
   lowerPrice: 200,
   items     : [
-    [ croqueJambonFromage, croqueChevreMiel, croqueTroisFromages ],
-    [ croqueJambonFromage, croqueChevreMiel, croqueTroisFromages ],
-    [ croqueJambonFromage, croqueChevreMiel, croqueTroisFromages ]
+    [ croqueJambonFromage, croqueTomateMozza ],
+    [ croqueJambonFromage, croqueTomateMozza ],
+    [ croqueJambonFromage, croqueTomateMozza ]
   ],
   category: 'croques'
-};
-
-const promo2CroquesNutella = {
-  id        : 'promo-2croques-nutella',
-  name      : '2 Croques + Nutella',
-  price     : 200,
-  lowerPrice: 200,
-  items     : [
-    [ croqueJambonFromage, croqueChevreMiel, croqueTroisFromages ],
-    [ croqueJambonFromage, croqueChevreMiel, croqueTroisFromages ],
-    [ croqueNutella ]
-  ],
-  category: 'croques'
-};
+}
 
 export {
   tshirtUA,
@@ -404,26 +218,11 @@ export {
   fantaOrange,
   oasisOrange,
   oasisTropical,
-  //boissonEau,
-  //theGlace,
-  //boissonMonsterEnergy,
-  //boissonMonsterUltra,
-  //boissonMonsterAssault,
-  //boissonCafe,
-  //boissonThe,
-  //boissonChocolat,
-  //crepeJambonFromage,
-  //crepeSupplementOeuf,
-  //crepeTroisFromages,
-  //crepeChevreMiel,
   crepeSucre,
   crepeConfiture,
   crepeNutella,
   crepeMiel,
   croqueJambonFromage,
-  croqueChevreMiel,
-  croqueTroisFromages,
-  //croqueNutella,
+  croqueTomateMozza,
   promo3Croques,
-  //promo2CroquesNutella
 };
