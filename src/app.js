@@ -1,7 +1,6 @@
 /* global document */
 import './styles/index.css';
 
-import Horizon from '@horizon/client';
 
 import {
   Router,
@@ -26,8 +25,6 @@ import Sell    from './components/Sell';
 import Stats   from './components/stats/Stats';
 
 import app from './reducers';
-
-window.hz = new Horizon();
 
 const logger = createLogger();
 const store  = createStore(

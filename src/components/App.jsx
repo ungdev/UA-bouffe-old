@@ -1,23 +1,30 @@
 import React       from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import io from 'socket.io-client'
 
 import { listenForOrders } from '../actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    setupOrders() {
-      dispatch(listenForOrders());
+    listenForOrders(socket) {
+      dispatch(listenForOrders(socket))
     }
   };
 };
 
 class App extends React.Component {
+
   componentDidMount() {
-    this.props.setupOrders();
+    this.socket = io.connect('localhost:3001')
+    this.socket.on('connect', () => {
+      console.log('Client has connected to the server!')
+      this.props.listenForOrders(this.socket)
+    })
   }
 
   render() {
-    return this.props.children;
+    this.props.children.props.socket = this.socket
+    return this.props.children
   }
 }
 

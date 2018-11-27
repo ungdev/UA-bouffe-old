@@ -1,7 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 
-import { closeModal } from '../actions';
+import { closeModal, clearOrder } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,12 +16,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(closeModal('cancel'));
     },
     onValidModal(order) {
-      const orders = window.hz('orders');
-
-      orders.update({
-        id     : order.id,
-        removed: true
-      });
+      dispatch(clearOrder(order.id, true))
 
       dispatch(closeModal('cancel'));
     }

@@ -1,3 +1,5 @@
+import axios from '../lib/axios'
+
 export const addItem = (item) => {
   return {
     type   : 'ADD_ITEM',
@@ -18,19 +20,31 @@ export const clearBasket = () => {
   };
 };
 
+export const addOrder = (item) => {
+  return async () => {
+    try {
+      await axios.post(`orders`, item)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
 export const sendBasket = (basket) => {
   return (dispatch) => {
-    const orders = window.hz('orders');
-
+    
     basket = basket
       .map(item => {
         delete item.id;
-        item.status  = 'pending';
-        item.created = new Date();
+        item.status  = 'pending'
         return item;
       });
 
-    orders.insert(basket);
+    for(let item of basket) {
+      console.log(item)
+      dispatch(addOrder(item))
+      
+    }
 
     return new Promise((resolve) => {
       setTimeout(() => {

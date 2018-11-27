@@ -4,6 +4,7 @@ import basket     from './basket';
 import lowerPrice from './lowerPrice';
 import modal      from './modal';
 import orders     from './orders';
+import allorders     from './allorders';
 import orderCode  from './orderCode';
 
 const app = combineReducers({
@@ -11,6 +12,7 @@ const app = combineReducers({
   lowerPrice,
   modal,
   orders,
+  allorders,
   orderCode
 });
 

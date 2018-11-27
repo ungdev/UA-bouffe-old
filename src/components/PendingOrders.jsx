@@ -2,7 +2,7 @@ import React       from 'react';
 import { connect } from 'react-redux';
 import classNames  from 'classnames';
 
-import { openModal } from '../actions';
+import { openModal, clearOrder } from '../actions'
 
 const mapStateToProps = state => {
   return {
@@ -14,7 +14,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onCancelOrder(order) {
       dispatch(openModal('cancel', order));
-    }
+    },
+    clearOrder: (id) => dispatch(clearOrder(id))
   };
 };
 
@@ -24,14 +25,12 @@ class PendingOrders extends React.Component {
     onCancelOrder: React.PropTypes.func
   };
 
-  startTimer(order) {
+  startTimer = (order) => {
     if (order.status === 'ready') {
-      const orders = window.hz('orders');
 
-      setTimeout(function(){orders.update({
-        id     : order.id,
-        removed: true
-      })}, 250);
+      setTimeout(() => {
+        this.props.clearOrder(order.id)
+      }, 250);
 
       return;
     }

@@ -10,29 +10,6 @@ import BiggestEaters    from './BiggestEaters';
 import SalesPieCharts   from './SalesPieCharts';
 
 class Stats extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      orders: []
-    };
-
-    this.onOrdersFetch = this.onOrdersFetch.bind(this);
-  }
-
-  componentDidMount() {
-    window.hz('orders').watch().subscribe(this.onOrdersFetch);
-  }
-
-  /**
-   * Handle orders updates
-   *
-   * @param  {array} orders
-   */
-  onOrdersFetch(orders) {
-    this.setState({orders});
-  }
-
   render() {
 
     return (
@@ -43,14 +20,20 @@ class Stats extends React.Component {
             Statistiques des ventes
           </h1>
         </div>
-        <Table orders={this.state.orders} />
-        <BiggestEaters orders={this.state.orders} />
-        <SalesLineCharts orders={this.state.orders} />
-        <SalesPieCharts orders={this.state.orders} />
+        <Table orders={this.props.orders} />
+        <BiggestEaters orders={this.props.orders} />
+        <SalesLineCharts orders={this.props.orders} />
+        <SalesPieCharts orders={this.props.orders} />
       </div>
     );
   }
 
 }
 
-export default connect(null, null)(Stats);
+const mapStateToProps = state => {
+  return {
+    orders: state.allorders
+  };
+};
+
+export default connect(mapStateToProps, null)(Stats);
