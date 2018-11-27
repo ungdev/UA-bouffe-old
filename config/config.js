@@ -1,3 +1,4 @@
 export const config = {
-  api: 'localhost:3001'
+  api: 'localhost:3001',
+  protocol: 'http'
 }
