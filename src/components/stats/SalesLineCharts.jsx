@@ -1,6 +1,7 @@
 import React  from 'react';
 
 import LineChart  from '../charts/LineChart';
+import moment from 'moment'
 
 export default class SalesLineChart extends React.Component {
   propTypes = {
@@ -8,13 +9,13 @@ export default class SalesLineChart extends React.Component {
   };
 
   render() {
-    // sort the orders by creation date and add 2 fields based on 'created'
+    // sort the orders by creation date and add 2 fields based on 'createdAt'
     const extendedOrders = this.props.orders
-      .sort((a, b) => a.created - b.created)
+      .sort((a, b) => a.createdAt - b.createdAt)
       .map(order => {
-        order.date = `${order.created.getDate()}/${order.created.getMonth()}`;
-        order.hour = order.created.getHours();
-        return order;
+        order.date = `${moment(order.createdAt).format('DD/MM')}`
+        order.hour = parseInt(moment(order.createdAt).format('HH'), 10)
+        return order
       });
     // count the number of days (the days follow each others during the UA)
     const numberOfDays = Array.from(new Set(extendedOrders.map(order => order.date)));

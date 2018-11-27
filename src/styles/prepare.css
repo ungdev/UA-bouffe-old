@@ -139,7 +139,7 @@
     border-left-color: var(--dark-grapefruit);
 
     .b-prepare__orders__orders__order--prepare & {
-      background-color: var(--dark-bittersweet);
+      background-color: #61170c;
     }
   }
 
@@ -147,7 +147,7 @@
     background-color: var(--dark-grapefruit);
 
     &:after {
-      border-left-color: var(--dark-grapefruit);
+      background-color: #e8563f;
     }
   }
 }

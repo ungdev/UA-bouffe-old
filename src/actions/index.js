@@ -14,7 +14,7 @@ import { closeModal, openModal, closeIntermediateModal } from './modal';
 
 import { lowerPrice } from './lowerPrice';
 
-import { order, listenForOrders, nextOrderCode, setPlayerCode, cleanPlayerCode } from './orders';
+import { order, listenForOrders, nextOrderCode, setPlayerCode, cleanPlayerCode, changeStatus, clearOrder } from './orders';
 
 export {
   addItem,
@@ -29,5 +29,7 @@ export {
   listenForOrders,
   nextOrderCode,
   setPlayerCode,
-  cleanPlayerCode
+  cleanPlayerCode,
+  changeStatus,
+  clearOrder
 };

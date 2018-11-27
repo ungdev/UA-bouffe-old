@@ -21,12 +21,7 @@ class Follow extends React.Component {
   }
 
   onChangeStatusClick(order, status) {
-    const orders = window.hz('orders');
-
-    orders.update({
-        id: order.id,
-        status
-      });
+    //this.props.changeStatus(order.id, status)
   }
 
   getOrders() {
@@ -34,26 +29,26 @@ class Follow extends React.Component {
       .filter(order => (order.status === 'pending') || (order.status === 'prepare') || (order.status === 'ready'))
 
     orders.sort((a, b) => {
-      if (a.created - b.created === 0) {
+      if (a.createdAt - b.createdAt === 0) {
         return a.name.localeCompare(b.name);
       }
 
-      return a.created - b.created;
+      return a.createdAt - b.createdAt;
     })
 
     const resOrders = [];
 
     orders.map(order => {
       if (resOrders[resOrders.length - 1] != undefined) {
-        if (resOrders[resOrders.length - 1]["created"] != undefined) {
-          if ((new Date(order.created).getTime() === new Date(resOrders[resOrders.length - 1]["created"]).getTime())
+        if (resOrders[resOrders.length - 1]["createdAt"] != undefined) {
+          if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1]["createdAt"]).getTime())
             && (order.code === resOrders[resOrders.length - 1]["code"])) {
               var temp = [resOrders[resOrders.length - 1], order];
               resOrders[resOrders.length - 1] = temp;
             }
           else resOrders.push(order);
         }
-        else if ((new Date(order.created).getTime() === new Date(resOrders[resOrders.length - 1][0].created).getTime())
+        else if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1][0].createdAt).getTime())
           && (order.code === resOrders[resOrders.length - 1][0].code)) {
             var temp = resOrders[resOrders.length - 1];
             temp.push(order);
@@ -129,13 +124,13 @@ class Follow extends React.Component {
                     const pendingClasses = classNames(
                       'b-prepare__orders__orders__order__status',
                       'b-prepare__orders__orders__order__pending',
-                      { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' }
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                     );
 
                     const prepareClasses = classNames(
                       'b-prepare__orders__orders__order__status',
                       'b-prepare__orders__orders__order__prepare',
-                      { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' }
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                     );
 
                     const readyClasses = classNames(
@@ -177,13 +172,13 @@ class Follow extends React.Component {
                             const pendingClasses = classNames(
                               'b-prepare__orders__orders__order__status',
                               'b-prepare__orders__orders__order__pending',
-                              { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' }
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                             );
 
                             const prepareClasses = classNames(
                               'b-prepare__orders__orders__order__status',
                               'b-prepare__orders__orders__order__prepare',
-                              { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' }
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                             );
 
                             const readyClasses = classNames(
