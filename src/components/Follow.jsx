@@ -124,7 +124,7 @@ class Follow extends React.Component {
                     const pendingClasses = classNames(
                       'b-prepare__orders__orders__order__status',
                       'b-prepare__orders__orders__order__pending',
-                      { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' || order.status === 'prepare' || order.status === 'ready' }
+                      { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                     );
 
                     const prepareClasses = classNames(
@@ -172,7 +172,7 @@ class Follow extends React.Component {
                             const pendingClasses = classNames(
                               'b-prepare__orders__orders__order__status',
                               'b-prepare__orders__orders__order__pending',
-                              { 'b-prepare__orders__orders__order__status--active': order.status === 'pending' || order.status === 'prepare' || order.status === 'ready' }
+                              { 'b-prepare__orders__orders__order__status--active': order.status === 'prepare' || order.status === 'ready' }
                             );
 
                             const prepareClasses = classNames(

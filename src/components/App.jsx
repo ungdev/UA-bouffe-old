@@ -2,7 +2,8 @@ import React       from 'react';
 import { connect } from 'react-redux'
 import io from 'socket.io-client'
 
-import { listenForOrders } from '../actions';
+import { listenForOrders } from '../actions'
+import { config } from '../../config/config'
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
 class App extends React.Component {
 
   componentDidMount() {
-    this.socket = io.connect('localhost:3001')
+    this.socket = io.connect(config.api)
     this.socket.on('connect', () => {
       console.log('Client has connected to the server!')
       this.props.listenForOrders(this.socket)
