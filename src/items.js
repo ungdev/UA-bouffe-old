@@ -63,7 +63,8 @@ const iceTea = {
   name      : 'Ice Tea',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const coca = {
@@ -71,7 +72,8 @@ const coca = {
   name      : 'Coca Cola',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const oasisTropical = {
@@ -79,7 +81,8 @@ const oasisTropical = {
   name      : 'Oasis Tropical',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const oasisOrange = {
@@ -87,7 +90,8 @@ const oasisOrange = {
   name      : 'Oasis Orange',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const sprite = {
@@ -95,7 +99,8 @@ const sprite = {
   name      : 'Sprite',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const oasisPCF = {
@@ -103,7 +108,8 @@ const oasisPCF = {
   name      : 'Oasis Pomme Cassis Framboise',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const orangina = {
@@ -111,7 +117,8 @@ const orangina = {
   name      : 'Orangina',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const sevenUp = {
@@ -119,7 +126,8 @@ const sevenUp = {
   name      : '7Up',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const cocaCherry = {
@@ -127,7 +135,8 @@ const cocaCherry = {
   name      : 'Coca Cherry',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const cocaZero = {
@@ -135,7 +144,8 @@ const cocaZero = {
   name      : 'Coca Zéro',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const schweppesAgrum = {
@@ -143,7 +153,8 @@ const schweppesAgrum = {
   name      : 'Schweppes Agrum',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const minuteMaidPomme = {
@@ -151,7 +162,8 @@ const minuteMaidPomme = {
   name      : 'Minute Maid Pomme',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 const fantaOrange = {
@@ -159,7 +171,8 @@ const fantaOrange = {
   name      : 'Fanta Orange',
   price     : 60,
   lowerPrice: 60,
-  category  : 'canettes'
+  category  : 'canettes',
+  noPrep    : true,
 };
 
 /* Goodies */
@@ -169,7 +182,8 @@ const tshirtUA = {
   name      : 'TshirtUA',
   price     : 1000,
   lowerPrice: 1000,
-  category  : 'general'
+  category  : 'general',
+  noPrep    : true,
 };
 
 const cableSeptMetres = {
@@ -177,7 +191,8 @@ const cableSeptMetres = {
   name      : 'Câble Ethernet (7m)',
   price     : 1000,
   lowerPrice: 1000,
-  category  : 'general'
+  category  : 'general',
+  noPrep    : true,
 };
 
 const cableCinqMetres = {
@@ -185,7 +200,8 @@ const cableCinqMetres = {
   name      : 'Câble Ethernet (5m)',
   price     : 700,
   lowerPrice: 700,
-  category  : 'general'
+  category  : 'general',
+  noPrep    : true,
 };
 
 /* Promotions */
@@ -199,6 +215,28 @@ const promo3Croques = {
     [ croqueJambonFromage, croqueTomateMozza ],
     [ croqueJambonFromage, croqueTomateMozza ],
     [ croqueJambonFromage, croqueTomateMozza ]
+  ],
+  category: 'croques'
+}
+
+const boissonCanette = {
+  id        : 'boisson-canette',
+  name      : 'Canette',
+  price     : 100,
+  lowerPrice: 100,
+  category  : 'canettes'
+};
+
+const promo3CroquesPlusCanette = {
+  id        : 'promo-3croquesCanette',
+  name      : '3 Croques + Canette',
+  price     : 300,
+  lowerPrice: 300,
+  items     : [
+    [ croqueJambonFromage, croqueTomateMozza ],
+    [ croqueJambonFromage, croqueTomateMozza ],
+    [ croqueJambonFromage, croqueTomateMozza ],
+    [ boissonCanette ]
   ],
   category: 'croques'
 }
@@ -225,4 +263,5 @@ export {
   croqueJambonFromage,
   croqueTomateMozza,
   promo3Croques,
+  promo3CroquesPlusCanette,
 };

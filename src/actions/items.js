@@ -35,9 +35,10 @@ export const sendBasket = (basket) => {
     
     basket = basket
       .map(item => {
-        delete item.id;
-        item.status  = 'pending'
-        return item;
+        delete item.id
+        item.status  = item.noPrep ? 'ready' : 'pending'
+        delete item.noPrep
+        return item
       });
 
     for(let item of basket) {

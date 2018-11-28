@@ -18,4 +18,6 @@
 
 .b-order_code__keyboards {
   display: flex !important;
+  justify-content: space-around;
+  align-items: center;
 }

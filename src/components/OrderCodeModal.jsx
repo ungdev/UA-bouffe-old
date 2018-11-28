@@ -35,15 +35,21 @@ class OrderCodeModal extends React.Component {
 
   state = {
     letter: null,
-    number: null
+    number: ''
   };
 
   onLetterChange(letter) {
-    this.setState({letter});
+    this.setState({letter})
   }
 
   onNumberChange(number) {
-    this.setState({number});
+    if(number === '<-') {
+      if(number === '') return
+      this.setState({ number : this.state.number.substr(0, this.state.number.length - 1) })
+      return
+    }
+    if(this.state.number.length > 2) return
+    this.setState({ number : `${this.state.number}${number}` })
   }
 
   onSubmitOrderCode() {

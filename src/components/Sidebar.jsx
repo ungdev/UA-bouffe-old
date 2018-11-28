@@ -65,7 +65,9 @@ class Sell extends React.Component {
             );
           })}
         </div>
-        <div className="b-sell__page__sidebar__valid" onClick={() => this.props.onSendBasket()}>
+        <div className="b-sell__page__sidebar__valid" onClick={() => {
+          if (this.getTotalPrice() > 0) this.props.onSendBasket()
+        }}>
           <span>
             {this.getTotalPrice()}€
           </span>

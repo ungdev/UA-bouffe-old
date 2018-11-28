@@ -145,7 +145,7 @@ class Follow extends React.Component {
 
                     return (
                       <div className={orderClasses} ref={order.id}>
-                        <div className="b-prepare__orders__orders__order__name">#{order.code} {orderName}</div>
+                        <div className="b-prepare__orders__orders__order__name">#{order.code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}</div>
                         <div
                           className={pendingClasses}
                           onClick={() => this.onChangeStatusClick(order, 'pending')}>
@@ -193,7 +193,8 @@ class Follow extends React.Component {
 
                             return (
                               <div className={orderClasses} ref={order.id}>
-                                <div className="b-prepare__orders__orders__order__name">#{order.code} {orderName}</div>
+                                <div className="b-prepare__orders__orders__order__name">#{order.code} 
+                                {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}</div>
                                 <div
                                   className={pendingClasses}
                                   onClick={() => this.onChangeStatusClick(order, 'pending')}>

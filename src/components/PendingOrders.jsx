@@ -97,7 +97,7 @@ class PendingOrders extends React.Component {
                   onMousedown={() => this.startTimer(order)}
                   onTouchEnd={() => this.stopTimer()}
                   onMouseUp={() => this.stopTimer()}>
-                  #{order.code} {orderName}
+                  #{order.code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}
                 </div>
               );
             })

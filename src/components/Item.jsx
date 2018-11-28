@@ -44,6 +44,7 @@ class Item extends React.Component {
       lowerPrice    : this.props.lowerPrice,
       items         : this.props.items,
       category      : this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1),
+      noPrep         : this.props.noPrep,
       statsCategory : ['crepes', 'croques', 'pizzas', 'sandwichs'].includes(this.props.category)
                       ? this.props.category
                       : IS_SUBCATEGORY_REGEX.test(this.props.id)
