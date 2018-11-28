@@ -46,13 +46,29 @@ const croqueJambonFromage = {
   category  : 'croques'
 };
 
-const croqueTomateMozza = {
-  id        : 'croque-tomate-mozza',
-  name      : 'Croque Tomate Mozza',
+const croqueNutella = {
+  id        : 'croque-nutella',
+  name      : 'Croque Nutella',
   price     : 100,
   lowerPrice: 100,
   category  : 'croques'
-};
+}
+
+const croqueTroisFromage = {
+  id        : 'croque-trois-fromage',
+  name      : 'Croque Trois Fromage',
+  price     : 100,
+  lowerPrice: 100,
+  category  : 'croques'
+}
+
+const croqueSaucisseFromage = {
+  id        : 'croque-saucisse-fromage',
+  name      : 'Croque Saucisse Fromage',
+  price     : 100,
+  lowerPrice: 100,
+  category  : 'croques'
+}
 
 
 /* canettes */
@@ -212,9 +228,9 @@ const promo3Croques = {
   price     : 200,
   lowerPrice: 200,
   items     : [
-    [ croqueJambonFromage, croqueTomateMozza ],
-    [ croqueJambonFromage, croqueTomateMozza ],
-    [ croqueJambonFromage, croqueTomateMozza ]
+    [ croqueSaucisseFromage, croqueTroisFromage, croqueNutella ],
+    [ croqueSaucisseFromage, croqueTroisFromage, croqueNutella ],
+    [ croqueSaucisseFromage, croqueTroisFromage, croqueNutella ]
   ],
   category: 'croques'
 }
@@ -227,7 +243,7 @@ const boissonCanette = {
   category  : 'canettes'
 };
 
-const promo3CroquesPlusCanette = {
+/*const promo3CroquesPlusCanette = {
   id        : 'promo-3croquesCanette',
   name      : '3 Croques + Canette',
   price     : 300,
@@ -239,29 +255,34 @@ const promo3CroquesPlusCanette = {
     [ boissonCanette ]
   ],
   category: 'croques'
-}
+}*/
 
 export {
-  tshirtUA,
-  cableCinqMetres,
-  cableSeptMetres,
+  //tshirtUA,
+  //cableCinqMetres,
+  //cableSeptMetres,
   orangina,
   sevenUp,
   coca,
   cocaCherry,
   cocaZero,
+  sprite,
+  oasisPCF,
   schweppesAgrum,
   iceTea,
   minuteMaidPomme,
   fantaOrange,
   oasisOrange,
   oasisTropical,
-  crepeSucre,
-  crepeConfiture,
-  crepeNutella,
-  crepeMiel,
-  croqueJambonFromage,
-  croqueTomateMozza,
+  //crepeSucre,
+  //crepeConfiture,
+  //crepeNutella,
+  //crepeMiel,
+  //croqueJambonFromage,
+  croqueNutella,
+  croqueTroisFromage,
+  croqueSaucisseFromage,
+  //croqueTomateMozza,
   promo3Croques,
-  promo3CroquesPlusCanette,
+  //promo3CroquesPlusCanette,
 };
