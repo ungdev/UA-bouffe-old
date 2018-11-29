@@ -23,7 +23,9 @@ export const clearBasket = () => {
 export const addOrder = (item) => {
   return async () => {
     try {
-      await axios.post(`orders`, item)
+      await axios.post(`orders`, {
+        ...item, items: JSON.stringify(item.items)
+      })
     } catch (err) {
       console.log(err)
     }

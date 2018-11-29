@@ -129,7 +129,7 @@ class Follow extends React.Component {
 
                     const orderClasses = `b-prepare__orders__orders__order b-prepare__orders__orders__order--${order.status}`;
 
-                    const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
+                    const orderName = order.items.length > 0 ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
 
                     return (
                       <div className={orderClasses} ref={order.id}>
@@ -177,7 +177,7 @@ class Follow extends React.Component {
 
                             const orderClasses = `b-prepare__orders__orders__order b-prepare__orders__orders__order--${order.status}`;
 
-                            const orderName = order.items ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
+                            const orderName = order.items.length > 0 ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
 
                             return (
                               <div className={orderClasses} ref={order.id}>

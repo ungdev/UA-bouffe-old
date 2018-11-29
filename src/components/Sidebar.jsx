@@ -44,7 +44,7 @@ class Sell extends React.Component {
       <div className="b-sell__page__sidebar">
         <div className="b-sell__page__overflow">
           {this.props.basket.map((item, i) => {
-            const name = item.items ?
+            const name = item.items.length > 0 ?
               item.items.map(i => i.name).join(', ') :
               item.name;
 

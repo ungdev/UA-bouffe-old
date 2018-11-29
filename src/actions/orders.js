@@ -64,6 +64,9 @@ export const listenForOrders = (socket) => {
         if(a.id > b.id) return -1
         if(a.id < b.id) return 1
         return 0
+      }).map(order => {
+        const items = JSON.parse(order.items)
+        return { ...order, items }
       })
       dispatch(orders(o))
       dispatch(allorders(o))

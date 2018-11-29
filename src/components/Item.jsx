@@ -55,6 +55,7 @@ class Item extends React.Component {
     if (this.props.items) {
       this.props.onShowPromotionModalClick(itemProps);
     } else {
+      itemProps.items = []
       this.props.onAddItemClick(itemProps);
     }
   }
