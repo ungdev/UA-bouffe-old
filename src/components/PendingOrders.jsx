@@ -1,6 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
-import classNames  from 'classnames';
+import classNames  from 'classnames'
+import moment from 'moment'
 
 import { openModal, clearOrder } from '../actions'
 
@@ -53,33 +54,27 @@ class PendingOrders extends React.Component {
   render() {
     const ordersPending = this.props.orders.filter(order => order.status === "pending");
     ordersPending.sort((a, b) => {
-      if (a.created - b.created === 0) {
-        return a.name.localeCompare(b.name);
-      }
-
-      return b.created - a.created;
-    });
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
     const ordersInPrep = this.props.orders.filter(order => order.status === "prepare");
     ordersInPrep.sort((a, b) => {
-      if (a.created - b.created === 0) {
-        return a.name.localeCompare(b.name);
-      }
-
-      return a.created - b.created;
-    });
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
     const ordersReady = this.props.orders.filter(order => order.status === "ready");
     ordersReady.sort((a, b) => {
-      if (a.created - b.created === 0) {
-        return a.name.localeCompare(b.name);
-      }
-
-      return a.created - b.created;
-    });
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
     const orders = [...ordersReady, ...ordersInPrep, ...ordersPending];
-
+    console.log(orders)
     return (
       <div className="b-sell__page__orders">
           {orders.map(order => {
