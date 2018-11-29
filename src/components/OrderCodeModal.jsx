@@ -45,10 +45,11 @@ class OrderCodeModal extends React.Component {
   onNumberChange(number) {
     if(number === '<-') {
       if(number === '') return
-      this.setState({ number : this.state.number.substr(0, this.state.number.length - 1) })
+      let n = this.state.number.substr(0, this.state.number.length - 1)
+      this.setState({ number: n ? n : '' })
       return
     }
-    if(this.state.number.length > 2) return
+    if(this.state.number && this.state.number.length > 2) return
     this.setState({ number : `${this.state.number}${number}` })
   }
 
@@ -56,7 +57,7 @@ class OrderCodeModal extends React.Component {
     const code = (this.state.letter && this.state.number) ? `${this.state.letter}${this.state.number}` : null;
     this.setState({
       letter: null,
-      number: null
+      number: ''
     });
     this.props.onSubmitOrderCode(code);
   }
