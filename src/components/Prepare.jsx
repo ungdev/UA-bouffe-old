@@ -1,10 +1,11 @@
-import React       from 'react';
-import { connect } from 'react-redux';
-import { Link }    from 'react-router';
+import React       from 'react'
+import { connect } from 'react-redux'
+import { Link }    from 'react-router'
 import classNames  from 'classnames'
 import { changeStatus } from '../actions'
+import moment from 'moment'
 
-import AppBarTimer   from './AppBarTimer';
+import AppBarTimer   from './AppBarTimer'
 
 const mapStateToProps = state => {
   return {
@@ -26,49 +27,14 @@ class Prepare extends React.Component {
   }
 
   getOrders() {
-    const orders = this.props.orders
-      .filter(order => {
-        if (this.state.tab === 'notReady') {
-          return ((order.status === 'pending') || (order.status === 'prepare'));
-        }
-        else return order.status === this.state.tab;
-      })
-      .map(order => {
-        return order;
-      });
-
+    const orders = this.props.orders.filter(order => order.status === "pending" || order.status === "prepare" || order.status === "ready")
     orders.sort((a, b) => {
-      if (a.createdAt - b.createdAt === 0) {
-        return a.name.localeCompare(b.name);
-      }
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
-      return a.createdAt - b.createdAt;
-    });
-
-    const resOrders = [];
-
-    orders.map(order => {
-      if (resOrders[resOrders.length - 1] != undefined) {
-        if (resOrders[resOrders.length - 1].createdAt != undefined) {
-          if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1].createdAt).getTime())
-            && (order.code === resOrders[resOrders.length - 1]["code"])) {
-              var temp = [resOrders[resOrders.length - 1], order];
-              resOrders[resOrders.length - 1] = temp;
-            }
-          else resOrders.push(order);
-        }
-        else if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1][0].createdAt).getTime())
-          && (order.code === resOrders[resOrders.length - 1][0].code)) {
-            var temp = resOrders[resOrders.length - 1];
-            temp.push(order);
-            resOrders[resOrders.length - 1] = temp;
-          }
-        else resOrders.push(order);
-      }
-      else resOrders.push(order);
-    });
-
-    return resOrders;
+    return orders
   }
 
   changeTab(elem, tab) {
