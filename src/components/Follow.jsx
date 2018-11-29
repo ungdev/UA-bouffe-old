@@ -1,7 +1,8 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 import { Link }    from 'react-router';
-import classNames  from 'classnames';
+import classNames  from 'classnames'
+import moment from 'moment'
 
 import AppBarTimer   from './AppBarTimer';
 
@@ -25,41 +26,28 @@ class Follow extends React.Component {
   }
 
   getOrders() {
-    const orders = this.props.orders
-      .filter(order => (order.status === 'pending') || (order.status === 'prepare') || (order.status === 'ready'))
-
-    orders.sort((a, b) => {
-      if (a.createdAt - b.createdAt === 0) {
-        return a.name.localeCompare(b.name);
-      }
-
-      return a.createdAt - b.createdAt;
+    const ordersPending = this.props.orders.filter(order => order.status === "pending")
+    ordersPending.sort((a, b) => {
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
     })
 
-    const resOrders = [];
+    const ordersInPrep = this.props.orders.filter(order => order.status === "prepare")
+    ordersInPrep.sort((a, b) => {
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
-    orders.map(order => {
-      if (resOrders[resOrders.length - 1] != undefined) {
-        if (resOrders[resOrders.length - 1]["createdAt"] != undefined) {
-          if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1]["createdAt"]).getTime())
-            && (order.code === resOrders[resOrders.length - 1]["code"])) {
-              var temp = [resOrders[resOrders.length - 1], order];
-              resOrders[resOrders.length - 1] = temp;
-            }
-          else resOrders.push(order);
-        }
-        else if ((new Date(order.createdAt).getTime() === new Date(resOrders[resOrders.length - 1][0].createdAt).getTime())
-          && (order.code === resOrders[resOrders.length - 1][0].code)) {
-            var temp = resOrders[resOrders.length - 1];
-            temp.push(order);
-            resOrders[resOrders.length - 1] = temp;
-          }
-        else resOrders.push(order);
-      }
-      else resOrders.push(order);
-    });
+    const ordersReady = this.props.orders.filter(order => order.status === "ready")
+    ordersReady.sort((a, b) => {
+      if (moment(a.createdAt).isAfter(b.createdAt)) return 1
+      if (moment(a.createdAt).isBefore(b.createdAt)) return -1
+      return 0
+    })
 
-    return resOrders;
+    return [...ordersReady, ...ordersInPrep, ...ordersPending]
   }
 
   changeTab(elem, tab) {
