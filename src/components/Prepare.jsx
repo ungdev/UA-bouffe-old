@@ -27,12 +27,19 @@ class Prepare extends React.Component {
   }
 
   getOrders() {
-    const orders = this.props.orders.filter(order => order.status === "pending" || order.status === "prepare" || order.status === "ready")
+    let orders = this.props.orders.filter(order => order.status === "pending" || order.status === "prepare" || order.status === "ready")
     orders.sort((a, b) => {
       if (moment(a.createdAt).isAfter(b.createdAt)) return 1
       if (moment(a.createdAt).isBefore(b.createdAt)) return -1
       return 0
     })
+
+    orders = orders.filter(order => {
+      return this.state.tab === 'notReady' ? 
+        order.status === "pending" || order.status === "prepare" :
+        order.status === "ready"
+      }
+    )
 
     return orders
   }
