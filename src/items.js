@@ -485,7 +485,7 @@ const promo3CroquesBoisson = {
     [ croqueJambonFromage, croqueChevreMiel, croqueTomateMozza ],
     [ croqueJambonFromage, croqueChevreMiel, croqueTomateMozza ],
     [ croqueJambonFromage, croqueChevreMiel, croqueTomateMozza ],
-    [ boissonThe, boissonCafe, boissonChocolat, theGlace, boissonEau, boissonCanette ]
+    [ boissonThe, boissonCafe, boissonChocolat, boissonEau, boissonCanette ]
   ],
   category: 'croques'
 };
@@ -510,7 +510,7 @@ const promoCrepesBoisson = {
   lowerPrice: 200,
   items     : [
     [ crepeJambonFromage, crepeComplete, crepeChevreMiel ],
-    [ boissonThe, boissonCafe, boissonChocolat, theGlace, boissonEau, boissonCanette ]
+    [ boissonThe, boissonCafe, boissonChocolat, boissonEau, boissonCanette ]
   ],
   category: 'crepes'
 };
@@ -522,7 +522,7 @@ const promoPizzaCannette = {
   lowerPrice: 400,
   items     : [
     [ pizzaRoyale, pizzaChorizo, pizzaChevreLardons, pizzaJambonEmmental ],
-    [ boissonThe, boissonCafe, boissonChocolat, theGlace, boissonEau, boissonCanette ]
+    [ boissonThe, boissonCafe, boissonChocolat, boissonEau, boissonCanette ]
   ],
   category: 'pizzas'
 };
@@ -534,7 +534,7 @@ const promoBarreCanette = {
   lowerPrice: 110,
   items     : [
     [ snackBar ],
-    [ theGlace, boissonCanette ]
+    [ boissonCanette ]
   ],
   category: 'general'
 };
