@@ -151,7 +151,7 @@ const snackBar = {
   name      : 'Snack Bar',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -160,7 +160,7 @@ const snackBounty = {
   name      : 'Bounty',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -169,7 +169,7 @@ const snackSnickers = {
   name      : 'Snickers',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -178,7 +178,7 @@ const snackKinderBueno = {
   name      : 'Kinder Bueno',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -187,7 +187,7 @@ const snackKitKat = {
   name      : 'Kit Kat',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -196,7 +196,7 @@ const snackTwix = {
   name      : 'Twix',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -205,7 +205,7 @@ const snackMaltesers = {
   name      : 'Maltesers',
   price     : 100,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -214,7 +214,7 @@ const snackCompote = {
   name      : 'Pom\'potes',
   price     : 60,
   lowerPrice: 50,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -223,7 +223,7 @@ const snackBonbon = {
   name      : 'Bonbons',
   price     : 70,
   lowerPrice: 70,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -232,7 +232,7 @@ const snackChips = {
   name      : 'Chips',
   price     : 60,
   lowerPrice: 30,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -241,7 +241,7 @@ const snackSaucisson = {
   name      : 'Saucisson',
   price     : 150,
   lowerPrice: 0,
-  category  : 'general',
+  category  : 'snacks',
   noPrep    : true
 };
 
@@ -335,7 +335,7 @@ const pizzaRoyale = {
   id        : 'pizza-royale',
   name      : 'Pizza Royale',
   price     : 450,
-  lowerPrice: 300,
+  lowerPrice: 350,
   category  : 'pizzas'
 };
 
@@ -402,22 +402,67 @@ const crepeNutella = {
   price     : 100,
   lowerPrice: 50,
   category  : 'crepes'
-};
+}
+const crepeFraise = {
+  id        : 'crepe-fraise',
+  name      : 'Crêpe Confiture Fraise',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'crepes'
+}
+const crepeAbricot = {
+  id        : 'crepe-abricot',
+  name      : 'Crêpe Confiture Abricot',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'crepes'
+}
+const crepeMiel = {
+  id        : 'crepe-miel',
+  name      : 'Crêpe Miel',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'crepes'
+}
 const croqueNutella = {
   id        : 'croque-nutella',
   name      : 'Croque Nutella',
   price     : 100,
   lowerPrice: 50,
   category  : 'croques'
-};
+}
 
-const tartine = {
-  id        : 'tartine',
-  name      : 'Tartine',
+const tartineNutella = {
+  id        : 'tartine-nutella',
+  name      : 'Tartine Nutella',
   price     : 100,
   lowerPrice: 50,
-  category  : 'crepes'
-};
+  category  : 'snacks'
+}
+
+const tartineFraise = {
+  id        : 'tartine-fraise',
+  name      : 'Tartine Confiture Fraise',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'snacks'
+}
+
+const tartineAbricot = {
+  id        : 'tartine-abricot',
+  name      : 'Tartine Confiture Abricot',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'snacks'
+}
+
+const tartineMiel = {
+  id        : 'tartine-miel',
+  name      : 'Tartine Miel',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'snacks'
+}
 
 /* Goodies */
 
@@ -426,7 +471,7 @@ const tshirtUA = {
   name      : 'TshirtUA',
   price     : 1500,
   lowerPrice: 1000,
-  category  : 'general'
+  category  : 'goodies'
 };
 
 const pins = {
@@ -434,7 +479,7 @@ const pins = {
   name      : 'Pins',
   price     : 100,
   lowerPrice: 100,
-  category  : 'general'
+  category  : 'goodies'
 }
 
 const cableSeptMetres = {
@@ -442,7 +487,7 @@ const cableSeptMetres = {
   name      : 'Câble Ethernet (7m)',
   price     : 1000,
   lowerPrice: 1000,
-  category  : 'general'
+  category  : 'goodies'
 };
 
 const cableCinqMetres = {
@@ -450,7 +495,7 @@ const cableCinqMetres = {
   name      : 'Câble Ethernet (5m)',
   price     : 700,
   lowerPrice: 700,
-  category  : 'general'
+  category  : 'goodies'
 };
 
 const multiprise = {
@@ -458,7 +503,7 @@ const multiprise = {
   name      : 'Multiprise',
   price     : 500,
   lowerPrice: 500,
-  category  : 'general'
+  category  : 'goodies'
 };
 
 /* Promotions */
@@ -494,7 +539,7 @@ const promo2CroquesNutella = {
   id        : 'promo-2croques-nutella',
   name      : '2 Croques + Nutella',
   price     : 300,
-  lowerPrice: 200,
+  lowerPrice: 150,
   items     : [
     [ croqueJambonFromage, croqueChevreMiel, croqueTomateMozza ],
     [ croqueJambonFromage, croqueChevreMiel, croqueTomateMozza ],
@@ -529,51 +574,111 @@ const promoPizzaCannette = {
 
 const promoBarreCanette = {
   id        : 'promo-barre-canette',
-  name      : 'Barre Canette',
+  name      : 'Barre + Canette',
   price     : 170,
   lowerPrice: 110,
   items     : [
     [ snackBar ],
     [ boissonCanette ]
   ],
-  category: 'general'
+  category: 'snacks',
+  noPrep: true
 };
 
-const promoNutCafe = {
-  id        : 'promo-nut-cafe',
-  name      : 'Nutella + Café',
+const promoNutCafeThe = {
+  id        : 'promo-nut-cafe-the',
+  name      : 'Nutella + Café/Thé',
   price     : 120,
   lowerPrice: 70,
   items     : [
-    [ crepeNutella, croqueNutella, tartine ],
-    [ boissonCafe ]
+    [ crepeNutella, croqueNutella, tartineNutella ],
+    [ boissonCafe, boissonThe ]
   ],
-  category: 'general'
-};
+  category: 'snacks'
+}
 
-const promoNutThe = {
-  id        : 'promo-nut-the',
-  name      : 'Nutella + Thé',
+const promoAbrCafeThe = {
+  id        : 'promo-abr-cafe-the',
+  name      : 'Confiture Abricot + Café/Thé',
   price     : 120,
   lowerPrice: 70,
   items     : [
-    [ crepeNutella, croqueNutella, tartine ],
-    [ boissonThe ]
+    [ crepeAbricot, tartineAbricot ],
+    [ boissonCafe, boissonThe ]
   ],
-  category: 'general'
-};
+  category: 'snacks'
+}
 
+const promoFraCafeThe = {
+  id        : 'promo-fra-cafe-the',
+  name      : 'Confiture Fraise + Café/Thé',
+  price     : 120,
+  lowerPrice: 70,
+  items     : [
+    [ crepeFraise, tartineFraise ],
+    [ boissonCafe, boissonThe ]
+  ],
+  category: 'snacks'
+}
+
+const promoMielCafeThe = {
+  id        : 'promo-miel-cafe-the',
+  name      : 'Miel + Café/Thé',
+  price     : 120,
+  lowerPrice: 70,
+  items     : [
+    [ crepeMiel, tartineMiel ],
+    [ boissonCafe, boissonThe ]
+  ],
+  category: 'snacks'
+}
 const promoNutChocolat = {
   id        : 'promo-nut-chocolat',
   name      : 'Nutella + Chocolat',
   price     : 170,
   lowerPrice: 100,
   items     : [
-    [ crepeNutella, croqueNutella, tartine ],
+    [ crepeNutella, croqueNutella, tartineNutella ],
     [ boissonChocolat ]
   ],
-  category: 'general'
-};
+  category: 'snacks'
+}
+
+const promoFraChocolat = {
+  id        : 'promo-fra-chocolat',
+  name      : 'Confiture Fraise + Chocolat',
+  price     : 170,
+  lowerPrice: 100,
+  items     : [
+    [ crepeFraise, tartineFraise ],
+    [ boissonChocolat ]
+  ],
+  category: 'snacks'
+}
+
+const promoAbrChocolat = {
+  id        : 'promo-abr-chocolat',
+  name      : 'Confiture Abricot + Chocolat',
+  price     : 170,
+  lowerPrice: 100,
+  items     : [
+    [ crepeAbricot, tartineAbricot ],
+    [ boissonChocolat ]
+  ],
+  category: 'snacks'
+}
+
+const promoMielChocolat = {
+  id        : 'promo-miel-chocolat',
+  name      : 'Miel + Chocolat',
+  price     : 170,
+  lowerPrice: 100,
+  items     : [
+    [ crepeMiel, tartineMiel ],
+    [ boissonChocolat ]
+  ],
+  category: 'snacks'
+}
 
 export {
   boissonCanette,
@@ -592,7 +697,6 @@ export {
   boissonMonsterAssault,
   boissonMonsterUltra,
   briqueJus,
-  snackBar,
   snackBounty,
   snackSnickers,
   snackKinderBueno,
@@ -616,10 +720,17 @@ export {
   pizzaRoyale,
   sandwichThon,
   sandwichTzatziki,
+  sandwichJambonBeurre,
   boissonCafe,
   crepeNutella,
+  crepeFraise,
+  crepeAbricot,
+  crepeMiel,
   croqueNutella,
-  tartine,
+  tartineNutella,
+  tartineFraise,
+  tartineAbricot,
+  tartineMiel,
   tshirtUA,
   pins,
   cableSeptMetres,
@@ -631,7 +742,12 @@ export {
   promoCrepesBoisson,
   promoPizzaCannette,
   promoBarreCanette,
-  promoNutCafe,
-  promoNutThe,
-  promoNutChocolat
+  promoNutCafeThe,
+  promoFraCafeThe,
+  promoAbrCafeThe,
+  promoMielCafeThe,
+  promoNutChocolat,
+  promoFraChocolat,
+  promoAbrChocolat,
+  promoMielChocolat
 };

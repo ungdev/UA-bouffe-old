@@ -16,6 +16,24 @@
   color: var(--dark-sunflower);
 }
 
+.b-keyboard__key2 {
+  background-color: var(--dark-sunflower);
+  color: var(--dark-blue);
+  margin: 2px;
+  display: inline-block;
+
+  /* center the letter in the square */
+  width: 144px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.b-keyboard__key2--selected {
+  background-color: var(--dark-blue);
+  color: var(--dark-sunflower);
+}
+
 .b-keyboard:first-child {
   padding-right: 10px;
 }

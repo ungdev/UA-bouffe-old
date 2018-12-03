@@ -50,15 +50,15 @@ class Sell extends React.Component {
 
   sendPromo() {
     const promo = clone(this.props.modal.payload);
-    promo.items = this.state.choices;
-    this.props.onChoosePromoClick(promo);
+    promo.items = this.state.choices
     this.setState({
       choices: []
-    });
+    })
+    this.props.onChoosePromoClick(promo)
   }
 
   render() {
-    console.log("modal", this.props.modal);
+    console.log("modal", this.props.modal)
     const hasModal = Boolean(this.props.modal);
 
     if (!hasModal) {
@@ -68,13 +68,22 @@ class Sell extends React.Component {
     const item           = this.props.modal.payload;
     const effectivePrice = (this.props.lowerPrice ? item.lowerPrice : item.price) / 100;
 
-    let choices = this.state.choices;
+    let choices = this.state.choices
 
+    item.items.forEach((i, index) => {
+      if (!choices[index] && i.length === 1) {
+        choices[index] = i[0]
+        this.setState({ choices })
+      }
+    })
     return (
       <div>
         <div className="b-modal b-promo-modal" hidden={!hasModal}>
           <h2>{item.name} - {effectivePrice && effectivePrice.toFixed(1)}€</h2>
-          <span onClick={() => this.props.onCancelPromoClick(item.id)}>&times;</span>
+          <span onClick={() => {
+            this.setState({ choices: [] })
+            this.props.onCancelPromoClick(item.id)
+          }}>&times;</span>
           <div className="b-promo-modal__choices">
             {item.items.map((choice, i) => {
               const choicePayload = clone(item);
