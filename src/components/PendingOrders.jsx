@@ -84,7 +84,10 @@ class PendingOrders extends React.Component {
               );
 
               const orderName = order.items.length > 0 ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
-
+              let code = order.code
+              if (code.startsWith('X')) code = 'Visiteur' + code.substr(1, code.length)
+              if (code.startsWith('Y')) code = 'Casteur' + code.substr(1, code.length)
+              if (code.startsWith('Z')) code = 'Orga' + code.substr(1, code.length)
               return (
                 <div
                   className={orderClasses}
@@ -92,7 +95,7 @@ class PendingOrders extends React.Component {
                   onMousedown={() => this.startTimer(order)}
                   onTouchEnd={() => this.stopTimer()}
                   onMouseUp={() => this.stopTimer()}>
-                  #{order.code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}
+                  #{code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}
                 </div>
               );
             })

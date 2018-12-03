@@ -130,10 +130,13 @@ class Follow extends React.Component {
                     const orderClasses = `b-prepare__orders__orders__order b-prepare__orders__orders__order--${order.status}`;
 
                     const orderName = order.items.length > 0 ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
-
+                    let code = order.code
+                    if (code.startsWith('X')) code = 'Visiteur' + code.substr(1, code.length)
+                    if (code.startsWith('Y')) code = 'Casteur' + code.substr(1, code.length)
+                    if (code.startsWith('Z')) code = 'Orga' + code.substr(1, code.length)
                     return (
                       <div className={orderClasses} ref={order.id}>
-                        <div className="b-prepare__orders__orders__order__name">#{order.code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}</div>
+                        <div className="b-prepare__orders__orders__order__name">#{code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}</div>
                         <div
                           className={pendingClasses}
                           onClick={() => this.onChangeStatusClick(order, 'pending')}>

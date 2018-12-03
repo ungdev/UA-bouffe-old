@@ -54,7 +54,23 @@ class OrderCodeModal extends React.Component {
   }
 
   onSubmitOrderCode() {
-    const code = (this.state.letter && this.state.number) ? `${this.state.letter}${this.state.number}` : null;
+    let { letter } = this.state
+    if (letter) {
+      switch (letter){
+        case 'Visiteur':
+          letter = 'X'
+          break
+        case 'Casteur':
+          letter = 'Y'
+          break
+        case 'Orga':
+          letter = 'Z'
+          break
+        default:
+          break
+      }
+    }
+    const code = (letter && this.state.number) ? `${letter}${this.state.number}` : null;
     this.setState({
       letter: null,
       number: ''

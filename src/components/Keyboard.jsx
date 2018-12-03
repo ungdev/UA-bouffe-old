@@ -30,13 +30,23 @@ class Keyboard extends React.Component {
             return <div>
                     {
                       row.map(key => {
-                        return <span
-                          className={
-                            `b-keyboard__key
-                            ${key === this.props.selectedKey ? ' b-keyboard__key--selected' : ''}`}
-                          onClick={() => this.onKeySelect(key)}>
-                          {key}
-                          </span>
+                        if (key.length === 1) {
+                          return <span
+                            className={
+                              `b-keyboard__key
+                              ${key === this.props.selectedKey ? ' b-keyboard__key--selected' : ''}`}
+                            onClick={() => this.onKeySelect(key)}>
+                            {key}
+                            </span>
+                        } else {
+                          return <span
+                            className={
+                              `b-keyboard__key2
+                              ${key === this.props.selectedKey ? ' b-keyboard__key--selected' : ''}`}
+                            onClick={() => this.onKeySelect(key)}>
+                            {key}
+                            </span>
+                        }
                       })
                     }
                   </div>
