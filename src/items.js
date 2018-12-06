@@ -117,15 +117,6 @@ const boissonMonsterEnergy = {
   noPrep    : true
 };
 
-const boissonMonsterAssault = {
-  id        : 'boisson-monster-assault',
-  name      : 'Monster Assault',
-  price     : 250,
-  lowerPrice: 200,
-  category  : 'canettes',
-  noPrep    : true
-};
-
 const boissonMonsterUltra = {
   id        : 'boisson-monster-ultra',
   name      : 'Monster Ultra',
@@ -552,9 +543,9 @@ const promoCrepesBoisson = {
   id        : 'promo-2crepes-boisson',
   name      : 'Crêpe Salée + Boisson',
   price     : 250,
-  lowerPrice: 200,
+  lowerPrice: 150,
   items     : [
-    [ crepeJambonFromage, crepeComplete, crepeChevreMiel ],
+    [ crepeJambonFromage, crepeChevreMiel ],
     [ boissonThe, boissonCafe, boissonChocolat, boissonEau, boissonCanette ]
   ],
   category: 'crepes'
@@ -589,7 +580,7 @@ const promoNutCafeThe = {
   id        : 'promo-nut-cafe-the',
   name      : 'Nutella + Café/Thé',
   price     : 120,
-  lowerPrice: 70,
+  lowerPrice: 50,
   items     : [
     [ crepeNutella, croqueNutella, tartineNutella ],
     [ boissonCafe, boissonThe ]
@@ -601,7 +592,7 @@ const promoAbrCafeThe = {
   id        : 'promo-abr-cafe-the',
   name      : 'Confiture Abricot + Café/Thé',
   price     : 120,
-  lowerPrice: 70,
+  lowerPrice: 50,
   items     : [
     [ crepeAbricot, tartineAbricot ],
     [ boissonCafe, boissonThe ]
@@ -613,7 +604,7 @@ const promoFraCafeThe = {
   id        : 'promo-fra-cafe-the',
   name      : 'Confiture Fraise + Café/Thé',
   price     : 120,
-  lowerPrice: 70,
+  lowerPrice: 50,
   items     : [
     [ crepeFraise, tartineFraise ],
     [ boissonCafe, boissonThe ]
@@ -625,7 +616,7 @@ const promoMielCafeThe = {
   id        : 'promo-miel-cafe-the',
   name      : 'Miel + Café/Thé',
   price     : 120,
-  lowerPrice: 70,
+  lowerPrice: 50,
   items     : [
     [ crepeMiel, tartineMiel ],
     [ boissonCafe, boissonThe ]
@@ -694,7 +685,6 @@ export {
   oasisTropical,
   boissonEau,
   boissonMonsterEnergy,
-  boissonMonsterAssault,
   boissonMonsterUltra,
   briqueJus,
   snackBounty,
