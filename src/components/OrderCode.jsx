@@ -8,7 +8,7 @@ const LETTERS_PER_ROW = 6;
 const SPOT_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F',
                       'G', 'H', 'I', 'J', 'K', 'L',
                       'M', 'N', 'O', 'P', 'Q', 'R',
-                      'S', 'T', 'U', 'V', 'W', '',
+                      'S', 'T', 'U', 'V', 'Invité', '',
                       'Visiteur', 'Casteur', 'Orga']
 
 class OrderCode extends React.Component {

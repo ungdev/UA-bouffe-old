@@ -131,6 +131,7 @@ class Follow extends React.Component {
 
                     const orderName = order.items.length > 0 ? order.items.filter(i => i).map(i => i.name).join(', ') : order.name;
                     let code = order.code
+                    if (code.startsWith('W')) code = 'Invité' + code.substr(1, code.length)
                     if (code.startsWith('X')) code = 'Visiteur' + code.substr(1, code.length)
                     if (code.startsWith('Y')) code = 'Casteur' + code.substr(1, code.length)
                     if (code.startsWith('Z')) code = 'Orga' + code.substr(1, code.length)
