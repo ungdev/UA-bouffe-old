@@ -57,6 +57,9 @@ class OrderCodeModal extends React.Component {
     let { letter } = this.state
     if (letter) {
       switch (letter){
+        case 'Invité':
+          letter = 'W'
+          break
         case 'Visiteur':
           letter = 'X'
           break
