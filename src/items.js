@@ -350,7 +350,7 @@ const sandwichThon = {
 
 const sandwichTzatziki = {
   id        : 'sandwich-tzatziki',
-  name      : 'Jambon Tzatziki',
+  name      : 'Sandwich Tzatziki',
   price     : 250,
   lowerPrice: 200,
   category  : 'sandwichs'
@@ -390,6 +390,13 @@ const boissonCafe = {
 const crepeNutella = {
   id        : 'crepe-nutella',
   name      : 'Crêpe Nutella',
+  price     : 100,
+  lowerPrice: 50,
+  category  : 'crepes'
+}
+const crepeSucre = {
+  id        : 'crepe-sucre',
+  name      : 'Crêpe au Sucre',
   price     : 100,
   lowerPrice: 50,
   category  : 'crepes'
@@ -462,7 +469,8 @@ const tshirtUA = {
   name      : 'TshirtUA',
   price     : 1500,
   lowerPrice: 1000,
-  category  : 'goodies'
+  category  : 'goodies',
+  noPrep: true
 };
 
 const pins = {
@@ -470,7 +478,8 @@ const pins = {
   name      : 'Pins',
   price     : 100,
   lowerPrice: 100,
-  category  : 'goodies'
+  category  : 'goodies',
+  noPrep: true
 }
 
 const cableSeptMetres = {
@@ -478,7 +487,8 @@ const cableSeptMetres = {
   name      : 'Câble Ethernet (7m)',
   price     : 1000,
   lowerPrice: 1000,
-  category  : 'goodies'
+  category  : 'goodies',
+  noPrep: true
 };
 
 const cableCinqMetres = {
@@ -486,7 +496,8 @@ const cableCinqMetres = {
   name      : 'Câble Ethernet (5m)',
   price     : 700,
   lowerPrice: 700,
-  category  : 'goodies'
+  category  : 'goodies',
+  noPrep: true
 };
 
 const multiprise = {
@@ -494,7 +505,8 @@ const multiprise = {
   name      : 'Multiprise',
   price     : 500,
   lowerPrice: 500,
-  category  : 'goodies'
+  category  : 'goodies',
+  noPrep: true
 };
 
 /* Promotions */
@@ -698,6 +710,7 @@ export {
   snackChips,
   snackSaucisson,
   crepeJambonFromage,
+  crepeSucre,
   crepeComplete,
   supplementLegume,
   crepeChevreMiel,
