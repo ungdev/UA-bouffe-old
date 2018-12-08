@@ -129,6 +129,23 @@
   }
 }
 
+.b-sell__title__pizza {
+  cursor: pointer;
+  height: 75px;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 28px;
+  text-align: left;
+  min-width: 186px;
+}
+
+.b-sell__title__pizza--switched {
+  background-color: var(--dark-lavender);
+}
+
+
 .b-prepare__orders__orders__order__pending {
   background-color: var(--dark-grapefruit);
   left: -70px;

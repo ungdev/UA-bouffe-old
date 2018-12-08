@@ -19,7 +19,8 @@ class Prepare extends React.Component {
   };
 
   state = {
-    tab: 'notReady'
+    tab: 'notReady',
+    pizza: false
   }
 
   onChangeStatusClick(order, status) {
@@ -40,7 +41,7 @@ class Prepare extends React.Component {
         order.status === "ready"
       }
     )
-
+    if(this.state.pizza) orders = orders.filter(o => o.category === 'Pizzas')
     return orders
   }
 
@@ -48,6 +49,9 @@ class Prepare extends React.Component {
     this.setState({
       tab
     });
+  }
+  onSwitch = () => {
+    this.setState({ pizza: !this.state.pizza })
   }
 
   render() {
@@ -86,13 +90,21 @@ class Prepare extends React.Component {
       }
     })
 
-    const ordersToDisplay = this.getOrders();
-
+    const ordersToDisplay = this.getOrders()
+    const toggleClasses = classNames(
+      'b-sell__title__pizza',
+      {
+        'b-sell__title__pizza--switched': this.state.pizza
+      }
+    )
     return (
       <div className="b-prepare">
         <div className="b-prepare__title">
           <Link to="/" className="b-sell__title__back">&lsaquo;</Link>
           <AppBarTimer />
+          <div className={toggleClasses} onClick={() => this.onSwitch()}>
+            Pizza
+          </div>
         </div>
         <div className="b-prepare__abstract">
           <div className="b-prepare__abstract__title">
