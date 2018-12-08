@@ -12,6 +12,7 @@
   opacity: 1;
   padding: 10px 20px;
   transition: opacity 1s ease-in;
+  width: 100%;
 
   &:not(:first-child) {
     margin-top: 5px;

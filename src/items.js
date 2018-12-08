@@ -300,7 +300,7 @@ const croqueTomateMozza = {
 
 const pizzaJambonEmmental = {
   id        : 'pizza-jambon-emmental',
-  name      : 'Jambon Emmental',
+  name      : 'Pizza Jambon Emmental',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'
@@ -308,7 +308,7 @@ const pizzaJambonEmmental = {
 
 const pizzaChorizo = {
   id        : 'pizza-chorizo',
-  name      : 'Chorizo',
+  name      : 'Pizza Chorizo',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'
@@ -316,7 +316,7 @@ const pizzaChorizo = {
 
 const pizzaChevreLardons = {
   id        : 'pizza-chevre-lardons',
-  name      : 'Chèvre Lardons',
+  name      : 'Pizza Chèvre Lardons',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'

@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(cleanPlayerCode());
     },
     onValidModal(code, basket) {
+      document.getElementById('b-modal__button b-modal__button--validate').disabled = true;
       basket = basket.map(item => {
         item.code = code;
         return item;
@@ -28,6 +29,7 @@ const mapDispatchToProps = dispatch => {
         .then(() => {
           Number.isInteger(code) ? dispatch(nextOrderCode()) : dispatch(cleanPlayerCode());
           dispatch(closeModal('valid'));
+          document.getElementById('b-modal__button b-modal__button--validate').disabled = false;
         });
     }
   };
@@ -51,6 +53,7 @@ class ValidModal extends React.Component {
           <div style={{marginTop: "10"}}></div>
           <button
             className="b-modal__button b-modal__button--validate"
+            id="b-modal__button b-modal__button--validate"
             onClick={() => this.props.onValidModal(this.props.playerCode || this.props.incrementalCode, this.props.basket)}>
             Paiement validé
           </button>

@@ -21,35 +21,43 @@ const mapDispatchToProps = dispatch => {
 };
 
 class PendingOrders extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={disabled : false};
+  }
+
   propTypes = {
     orders       : React.PropTypes.orders,
     onCancelOrder: React.PropTypes.func
   };
 
   startTimer = (order) => {
-    if (order.status === 'ready') {
+    if ((order.status === 'ready') && (!this.state.disabled)) {
+      console.log('CLEAR');
 
       setTimeout(() => {
-        this.props.clearOrder(order.id)
-      }, 250);
+        this.props.clearOrder(order.id);
+        setTimeout(() => {
+          this.setState({disabled : false});
+        }, 100);
+      }, 100);
 
       return;
+    } else {
+      console.log('START');
+  
+      this.timeout = setTimeout(() => {
+        console.log('GO');
+        this.props.onCancelOrder(order);
+        this.setState({disabled : false});
+      }, 750);
     }
-
-    // Cancel also to avoid double event click/touch
-    this.stopTimer();
-    console.log('START');
-
-    this.timeout = setTimeout(() => {
-      console.log('GO');
-      this.props.onCancelOrder(order);
-    }, 750);
   }
 
-  stopTimer() {
-    console.log('CLEAR');
-    clearTimeout(this.timeout);
-  }
+//  stopTimer() {
+//    console.log('CLEAR');
+//    clearTimeout(this.timeout);
+//  }
 
   render() {
     const ordersPending = this.props.orders.filter(order => order.status === "pending");
@@ -90,14 +98,19 @@ class PendingOrders extends React.Component {
               if (code.startsWith('Y')) code = 'Casteur' + code.substr(1, code.length)
               if (code.startsWith('Z')) code = 'Orga' + code.substr(1, code.length)
               return (
-                <div
+                <button
                   className={orderClasses}
-                  onTouchStart={() => this.startTimer(order)}
-                  onMousedown={() => this.startTimer(order)}
-                  onTouchEnd={() => this.stopTimer()}
-                  onMouseUp={() => this.stopTimer()}>
+                  disabled={this.state.disabled}
+                  onTouchDown={() => {
+                    this.setState({disabled : true});
+                    this.startTimer(order);}
+                  }
+                  onMouseDown={() => {
+                    this.setState({disabled : true});
+                    this.startTimer(order);}
+                  }>
                   #{code} {order.buyerName !== order.code ? `${order.buyerFirstName} (${order.buyerName})` : null} {orderName}
-                </div>
+                </button>
               );
             })
         }

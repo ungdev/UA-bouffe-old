@@ -39,6 +39,10 @@ class Sell extends React.Component {
       .toFixed(1);
   }
 
+  getCountItems() {
+    return this.props.basket.length;
+  }
+
   render() {
     return (
       <div className="b-sell__page__sidebar">
@@ -66,7 +70,7 @@ class Sell extends React.Component {
           })}
         </div>
         <div className="b-sell__page__sidebar__valid" onClick={() => {
-          if (this.getTotalPrice() > 0) this.props.onSendBasket()
+          if (this.getCountItems() > 0) this.props.onSendBasket()
         }}>
           <span>
             {this.getTotalPrice()}€
