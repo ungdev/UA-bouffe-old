@@ -300,7 +300,7 @@ const croqueTomateMozza = {
 
 const pizzaJambonEmmental = {
   id        : 'pizza-jambon-emmental',
-  name      : 'Pizza Jambon Emmental',
+  name      : 'Pizza Chèvre Mazdam',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'
@@ -308,7 +308,7 @@ const pizzaJambonEmmental = {
 
 const pizzaChorizo = {
   id        : 'pizza-chorizo',
-  name      : 'Pizza Chorizo',
+  name      : 'Pizza 4 Fromages',
   price     : 450,
   lowerPrice: 350,
   category  : 'pizzas'
@@ -569,7 +569,7 @@ const promoPizzaCannette = {
   price     : 500,
   lowerPrice: 400,
   items     : [
-    [ pizzaRoyale, pizzaChorizo, pizzaChevreLardons, pizzaJambonEmmental ],
+    [ pizzaRoyale, pizzaChorizo, pizzaJambonEmmental ],
     [ boissonThe, boissonCafe, boissonChocolat, boissonEau, boissonCanette ]
   ],
   category: 'pizzas'
@@ -719,7 +719,7 @@ export {
   croqueTomateMozza,
   pizzaJambonEmmental,
   pizzaChorizo,
-  pizzaChevreLardons,
+  //pizzaChevreLardons,
   pizzaRoyale,
   sandwichThon,
   sandwichTzatziki,
